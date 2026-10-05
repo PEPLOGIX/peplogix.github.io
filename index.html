@@ -46,6 +46,7 @@
   --gutter:clamp(16px,4vw,40px);
 }
 *,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;caret-color:var(--teal)}
@@ -766,6 +767,9 @@ const CONFIG = {
       landingVariant: ""
     }
   },
+  // Every application is emailed here (FormSubmit.co). The first submission sends an
+  // "Activate Form" email to this address; click it once and all later applications arrive.
+  leadEmail: "wnagi@peplogix.com",
   bookingUrl: "",                         // e.g. Calendly or Salesforce Scheduler link. Empty hides the button.
   responseTime: "",                       // e.g. "within 1 business day". Empty uses neutral wording.
   landingVariant: "b2b-funnel-v1",
@@ -1079,6 +1083,26 @@ const sendToSalesforce = data => new Promise(resolve => {
   window.dataLayer?.push({event:"generate_lead", lead_type:data.leadType, business_type:data.businessType});
 });
 
+/* Email delivery via FormSubmit (works without Salesforce) */
+const sendEmail = async (data, extra = {}) => {
+  if (!CONFIG.leadEmail) return {ok:false};
+  const body = {
+    _subject: `New ${data.leadType} lead: ${data.company} (${data.first_name} ${data.last_name})`,
+    _template: "table", _replyto: data.email,
+    "Lead type": data.leadType, "Name": `${data.first_name} ${data.last_name}`.trim(), "Business": data.company,
+    "Email": data.email, "Phone": data.phone, "State": data.state, "Business type": data.businessType,
+    "Interests": data.interests.replaceAll(";", ", "), "Stage": data.stage, ...extra,
+    "Campaign": [utm.utm_source, utm.utm_medium, utm.utm_campaign, utm.utm_content].filter(Boolean).join(" / "),
+    "Page": location.href.split("#")[0]
+  };
+  Object.keys(body).forEach(k => body[k] === "" && delete body[k]);
+  try {
+    const r = await fetch(`https://formsubmit.co/ajax/${CONFIG.leadEmail}`, {method:"POST", headers:{"Content-Type":"application/json", Accept:"application/json"}, body: JSON.stringify(body)});
+    const j = await r.json().catch(() => ({}));
+    return {ok: String(j.success) === "true", activation: /activat/i.test(j.message || "")};
+  } catch { return {ok:false}; }
+};
+
 const describe = obj => Object.entries(obj).filter(([,v]) => v).map(([k,v]) => `${k}: ${v}`).join("\n");
 
 $("#b2bForm").addEventListener("submit", async e => {
@@ -1102,16 +1126,23 @@ $("#b2bForm").addEventListener("submit", async e => {
     "Stage": data.stage, "Brand preview": brandInput.value.trim(), "Variant": CONFIG.landingVariant,
     "UTM source": utm.utm_source, "UTM medium": utm.utm_medium, "UTM campaign": utm.utm_campaign, "UTM content": utm.utm_content, "UTM term": utm.utm_term
   });
+  const mailed = await sendEmail(data, {
+    "Brand name typed in preview": brandInput.value.trim(),
+    "Program builder selection": SERVICES.filter(s => on.has(s.key)).map(s => s.label).join(", ")
+  });
+  const sfSent = await sendToSalesforce(data);
   try {
-    const sent = await sendToSalesforce(data);
+    if (!mailed.ok && !sfSent) throw new Error(mailed.activation ? "activation" : "send");
     $("#formBody").hidden = true; $("#formDone").hidden = false;
     if (CONFIG.responseTime) $("#doneMsg").textContent = `A partner manager will call you ${CONFIG.responseTime} to talk through your program and get you into the partner portal.`;
     if (CONFIG.bookingUrl) { $("#doneBook").href = CONFIG.bookingUrl; $("#doneBook").hidden = false; }
-    $("#demoNote").hidden = sent;
+    $("#demoNote").hidden = true;
     $("#formDone").focus();
-  } catch {
+  } catch (err) {
     const alert = $("#formAlert");
-    alert.textContent = "We couldn't send your application. Check your connection and try again, or call 949-899-9284 or email wnagi@peplogix.com.";
+    alert.textContent = err.message === "activation"
+      ? `Almost ready: check ${CONFIG.leadEmail} (and spam) for the FormSubmit "Activate Form" email and click it. Applications are delivered after that.`
+      : "We couldn't send your application. Check your connection and try again, or call 949-899-9284 or email wnagi@peplogix.com.";
     alert.classList.add("is-on");
     btn.removeAttribute("aria-busy"); btn.disabled = false; btn.textContent = "Submit application";
   }
@@ -1135,11 +1166,12 @@ d2cForm.addEventListener("submit", async e => {
   [["#d2c_name", !!name], ["#d2c_email", emailOk(email)], ["#d2c_state", !!state]].forEach(([s,v]) => $(s).setAttribute("aria-invalid", !v));
   if (!ok) return;
   const btn = $("#d2cSubmit"); btn.disabled = true; btn.textContent = "Sending";
-  await sendToSalesforce({
+  const d2cData = {
     leadType:"D2C", businessType:"D2C customer", interests:"", stage:"",
     first_name:name, last_name:"(D2C)", company:"D2C – Individual", email, phone:"", state,
     description: describe({"Lead type":"D2C","Action":"Email D2C site link","Variant":CONFIG.landingVariant,"UTM source":utm.utm_source,"UTM campaign":utm.utm_campaign})
-  });
+  };
+  await Promise.all([sendEmail(d2cData, {"Action needed": "Email this person the D2C site link"}), sendToSalesforce(d2cData)]);
   $(".row", d2cForm).hidden = true; $("#d2cDone").hidden = false;
 });
 </script>
