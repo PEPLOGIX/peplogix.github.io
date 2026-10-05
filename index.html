@@ -109,13 +109,14 @@ p{margin:0;text-wrap:pretty}
 .facts svg{width:20px;height:20px;color:var(--teal);flex:none}
 
 /* White-label preview */
-.preview{background:var(--mist);border-radius:var(--radius-lg);padding:20px;box-shadow:var(--shadow-lg)}
+.preview{background:var(--ink);border-radius:var(--radius-lg);padding:20px;box-shadow:var(--shadow-lg)}
 .preview__bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.preview__bar label{font-size:14px;font-weight:600;color:var(--ink)}
-.preview__input{flex:1 1 200px;min-width:0;height:44px;border:1px solid var(--line-2);border-radius:999px;padding:0 18px;font:500 16px var(--sans);color:var(--ink);background:#fff;transition:border-color .2s,box-shadow .2s}
-.preview__input:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 4px var(--teal-wash)}
-.preview__stage{margin-top:16px;border-radius:12px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(30,33,42,.06)}
-.preview__note{margin-top:12px;font-size:13px;color:var(--muted)}
+.preview__bar label{font-size:14px;font-weight:600;color:#fff}
+.preview__input{flex:1 1 200px;min-width:0;height:44px;border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:0 18px;font:500 16px var(--sans);color:#fff;background:rgba(255,255,255,.06);transition:border-color .2s,box-shadow .2s}
+.preview__input::placeholder{color:#9AA1AD}
+.preview__input:focus{outline:none;border-color:var(--teal-glow);box-shadow:0 0 0 4px rgba(95,182,194,.22)}
+.preview__stage{margin-top:16px;border-radius:12px;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.07)}
+.preview__note{margin-top:12px;font-size:13px;color:#9AA1AD}
 #brandText,#cartonBrand,#labelFrom{transition:opacity .25s var(--ease-out)}
 
 /* Sections */
@@ -395,13 +396,13 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
             <title id="previewTitle">Illustrative white-label vial and shipping carton showing your brand name</title>
             <defs>
               <linearGradient id="studioWall" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#E6EDF1"/><stop offset=".62" stop-color="#F3F6F8"/><stop offset=".8" stop-color="#FAFBFC"/><stop offset="1" stop-color="#EDF2F5"/>
+                <stop offset="0" stop-color="#323743"/><stop offset=".6" stop-color="#2A2E38"/><stop offset=".78" stop-color="#252830"/><stop offset="1" stop-color="#1C1F26"/>
               </linearGradient>
               <radialGradient id="studioSpot" cx=".46" cy=".42" r=".55">
-                <stop offset="0" stop-color="#FFFFFF" stop-opacity=".95"/><stop offset=".55" stop-color="#FFFFFF" stop-opacity=".35"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+                <stop offset="0" stop-color="#FFFFFF" stop-opacity=".16"/><stop offset=".55" stop-color="#FFFFFF" stop-opacity=".05"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
               </radialGradient>
               <radialGradient id="studioTint" cx=".85" cy=".1" r=".6">
-                <stop offset="0" stop-color="#5FB6C2" stop-opacity=".16"/><stop offset="1" stop-color="#5FB6C2" stop-opacity="0"/>
+                <stop offset="0" stop-color="#5FB6C2" stop-opacity=".28"/><stop offset="1" stop-color="#5FB6C2" stop-opacity="0"/>
               </radialGradient>
               <filter id="softShadow" x="-30%" y="-200%" width="160%" height="500%"><feGaussianBlur stdDeviation="6"/></filter>
               <filter id="tightShadow" x="-30%" y="-200%" width="160%" height="500%"><feGaussianBlur stdDeviation="2"/></filter>
@@ -409,10 +410,10 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
             <rect width="520" height="360" fill="url(#studioWall)"/>
             <rect width="520" height="360" fill="url(#studioTint)"/>
             <rect width="520" height="360" fill="url(#studioSpot)"/>
-            <ellipse cx="360" cy="320" rx="150" ry="14" fill="#1E212A" opacity=".14" filter="url(#softShadow)"/>
-            <ellipse cx="342" cy="318" rx="122" ry="4" fill="#1E212A" opacity=".18" filter="url(#tightShadow)"/>
-            <ellipse cx="128" cy="321" rx="56" ry="9" fill="#1E212A" opacity=".16" filter="url(#softShadow)"/>
-            <ellipse cx="128" cy="320" rx="44" ry="3" fill="#1E212A" opacity=".22" filter="url(#tightShadow)"/>
+            <ellipse cx="360" cy="320" rx="150" ry="14" fill="#000" opacity=".45" filter="url(#softShadow)"/>
+            <ellipse cx="342" cy="318" rx="122" ry="4" fill="#000" opacity=".5" filter="url(#tightShadow)"/>
+            <ellipse cx="128" cy="321" rx="56" ry="9" fill="#000" opacity=".45" filter="url(#softShadow)"/>
+            <ellipse cx="128" cy="320" rx="44" ry="3" fill="#000" opacity=".55" filter="url(#tightShadow)"/>
             <!-- Carton -->
             <g>
               <path d="M222 108 262 80h196l-40 28z" fill="#E6D2AE" stroke="#B89462" stroke-width="1.5" stroke-linejoin="round"/>
