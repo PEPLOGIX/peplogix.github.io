@@ -123,6 +123,12 @@ p{margin:0;text-wrap:pretty}
 .path .btn{margin-top:18px;width:100%;white-space:nowrap;padding:0 16px}
 .path .btn--ghost{--fg:#fff;border-color:rgba(255,255,255,.22)}
 .path .btn--ghost:hover{background:rgba(255,255,255,.08);color:#fff}
+.hero__top{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.6fr);gap:20px 40px;align-items:center;margin-bottom:clamp(40px,5vw,64px)}
+.hero__top .paths{margin-top:0}
+.hero__lead{font-size:clamp(18px,1.6vw,21px);line-height:1.5;color:#BCC2CC;margin:0}
+.hero__lead strong{display:block;font-size:clamp(26px,2.6vw,34px);line-height:1.15;letter-spacing:-.025em;color:#fff;margin-bottom:10px}
+.hero__ruo--top{grid-column:2;margin-top:-6px}
+@media (max-width:1000px){.hero__top{grid-template-columns:minmax(0,1fr)}.hero__ruo--top{grid-column:1}}
 .hero__ruo{margin-top:18px;font-size:13px;color:#858C98}
 .hero.hero--main h1 em{white-space:normal}
 .hero--main h1{font-size:clamp(40px,5vw,66px)}
@@ -131,7 +137,7 @@ p{margin:0;text-wrap:pretty}
 .heroart::after{content:"";position:absolute;bottom:58px;left:8%;width:84%;height:26px;border-radius:50%;background:rgba(0,0,0,.5);filter:blur(14px)}
 .heroart__photo{position:relative;z-index:1;margin:0;width:100%;animation:floaty 6s ease-in-out infinite}
 .heroart__photo{container-type:inline-size}
-.fixlbl{position:absolute;display:flex;align-items:center;padding-left:.17cqi;background:#F7F7F7;font:700 1.17cqi/1 Arial,"Helvetica Neue",Helvetica,sans-serif;color:#2B2B2B;letter-spacing:-.035em;white-space:nowrap;overflow:hidden}
+.fixlbl{position:absolute;display:flex;align-items:center;padding-left:.17cqi;background:#F7F7F7;font:700 1.24cqi/1 Arial,"Helvetica Neue",Helvetica,sans-serif;color:#2B2B2B;letter-spacing:-.04em;white-space:nowrap;overflow:hidden}
 .heroart__photo img{display:block;width:100%;height:auto;filter:drop-shadow(0 18px 22px rgba(0,0,0,.42))}
 .heroart>svg{width:auto;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45));animation:floaty 6s ease-in-out infinite}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
@@ -468,10 +474,8 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
 <main id="top">
   <!-- Hero -->
   <section class="hero hero--main">
-    <div class="wrap hero__main">
-      <div>
-        <h1><span class="l">Research peptides,</span> <em>direct from the source.</em></h1>
-        <p class="hero__sub">Skip the middlemen. Clinics and practices get wholesale accounts; individual researchers order direct.</p>
+    <div class="wrap hero__top">
+      <p class="hero__lead"><strong>Skip the middlemen.</strong> Clinics and practices get wholesale accounts; individual researchers order direct.</p>
         <div class="paths">
           <div class="path path--b2b">
             <span class="path__tag">For business</span>
@@ -494,10 +498,14 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
             </form>
           </div>
         </div>
-        <p class="hero__ruo">All products are for research use only. Not for human consumption.</p>
+        <p class="hero__ruo hero__ruo--top">All products are for research use only. Not for human consumption.</p>
+    </div>
+    <div class="wrap hero__main">
+      <div>
+        <h1><span class="l">Research peptides,</span> <em>direct from the source.</em></h1>
       </div>
       <div class="heroart">
-        <figure class="heroart__photo"><img src="assets/product-lineup-float.webp?v=4k" width="1800" height="1124" alt="Peplogix Peptides product lineup: Reta (GLP-3) 60 mg vial, Gut Inflammation capsules, NAD+ nasal spray, and GHK-Cu peptide serum, all labeled research use only" fetchpriority="high"><span class="fixlbl" style="left:30.1%;top:65.3%;width:5.1%;height:2.4%">BPC-157:</span><span class="fixlbl" style="left:30.17%;top:68.15%;width:4.78%;height:2.45%">TB-500:</span></figure>
+        <figure class="heroart__photo"><img src="assets/product-lineup-float.webp?v=clean2" width="1800" height="1125" alt="Peplogix Peptides product lineup: Reta (GLP-3) 60 mg vial, Gut Inflammation capsules, NAD+ nasal spray, and GHK-Cu peptide serum, all labeled research use only" fetchpriority="high"><span class="fixlbl" style="left:30.3%;top:64.45%;width:5.4%;height:2.4%">BPC-157:</span><span class="fixlbl" style="left:30.3%;top:67.3%;width:4.95%;height:2.45%">TB-500:</span></figure>
         <div class="heroart__pills">
           <span class="heroart__pill"><svg aria-hidden="true"><use href="#i-check-circle"/></svg>Wholesale for clinics</span>
           <span class="heroart__pill"><svg aria-hidden="true"><use href="#i-truck"/></svg>Direct to individuals</span>
