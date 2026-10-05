@@ -181,13 +181,45 @@ p{margin:0;text-wrap:pretty}
 .map__total{display:flex;align-items:baseline;gap:12px;margin-top:20px;color:#B9C7D4;font-size:15px}
 .map__total strong{font:500 40px/1 var(--mono);color:#fff;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
 
-/* Proof */
-.proof{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-@media (max-width:760px){.proof{grid-template-columns:repeat(2,1fr)}}
-.ph{display:grid;place-items:center;min-height:84px;border:1.5px dashed var(--line-2);border-radius:var(--radius);color:var(--muted);font:500 12px/1.3 var(--mono);text-align:center;padding:8px;background:#fff}
-.quote{margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media (max-width:760px){.quote{grid-template-columns:1fr}}
-.quote .ph{min-height:160px;padding:24px;font-size:13px}
+/* Build your program */
+.build{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(24px,4vw,56px);align-items:start}
+@media (max-width:960px){.build{grid-template-columns:1fr}}
+.svcs{display:grid;gap:10px}
+.svc{all:unset;box-sizing:border-box;display:grid;grid-template-columns:40px 1fr 44px;gap:16px;align-items:center;padding:16px 18px;border-radius:14px;background:#fff;box-shadow:0 0 0 1px var(--line);cursor:pointer;transition:box-shadow .2s var(--ease-out),background .2s var(--ease-out),transform .15s var(--ease-out)}
+.svc:hover{box-shadow:0 0 0 1px var(--line-2),0 6px 18px -10px rgba(0,0,0,.25)}
+.svc:active{transform:scale(.99)}
+.svc:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.svc__ic{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:var(--mist);color:var(--ink-2);transition:background .2s,color .2s}
+.svc__ic svg{width:20px;height:20px}
+.svc__t{display:block;font-weight:600;font-size:16px;letter-spacing:-.01em}
+.svc__d{display:block;font-size:14px;color:var(--muted);margin-top:2px;line-height:1.4}
+.sw{width:44px;height:26px;border-radius:999px;background:var(--line-2);position:relative;transition:background .25s var(--ease-out)}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:transform .3s var(--ease-out)}
+.svc[aria-pressed="true"]{box-shadow:0 0 0 1.5px var(--teal)}
+.svc[aria-pressed="true"] .svc__ic{background:var(--teal-wash);color:var(--teal-ink)}
+.svc[aria-pressed="true"] .sw{background:var(--teal)}
+.svc[aria-pressed="true"] .sw::after{transform:translateX(18px)}
+.plan{background:var(--ink);color:#E6EDF3;border-radius:var(--radius-lg);padding:clamp(24px,3.5vw,40px);position:sticky;top:96px}
+.plan__count{font-size:clamp(24px,2.6vw,32px);font-weight:600;letter-spacing:-.025em;color:#fff;line-height:1.2}
+.plan__count strong{color:var(--teal-glow);font-variant-numeric:tabular-nums}
+.plan__bar{display:flex;gap:4px;margin:20px 0 28px}
+.plan__bar span{flex:1;height:6px;border-radius:3px;background:rgba(255,255,255,.14);transition:background .35s var(--ease-out)}
+.plan__bar span.on{background:var(--teal-glow)}
+.plan__cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media (max-width:520px){.plan__cols{grid-template-columns:1fr}}
+.plan h3{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#93A6B8;margin-bottom:12px}
+.plan ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.plan li{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.4;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.05)}
+.plan li svg{width:16px;height:16px;flex:none;margin-top:2px}
+.plan__us li{color:#fff}
+.plan__us li svg{color:var(--teal-glow)}
+.plan__you li{color:#B9C7D4}
+.plan__you li svg{color:#7F93A6}
+.plan li.moved{animation:moved .6s var(--ease-out)}
+@keyframes moved{from{opacity:0;transform:translateY(-6px);background:rgba(70,194,201,.25)}to{opacity:1;transform:none}}
+.plan__cta{margin-top:28px;width:100%}
+.plan__note{margin-top:14px;font-size:13px;color:#93A6B8}
+@media (prefers-reduced-motion:reduce){.plan li.moved{animation:none}.sw::after,.svc{transition:none}}
 
 /* Apply */
 .apply{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,5vw,80px);align-items:start}
@@ -508,23 +540,25 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
     </div>
   </section>
 
-  <!-- Proof (placeholders: replace with real assets before launch) -->
-  <section class="section" id="proof">
+  <!-- Build your program -->
+  <section class="section" id="build">
     <div class="wrap">
       <div class="section__head rv">
-        <h2>The brands already running on Peplogix.</h2>
-        <p>The same white-label, warehouse, and shipping setup you'd be plugging into.</p>
+        <h2>Choose what we run for you.</h2>
+        <p>Switch services on and off to see who handles what. Then apply with that setup and we'll price it for you on the call.</p>
       </div>
-      <div class="proof rv" aria-label="Partner logos">
-        <div class="ph">Partner logo<br>(replace before launch)</div>
-        <div class="ph">Partner logo<br>(replace before launch)</div>
-        <div class="ph">Partner logo<br>(replace before launch)</div>
-        <div class="ph">Partner logo<br>(replace before launch)</div>
-        <div class="ph">Partner logo<br>(replace before launch)</div>
-      </div>
-      <div class="quote rv">
-        <div class="ph">Partner testimonial: real quote, name, business, and permission required. Replace before launch.</div>
-        <div class="ph">Partner testimonial: real quote, name, business, and permission required. Replace before launch.</div>
+      <div class="build rv">
+        <div class="svcs" id="svcList" role="group" aria-label="Services"></div>
+        <aside class="plan" aria-live="polite" aria-labelledby="planCount">
+          <p class="plan__count" id="planCount"></p>
+          <div class="plan__bar" id="planBar" aria-hidden="true"></div>
+          <div class="plan__cols">
+            <div class="plan__us"><h3>Peplogix runs</h3><ul id="planUs"></ul></div>
+            <div class="plan__you"><h3>You run</h3><ul id="planYou"></ul></div>
+          </div>
+          <a class="btn plan__cta" href="#apply" id="planCta">Apply with this setup <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <p class="plan__note">Every partner gets a dedicated partner manager.</p>
+        </aside>
       </div>
     </div>
   </section>
@@ -843,6 +877,59 @@ tabs.addEventListener("keydown", e => {
   if (e.key === "End") { e.preventDefault(); showSeg(list.at(-1).dataset.key, true); }
 });
 showSeg(SEGMENTS[0].key);
+
+/* Build your program */
+const SERVICES = [
+  {key:"brand", icon:"i-tag", label:"White-label branding", desc:"Your name on the labels and packaging", interest:"ruo-box"},
+  {key:"store", icon:"i-map", label:"3PL warehousing", desc:"We hold your inventory", interest:"ruo-box"},
+  {key:"ship", icon:"i-truck", label:"Dropship fulfillment", desc:"We pack and ship each order", interest:"ruo-box"},
+  {key:"supply", icon:"i-check-circle", label:"Wholesale supply", desc:"Product for your clinic or resale", interest:"supply"},
+  {key:"tele", icon:"i-steth", label:"White-label telehealth", desc:"A branded telehealth offering, 50 states", interest:"telehealth"},
+  {key:"regen", icon:"i-cells", label:"Regenerative medicine", desc:"Programs for your practice, 50 states", interest:"regen"},
+  {key:"aff", icon:"i-arrow", label:"Affiliate tracking", desc:"Referral tracking and payouts", interest:"affiliate"}
+];
+const TASKS = [
+  {label:"Sourcing product", by:["brand","supply"]},
+  {label:"Labels and packaging with your brand", by:["brand"]},
+  {label:"Storing inventory", by:["store"]},
+  {label:"Packing and shipping orders", by:["ship"]},
+  {label:"Telehealth platform and provider network", by:["tele"], optional:true},
+  {label:"Regenerative program setup", by:["regen"], optional:true},
+  {label:"Referral tracking and payouts", by:["aff"], optional:true},
+  {label:"Your storefront and marketing", by:[]},
+  {label:"Your customer relationships", by:[]}
+];
+const on = new Set(["brand","store","ship"]);
+let lastOwner = new Map();
+$("#svcList").innerHTML = SERVICES.map(s =>
+  `<button type="button" class="svc" data-key="${s.key}" aria-pressed="${on.has(s.key)}"><span class="svc__ic">${icon(s.icon)}</span><span><span class="svc__t">${s.label}</span><span class="svc__d">${s.desc}</span></span><span class="sw" aria-hidden="true"></span></button>`).join("");
+const renderPlan = () => {
+  const shown = TASKS.filter(t => !t.optional || t.by.some(k => on.has(k)));
+  const ours = shown.filter(t => t.by.some(k => on.has(k)));
+  const yours = shown.filter(t => !ours.includes(t));
+  const li = (t, mine) => {
+    const owner = mine ? "us" : "you", moved = lastOwner.has(t.label) && lastOwner.get(t.label) !== owner;
+    lastOwner.set(t.label, owner);
+    return `<li class="${moved && !reduced ? "moved" : ""}">${icon(mine ? "i-check-circle" : "i-arrow")}<span>${t.label}</span></li>`;
+  };
+  $("#planUs").innerHTML = ours.length ? ours.map(t => li(t, true)).join("") : `<li>${icon("i-plus")}<span>Switch on a service to start</span></li>`;
+  $("#planYou").innerHTML = yours.map(t => li(t, false)).join("");
+  $("#planCount").innerHTML = `Peplogix runs <strong>${ours.length}</strong> of ${shown.length} parts of your business.`;
+  $("#planBar").innerHTML = shown.map((_,i) => `<span class="${i < ours.length ? "on" : ""}"></span>`).join("");
+};
+$("#svcList").addEventListener("click", e => {
+  const b = e.target.closest(".svc"); if (!b) return;
+  const k = b.dataset.key, now = !on.has(k);
+  now ? on.add(k) : on.delete(k);
+  b.setAttribute("aria-pressed", now);
+  renderPlan();
+});
+$("#planCta").addEventListener("click", () => {
+  $$("input[name=interests]").forEach(c => c.checked = false);
+  preselect(on.has("brand") && !on.has("supply") && !on.has("tele") && !on.has("regen") ? "founder" : null,
+    [...new Set(SERVICES.filter(s => on.has(s.key)).map(s => s.interest))].join(","));
+});
+renderPlan();
 
 /* 50-state map */
 $("#mapGrid").innerHTML = TILES.map(([a,r,c]) => `<span class="st" style="grid-row:${r+1};grid-column:${c+1}" aria-hidden="true">${a}</span>`).join("");
