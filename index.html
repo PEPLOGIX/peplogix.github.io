@@ -335,6 +335,7 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
     <symbol id="i-map" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></symbol>
     <symbol id="i-steth" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a4 4 0 0 0 8 0V3"/><path d="M10 13v2a5 5 0 0 0 10 0v-2"/><circle cx="20" cy="11" r="2"/></symbol>
     <symbol id="i-cells" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="4"/><circle cx="16.5" cy="15.5" r="4.5"/><circle cx="8" cy="8" r="1"/><circle cx="16.5" cy="15.5" r="1.2"/></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5 5.5 4h13L20 9.5"/><path d="M4 9.5a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0 2.7 2.7 0 0 0 5.3 0"/><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"/></symbol>
     <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></symbol>
   </defs>
 </svg>
@@ -495,7 +496,7 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
           <li><div><h3>Choose your lineup</h3><p>Pick the research products you want to carry from our catalog. Your partner manager helps you build a lineup that fits your market.</p></div></li>
           <li><div><h3>Put your name on it</h3><p>Your brand on the labels and packaging. Customers see your company, not ours.</p></div></li>
           <li><div><h3>We store and ship it</h3><p>Inventory sits in our 3PL warehouse. Orders dropship straight to your customers under your brand.</p></div></li>
-          <li><div><h3>You sell</h3><p>You focus on your storefront and your customers. We handle the shelves, the boxes, and the shipping labels.</p></div></li>
+          <li><div><h3>You sell</h3><p>You focus on marketing and your customers. We handle the shelves, the boxes, and the shipping labels, and we can build your online store too.</p></div></li>
         </ol>
         <aside class="included rv" aria-labelledby="inclTitle">
           <h3 id="inclTitle">What's in the box</h3>
@@ -504,6 +505,7 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
             <li><span>Your label &amp; packaging</span><span>White-label</span></li>
             <li><span>Inventory storage</span><span>3PL</span></li>
             <li><span>Order fulfillment to your customers</span><span>Dropship</span></li>
+            <li><span>Your online storefront</span><span>Optional</span></li>
             <li><span>A partner manager on the phone</span><span>Onboarding</span></li>
             <li><span>Private partner portal</span><span>Access</span></li>
           </ul>
@@ -796,8 +798,8 @@ const SEGMENTS = [
     interests:["supply","ruo-box"] },
   { key:"founder", label:"Launching a brand", title:"Start your RUO business in a box.",
     body:"We already white-label, warehouse, and dropship for multiple RUO brands. Launch yours on the same setup.",
-    points:["Your brand on the label and packaging","Inventory stored in our 3PL warehouse","Orders dropshipped to your customers","Guided onboarding through our partner portal"],
-    interests:["ruo-box"] },
+    points:["Your brand on the label and packaging","Inventory stored in our 3PL warehouse","Orders dropshipped to your customers","An online storefront built for you, if you want one"],
+    interests:["ruo-box","storefront"] },
   { key:"affiliate", label:"Affiliates", title:"Refer clinics and brands. Earn on what they do.",
     body:"Introduce practices, med spas, and new brands to Peplogix and earn on the business they bring. Commission details are shared on your call.",
     points:["Refer any partner type on this page","Your own referral tracking","Commission terms reviewed on your call","Support from a partner manager"],
@@ -808,6 +810,7 @@ const INTERESTS = [
   {key:"ruo-box", label:"RUO business in a box"},
   {key:"telehealth", label:"White-label telehealth"},
   {key:"regen", label:"Regenerative medicine"},
+  {key:"storefront", label:"Storefront build"},
   {key:"supply", label:"Wholesale / clinic supply"},
   {key:"affiliate", label:"Affiliate program"}
 ];
@@ -883,6 +886,7 @@ const SERVICES = [
   {key:"brand", icon:"i-tag", label:"White-label branding", desc:"Your name on the labels and packaging", interest:"ruo-box"},
   {key:"store", icon:"i-map", label:"3PL warehousing", desc:"We hold your inventory", interest:"ruo-box"},
   {key:"ship", icon:"i-truck", label:"Dropship fulfillment", desc:"We pack and ship each order", interest:"ruo-box"},
+  {key:"shop", icon:"i-store", label:"Storefront build", desc:"We build your online store", interest:"storefront"},
   {key:"supply", icon:"i-check-circle", label:"Wholesale supply", desc:"Product for your clinic or resale", interest:"supply"},
   {key:"tele", icon:"i-steth", label:"White-label telehealth", desc:"A branded telehealth offering, 50 states", interest:"telehealth"},
   {key:"regen", icon:"i-cells", label:"Regenerative medicine", desc:"Programs for your practice, 50 states", interest:"regen"},
@@ -896,7 +900,8 @@ const TASKS = [
   {label:"Telehealth platform and provider network", by:["tele"], optional:true},
   {label:"Regenerative program setup", by:["regen"], optional:true},
   {label:"Referral tracking and payouts", by:["aff"], optional:true},
-  {label:"Your storefront and marketing", by:[]},
+  {label:"Building your online storefront", by:["shop"]},
+  {label:"Marketing and selling", by:[]},
   {label:"Your customer relationships", by:[]}
 ];
 const on = new Set(["brand","store","ship"]);
