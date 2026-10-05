@@ -18,18 +18,20 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <style>
 :root{
-  --ink:#0B1F33;
-  --ink-2:#2B3D50;
-  --muted:#5A6B7C;
-  --line:#DCE3E9;
-  --line-2:#C7D1DA;
+  --ink:#1E212A;
+  --ink-2:#363B46;
+  --muted:#5F6673;
+  --line:#E1E5EA;
+  --line-2:#CDD3DA;
   --paper:#FFFFFF;
-  --mist:#F4F7F9;
-  --mist-2:#EAF0F3;
-  --teal:#0E7C86;
-  --teal-ink:#0A5F67;
-  --teal-wash:#E3F2F3;
-  --teal-glow:#46C2C9;
+  --mist:#F4F6F8;
+  --mist-2:#EBEFF2;
+  --teal:#217F8C;
+  --teal-ink:#1B6974;
+  --teal-wash:#E3F3F5;
+  --teal-glow:#5FB6C2;
+  --accent:#D2654A;
+  --accent-ink:#B94F37;
   --kraft:#D8BF97;
   --kraft-2:#C6A877;
   --danger:#B3261E;
@@ -75,7 +77,7 @@ p{margin:0;text-wrap:pretty}
 .btn--ghost{--bg:transparent;--fg:var(--ink);border-color:var(--line-2)}
 .btn--ghost:hover{background:var(--mist);color:var(--ink);box-shadow:none}
 .btn--ink{--bg:var(--ink)}
-.btn--ink:hover{background:#163552}
+.btn--ink:hover{background:#2C313D}
 .btn[disabled],.btn[aria-busy="true"]{opacity:.6;cursor:not-allowed;box-shadow:none}
 .btn--sm{min-height:40px;padding:0 16px;font-size:15px}
 
@@ -99,6 +101,7 @@ p{margin:0;text-wrap:pretty}
 @media (max-width:960px){.hero__grid{grid-template-columns:1fr}}
 .hero h1{font-size:clamp(40px,6vw,72px);letter-spacing:-.035em;font-weight:650;max-width:15ch}
 .hero h1 em{font-style:normal;color:var(--teal)}
+.dot-accent{color:var(--accent)}
 .hero__sub{margin-top:24px;font-size:clamp(18px,1.6vw,20px);line-height:1.55;color:var(--ink-2);max-width:52ch}
 .hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
 .facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin:40px 0 0;padding:20px 0 0;border-top:1px solid var(--line);list-style:none}
@@ -111,18 +114,18 @@ p{margin:0;text-wrap:pretty}
 .preview__bar label{font-size:14px;font-weight:600;color:var(--ink)}
 .preview__input{flex:1 1 200px;min-width:0;height:44px;border:1px solid var(--line-2);border-radius:999px;padding:0 18px;font:500 16px var(--sans);color:var(--ink);background:#fff;transition:border-color .2s,box-shadow .2s}
 .preview__input:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 4px var(--teal-wash)}
-.preview__stage{margin-top:16px;border-radius:12px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(11,31,51,.06)}
+.preview__stage{margin-top:16px;border-radius:12px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(30,33,42,.06)}
 .preview__note{margin-top:12px;font-size:13px;color:var(--muted)}
 #brandText,#cartonBrand,#labelFrom{transition:opacity .25s var(--ease-out)}
 
 /* Sections */
 .section{padding:clamp(72px,9vw,128px) 0}
 .section--mist{background:var(--mist)}
-.section--ink{background:var(--ink);color:#E6EDF3}
+.section--ink{background:var(--ink);color:#E8EBEF}
 .section__head{max-width:720px;margin-bottom:clamp(40px,5vw,64px)}
 .section__head h2{font-size:clamp(32px,4.2vw,52px)}
 .section__head p{margin-top:18px;font-size:19px;color:var(--ink-2);max-width:60ch}
-.section--ink .section__head p{color:#B9C7D4}
+.section--ink .section__head p{color:#BCC2CC}
 .section--ink h2{color:#fff}
 
 /* Segments */
@@ -152,34 +155,34 @@ p{margin:0;text-wrap:pretty}
 .steps{list-style:none;padding:0;margin:0;counter-reset:s;display:grid}
 .steps li{counter-increment:s;display:grid;grid-template-columns:56px 1fr;gap:20px;padding:28px 0;border-top:1px solid var(--line)}
 .steps li:last-child{border-bottom:1px solid var(--line)}
-.steps li::before{content:counter(s,decimal-leading-zero);font:500 15px/1 var(--mono);color:var(--teal);padding-top:6px}
+.steps li::before{content:counter(s,decimal-leading-zero);font:500 15px/1 var(--mono);color:var(--accent-ink);padding-top:6px}
 .steps h3{font-size:22px;letter-spacing:-.02em}
 .steps p{margin-top:8px;color:var(--ink-2)}
-.included{background:var(--ink);color:#E6EDF3;border-radius:var(--radius-lg);padding:clamp(28px,4vw,44px);position:sticky;top:96px}
+.included{background:var(--ink);color:#E8EBEF;border-radius:var(--radius-lg);padding:clamp(28px,4vw,44px);position:sticky;top:96px}
 .included h3{color:#fff;font-size:26px}
-.included>p{margin-top:12px;color:#B9C7D4}
+.included>p{margin-top:12px;color:#BCC2CC}
 .included ul{list-style:none;padding:0;margin:28px 0;display:grid;gap:0}
 .included li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid rgba(255,255,255,.12);font-size:16px}
 .included li span:last-child{font-family:var(--mono);font-size:13px;color:var(--teal-glow);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
 .included .btn{width:100%}
-.ruo-note{margin-top:20px;font-size:13px;line-height:1.5;color:#93A6B8}
+.ruo-note{margin-top:20px;font-size:13px;line-height:1.5;color:#9AA1AD}
 
 /* Telehealth */
 .tele{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,80px);align-items:center}
 @media (max-width:960px){.tele{grid-template-columns:1fr}}
 .tele__copy h2{font-size:clamp(32px,4.2vw,52px)}
-.tele__copy>p{margin-top:18px;font-size:19px;color:#B9C7D4;max-width:52ch}
+.tele__copy>p{margin-top:18px;font-size:19px;color:#BCC2CC;max-width:52ch}
 .tele__cols{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:36px 0}
 @media (max-width:520px){.tele__cols{grid-template-columns:1fr}}
 .tele__cols h3{color:#fff;font-size:19px;display:flex;align-items:center;gap:10px}
 .tele__cols h3 svg{width:20px;height:20px;color:var(--teal-glow)}
-.tele__cols p{margin-top:8px;color:#B9C7D4;font-size:16px}
-.tele__copy>.tele__fine{font-size:13px;color:#93A6B8;margin-top:24px;max-width:60ch;line-height:1.5}
+.tele__cols p{margin-top:8px;color:#BCC2CC;font-size:16px}
+.tele__copy>.tele__fine{font-size:13px;color:#9AA1AD;margin-top:24px;max-width:60ch;line-height:1.5}
 .map{position:relative}
 .map__grid{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:repeat(8,1fr);gap:clamp(3px,.6vw,6px);aspect-ratio:12/8.4}
-.st{display:grid;place-items:center;border-radius:clamp(4px,.6vw,8px);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);font:500 clamp(9px,1.05vw,13px)/1 var(--mono);color:#7F93A6;transition:background .5s var(--ease-out),color .5s var(--ease-out),border-color .5s var(--ease-out)}
+.st{display:grid;place-items:center;border-radius:clamp(4px,.6vw,8px);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);font:500 clamp(9px,1.05vw,13px)/1 var(--mono);color:#858C98;transition:background .5s var(--ease-out),color .5s var(--ease-out),border-color .5s var(--ease-out)}
 .map.is-lit .st{background:var(--teal);border-color:var(--teal-glow);color:#fff}
-.map__total{display:flex;align-items:baseline;gap:12px;margin-top:20px;color:#B9C7D4;font-size:15px}
+.map__total{display:flex;align-items:baseline;gap:12px;margin-top:20px;color:#BCC2CC;font-size:15px}
 .map__total strong{font:500 40px/1 var(--mono);color:#fff;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
 
 /* Build your program */
@@ -200,7 +203,7 @@ p{margin:0;text-wrap:pretty}
 .svc[aria-pressed="true"] .svc__ic{background:var(--teal-wash);color:var(--teal-ink)}
 .svc[aria-pressed="true"] .sw{background:var(--teal)}
 .svc[aria-pressed="true"] .sw::after{transform:translateX(18px)}
-.plan{background:var(--ink);color:#E6EDF3;border-radius:var(--radius-lg);padding:clamp(24px,3.5vw,40px);position:sticky;top:96px}
+.plan{background:var(--ink);color:#E8EBEF;border-radius:var(--radius-lg);padding:clamp(24px,3.5vw,40px);position:sticky;top:96px}
 .plan__count{font-size:clamp(24px,2.6vw,32px);font-weight:600;letter-spacing:-.025em;color:#fff;line-height:1.2}
 .plan__count strong{color:var(--teal-glow);font-variant-numeric:tabular-nums}
 .plan__bar{display:flex;gap:4px;margin:20px 0 28px}
@@ -208,18 +211,18 @@ p{margin:0;text-wrap:pretty}
 .plan__bar span.on{background:var(--teal-glow)}
 .plan__cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 @media (max-width:520px){.plan__cols{grid-template-columns:1fr}}
-.plan h3{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#93A6B8;margin-bottom:12px}
+.plan h3{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#9AA1AD;margin-bottom:12px}
 .plan ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
 .plan li{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.4;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.05)}
 .plan li svg{width:16px;height:16px;flex:none;margin-top:2px}
 .plan__us li{color:#fff}
 .plan__us li svg{color:var(--teal-glow)}
-.plan__you li{color:#B9C7D4}
-.plan__you li svg{color:#7F93A6}
+.plan__you li{color:#BCC2CC}
+.plan__you li svg{color:#858C98}
 .plan li.moved{animation:moved .6s var(--ease-out)}
-@keyframes moved{from{opacity:0;transform:translateY(-6px);background:rgba(70,194,201,.25)}to{opacity:1;transform:none}}
+@keyframes moved{from{opacity:0;transform:translateY(-6px);background:rgba(210,101,74,.25)}to{opacity:1;transform:none}}
 .plan__cta{margin-top:28px;width:100%}
-.plan__note{margin-top:14px;font-size:13px;color:#93A6B8}
+.plan__note{margin-top:14px;font-size:13px;color:#9AA1AD}
 @media (prefers-reduced-motion:reduce){.plan li.moved{animation:none}.sw::after,.svc{transition:none}}
 
 /* Apply */
@@ -261,7 +264,7 @@ legend,.label{display:block;font-weight:600;font-size:15px;margin-bottom:10px;co
 .field label{display:block;font-weight:600;font-size:15px;margin-bottom:8px}
 .input,select.input{width:100%;height:48px;border:1px solid var(--line-2);border-radius:var(--radius);padding:0 14px;font:400 16px var(--sans);color:var(--ink);background:#fff;transition:border-color .15s,box-shadow .15s;appearance:none}
 select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235A6B7C' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:18px;padding-right:40px}
-.input::placeholder{color:#5F7080}
+.input::placeholder{color:#5F6673}
 .input:hover{border-color:var(--ink-2)}
 .input:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 4px var(--teal-wash)}
 .input[aria-invalid="true"]{border-color:var(--danger);box-shadow:0 0 0 4px var(--danger-wash)}
@@ -292,7 +295,7 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
 .faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:24px 0;font-size:19px;font-weight:600;letter-spacing:-.015em}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary svg{width:20px;height:20px;flex:none;color:var(--muted);transition:transform .3s var(--ease-out)}
-.faq details[open] summary svg{transform:rotate(45deg);color:var(--teal)}
+.faq details[open] summary svg{transform:rotate(45deg);color:var(--accent-ink)}
 .faq details p{padding:0 0 26px;color:var(--ink-2);max-width:68ch}
 
 /* D2C */
@@ -306,13 +309,13 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
 .d2c__form .field{margin-bottom:0}
 
 /* Footer */
-.foot{background:var(--ink);color:#B9C7D4;padding:56px 0 40px;font-size:14px}
+.foot{background:var(--ink);color:#BCC2CC;padding:56px 0 40px;font-size:14px}
 .foot__top{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.12)}
 .foot .logo{color:#fff}
 .foot nav ul{list-style:none;padding:0;margin:0;display:flex;gap:24px;flex-wrap:wrap}
 .foot a{color:#FFFFFF;text-decoration:none}
 .foot a:hover,.foot .logo:hover{color:#fff;text-decoration:underline}
-.foot__legal{margin-top:28px;display:grid;gap:12px;max-width:90ch;line-height:1.55;color:#93A6B8}
+.foot__legal{margin-top:28px;display:grid;gap:12px;max-width:90ch;line-height:1.55;color:#9AA1AD}
 .foot__legal strong{color:#FFFFFF}
 
 /* Reveal: visible by default, enhanced only with JS */
@@ -359,7 +362,7 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
   <section class="hero">
     <div class="wrap hero__grid">
       <div>
-        <h1>Launch, supply, or scale your <em>peptide business</em>.</h1>
+        <h1>Launch, supply, or scale your <em>peptide business</em><span class="dot-accent">.</span></h1>
         <p class="hero__sub">White-label products, 3PL warehousing and dropship fulfillment, plus white-label telehealth and regenerative medicine programs in all 50 states. Built for clinics, physicians, med spas, practices, RUO brands, and affiliates.</p>
         <div class="hero__cta">
           <a class="btn" href="#apply" data-cta="hero">Become a partner <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
@@ -388,7 +391,7 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
                 <stop offset="0" stop-color="#FFFFFF" stop-opacity=".95"/><stop offset=".55" stop-color="#FFFFFF" stop-opacity=".35"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
               </radialGradient>
               <radialGradient id="studioTint" cx=".85" cy=".1" r=".6">
-                <stop offset="0" stop-color="#46C2C9" stop-opacity=".16"/><stop offset="1" stop-color="#46C2C9" stop-opacity="0"/>
+                <stop offset="0" stop-color="#5FB6C2" stop-opacity=".16"/><stop offset="1" stop-color="#5FB6C2" stop-opacity="0"/>
               </radialGradient>
               <filter id="softShadow" x="-30%" y="-200%" width="160%" height="500%"><feGaussianBlur stdDeviation="6"/></filter>
               <filter id="tightShadow" x="-30%" y="-200%" width="160%" height="500%"><feGaussianBlur stdDeviation="2"/></filter>
@@ -396,10 +399,10 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
             <rect width="520" height="360" fill="url(#studioWall)"/>
             <rect width="520" height="360" fill="url(#studioTint)"/>
             <rect width="520" height="360" fill="url(#studioSpot)"/>
-            <ellipse cx="360" cy="320" rx="150" ry="14" fill="#0B1F33" opacity=".14" filter="url(#softShadow)"/>
-            <ellipse cx="342" cy="318" rx="122" ry="4" fill="#0B1F33" opacity=".18" filter="url(#tightShadow)"/>
-            <ellipse cx="128" cy="321" rx="56" ry="9" fill="#0B1F33" opacity=".16" filter="url(#softShadow)"/>
-            <ellipse cx="128" cy="320" rx="44" ry="3" fill="#0B1F33" opacity=".22" filter="url(#tightShadow)"/>
+            <ellipse cx="360" cy="320" rx="150" ry="14" fill="#1E212A" opacity=".14" filter="url(#softShadow)"/>
+            <ellipse cx="342" cy="318" rx="122" ry="4" fill="#1E212A" opacity=".18" filter="url(#tightShadow)"/>
+            <ellipse cx="128" cy="321" rx="56" ry="9" fill="#1E212A" opacity=".16" filter="url(#softShadow)"/>
+            <ellipse cx="128" cy="320" rx="44" ry="3" fill="#1E212A" opacity=".22" filter="url(#tightShadow)"/>
             <!-- Carton -->
             <g>
               <path d="M222 108 262 80h196l-40 28z" fill="#E6D2AE" stroke="#B89462" stroke-width="1.5" stroke-linejoin="round"/>
@@ -408,13 +411,13 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
               <path d="M300 108h40v210h-40z" fill="#CBB088" opacity=".55"/>
               <path d="M300 108 340 80h40l-40 28z" fill="#D6BE93" opacity=".8"/>
               <rect x="240" y="196" width="160" height="104" rx="4" fill="#FFFFFF" stroke="#C9B48F"/>
-              <text x="252" y="216" font-family="Geist Mono, ui-monospace, monospace" font-size="8.5" fill="#5A6B7C" letter-spacing=".08em">FROM</text>
-              <text id="labelFrom" x="252" y="230" font-family="Geist, system-ui, sans-serif" font-size="12" font-weight="600" fill="#0B1F33">Your Brand Co.</text>
-              <path d="M252 240h88M252 248h64" stroke="#C7D1DA" stroke-width="3" stroke-linecap="round"/>
-              <g fill="#0B1F33">
+              <text x="252" y="216" font-family="Geist Mono, ui-monospace, monospace" font-size="8.5" fill="#5F6673" letter-spacing=".08em">FROM</text>
+              <text id="labelFrom" x="252" y="230" font-family="Geist, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1E212A">Your Brand Co.</text>
+              <path d="M252 240h88M252 248h64" stroke="#CDD3DA" stroke-width="3" stroke-linecap="round"/>
+              <g fill="#1E212A">
                 <rect x="252" y="262" width="2" height="26"/><rect x="256" y="262" width="1" height="26"/><rect x="259" y="262" width="3" height="26"/><rect x="264" y="262" width="1" height="26"/><rect x="267" y="262" width="2" height="26"/><rect x="271" y="262" width="1" height="26"/><rect x="274" y="262" width="3" height="26"/><rect x="279" y="262" width="1" height="26"/><rect x="282" y="262" width="2" height="26"/><rect x="286" y="262" width="3" height="26"/><rect x="291" y="262" width="1" height="26"/><rect x="294" y="262" width="2" height="26"/><rect x="298" y="262" width="1" height="26"/><rect x="301" y="262" width="3" height="26"/><rect x="306" y="262" width="1" height="26"/><rect x="309" y="262" width="2" height="26"/><rect x="313" y="262" width="1" height="26"/><rect x="316" y="262" width="3" height="26"/>
               </g>
-              <text x="388" y="290" text-anchor="end" font-family="Geist Mono, ui-monospace, monospace" font-size="9" fill="#5A6B7C">DROPSHIP</text>
+              <text x="388" y="290" text-anchor="end" font-family="Geist Mono, ui-monospace, monospace" font-size="9" fill="#5F6673">DROPSHIP</text>
               <text id="cartonBrand" x="320" y="160" text-anchor="middle" font-family="Geist, system-ui, sans-serif" font-size="22" font-weight="700" fill="#5B4423" letter-spacing="-.02em">Your Brand Co.</text>
               <path d="M262 176h116" stroke="#B89462" stroke-width="1"/>
             </g>
