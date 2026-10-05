@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Peplogix Partners | White-label, 3PL & 50-state telehealth</title>
+<title>Peplogix | Research peptides direct, wholesale and retail</title>
 <meta name="description" content="Peplogix partners with clinics, physicians, med spas, RUO resellers and affiliates: white-label products, 3PL and dropship fulfillment, and white-label telehealth and regenerative medicine programs in all 50 states.">
 <link rel="canonical" href="https://peplogix.github.io/">
-<meta property="og:title" content="Put your brand on it. We’ll do the rest. | Peplogix">
+<meta property="og:title" content="Research peptides, direct from the source | Peplogix">
 <meta property="og:description" content="White-label, 3PL, dropship, and 50-state telehealth programs for clinics, practices, and RUO brands.">
 <meta property="og:url" content="https://peplogix.github.io/">
 <meta property="og:image" content="https://peplogix.github.io/assets/peplogix-logo.png">
@@ -106,11 +106,50 @@ p{margin:0;text-wrap:pretty}
   background:radial-gradient(60% 55% at 85% 10%,rgba(95,182,194,.22),transparent 70%),radial-gradient(45% 50% at 0% 100%,rgba(95,182,194,.08),transparent 70%),var(--ink)}
 .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:28px 28px;mask-image:linear-gradient(180deg,#000,transparent 75%);-webkit-mask-image:linear-gradient(180deg,#000,transparent 75%);pointer-events:none}
 .hero>.wrap{position:relative}
+.hero--brand{margin-top:0;padding-top:clamp(72px,9vw,112px);border-top:1px solid rgba(255,255,255,.06);background:radial-gradient(55% 50% at 100% 0%,rgba(95,182,194,.16),transparent 70%),#23262F}
+.hero--brand .h1like{font-size:clamp(36px,4.4vw,58px)}
+.hero--brand .h1like .l:first-child{font-size:.5em;letter-spacing:-.01em;color:#9AA1AD;margin-bottom:.4em}
+.hero__main{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(24px,4vw,56px);align-items:center}
+@media (max-width:1000px){.hero__main{grid-template-columns:minmax(0,1fr)}.heroart{display:none!important}}
+.hero--main{padding-bottom:clamp(56px,7vw,96px)}
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px;align-items:start}
+@media (max-width:640px){.paths{grid-template-columns:minmax(0,1fr)}}
+.path{padding:22px;border-radius:18px;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);transition:box-shadow .25s var(--ease-out),transform .25s var(--ease-out)}
+.path:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 1px rgba(95,182,194,.5)}
+.path--b2b{background:linear-gradient(160deg,rgba(95,182,194,.16),rgba(95,182,194,.04));box-shadow:inset 0 0 0 1px rgba(95,182,194,.35)}
+.path__tag{display:inline-block;font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--teal-glow);margin-bottom:12px}
+.path h3{font-size:22px;color:#fff;letter-spacing:-.02em}
+.path p{margin-top:8px;font-size:15px;color:#BCC2CC;line-height:1.5}
+.path .btn{margin-top:18px;width:100%}
+.path .btn--ghost{--fg:#fff;border-color:rgba(255,255,255,.22)}
+.path .btn--ghost:hover{background:rgba(255,255,255,.08);color:#fff}
+.hero__ruo{margin-top:18px;font-size:13px;color:#858C98}
+.hero.hero--main h1 em{white-space:normal}
+.hero--main h1{font-size:clamp(40px,5vw,66px)}
+.heroart{position:relative;display:grid;place-items:center;min-height:520px}
+.heroart::before{content:"";position:absolute;width:78%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(95,182,194,.35),rgba(95,182,194,0) 65%);filter:blur(10px)}
+.heroart::after{content:"";position:absolute;bottom:6%;width:50%;height:22px;border-radius:50%;background:rgba(0,0,0,.55);filter:blur(12px)}
+.heroart>svg{position:relative;z-index:1;height:min(520px,62vh);width:auto;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45));animation:floaty 6s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.heroart__pill{position:absolute;z-index:2;display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:rgba(39,43,53,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),0 10px 30px -10px rgba(0,0,0,.6);font-size:14px;font-weight:600;color:#fff;white-space:nowrap}
+.heroart__pill svg{width:16px;height:16px;color:var(--teal-glow)}
+.heroart__pill--a{top:18%;left:0}
+.heroart__pill--b{bottom:9%;right:0}
+.d2c__form{margin-top:16px;display:grid;gap:10px}
+.d2c__form .field{margin:0}
+.d2c__form label{color:#BCC2CC;font-size:13px;margin-bottom:6px}
+.d2c__form .input{height:44px;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16);color:#fff}
+.d2c__form select.input{color:#fff}
+.d2c__form select.input option{color:var(--ink)}
+.d2c__form .btn{margin-top:4px}
+.d2c__form .err{color:#F0A08C}
+.d2c__done{color:var(--teal-glow);font-weight:500;margin:0}
+@media (prefers-reduced-motion:reduce){.heroart>svg{animation:none}}
 .hero__grid{display:grid;grid-template-columns:1fr minmax(0,560px);gap:clamp(32px,5vw,72px);align-items:center}
-@media (max-width:1000px){.hero__grid{grid-template-columns:1fr}}
-.hero h1{font-size:clamp(42px,5.6vw,72px);letter-spacing:-.04em;font-weight:650;color:#fff;line-height:1.02}
-.hero h1 em{font-style:normal;color:var(--teal-glow);white-space:nowrap;display:block}
-.hero h1 .l{display:block}
+@media (max-width:1000px){.hero__grid{grid-template-columns:minmax(0,1fr)}}
+.hero h1,.hero .h1like{font-size:clamp(42px,5.6vw,72px);letter-spacing:-.04em;font-weight:650;color:#fff;line-height:1.02}
+.hero h1 em,.hero .h1like em{font-style:normal;color:var(--teal-glow);white-space:nowrap;display:block}
+.hero h1 .l,.hero .h1like .l{display:block}
 .hero__sub{margin-top:24px;font-size:clamp(17px,1.5vw,19px);line-height:1.6;color:#BCC2CC;max-width:46ch}
 .hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
 .hero .btn--ghost{--fg:#fff;border-color:rgba(255,255,255,.22)}
@@ -370,14 +409,6 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
 .faq details p{padding:0 0 26px;color:var(--ink-2);max-width:68ch}
 
 /* D2C */
-.d2c{border-top:1px solid var(--line);padding:48px 0}
-.d2c__in{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
-.d2c h2{font-size:22px;letter-spacing:-.02em}
-.d2c__in p{color:var(--muted);margin-top:6px}
-.d2c__form{margin-top:28px;max-width:760px}
-.d2c__form .row{grid-template-columns:1fr 1fr 1fr auto;align-items:end}
-@media (max-width:760px){.d2c__form .row{grid-template-columns:1fr}}
-.d2c__form .field{margin-bottom:0}
 
 /* Footer */
 .foot{background:var(--ink);color:#BCC2CC;padding:56px 0 40px;font-size:14px}
@@ -434,16 +465,53 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
 
 <main id="top">
   <!-- Hero -->
-  <section class="hero">
+  <section class="hero hero--main">
+    <div class="wrap hero__main">
+      <div>
+        <h1><span class="l">Research peptides,</span> <em>direct from the source.</em></h1>
+        <p class="hero__sub">Skip the middlemen. Clinics and practices get wholesale accounts; individual researchers order direct.</p>
+        <div class="paths">
+          <div class="path path--b2b">
+            <span class="path__tag">For business</span>
+            <h3>Clinics &amp; practices</h3>
+            <p>Wholesale pricing, volume ordering, and a dedicated account manager.</p>
+            <a class="btn" href="#apply" data-preselect-type="clinic" data-preselect-interest="supply" data-cta="hero-b2b">Get wholesale pricing <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+          <div class="path path--d2c">
+            <span class="path__tag">For individuals</span>
+            <h3>Order direct</h3>
+            <p>Research peptides shipped to you. 21+ only.</p>
+            <a class="btn btn--ghost" id="d2cBtn" href="#d2cForm" aria-expanded="false" aria-controls="d2cForm">Shop direct <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <form class="d2c__form" id="d2cForm" hidden novalidate>
+              <div class="field"><label for="d2c_name">First name</label><input class="input" id="d2c_name" autocomplete="given-name" required></div>
+              <div class="field"><label for="d2c_email">Email</label><input class="input" id="d2c_email" type="email" autocomplete="email" required></div>
+              <div class="field"><label for="d2c_state">State</label><select class="input" id="d2c_state" required><option value="">State</option></select></div>
+              <button class="btn" type="submit" id="d2cSubmit">Email me the store link</button>
+              <p class="err" id="err-d2c"><svg width="16" height="16" aria-hidden="true"><use href="#i-alert"/></svg>Enter your first name, a valid email, and your state.</p>
+              <p class="d2c__done" id="d2cDone" hidden>Thanks. Check your inbox for the link.</p>
+            </form>
+          </div>
+        </div>
+        <p class="hero__ruo">All products are for research use only. Not for human consumption.</p>
+      </div>
+      <div class="heroart" aria-hidden="true">
+        <svg viewBox="62 46 134 290"><use href="#vialArt"/><rect x="88" y="162" width="80" height="20" fill="#FFFFFF"/><image href="assets/peplogix-logo.png" x="96" y="163" width="64" height="17" preserveAspectRatio="xMidYMid meet"/></svg>
+        <span class="heroart__pill heroart__pill--a"><svg><use href="#i-check-circle"/></svg>Wholesale for clinics</span>
+        <span class="heroart__pill heroart__pill--b"><svg><use href="#i-truck"/></svg>Direct to individuals</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero hero--brand" id="your-brand">
     <div class="wrap hero__grid">
       <div>
-        <h1><span class="l">Put your brand on it.</span> <em>We’ll do the rest.</em></h1>
+        <h2 class="h1like"><span class="l">Want your own brand?</span> <span class="l">Put your name on it.</span> <em>We’ll do the rest.</em></h2>
         <p class="hero__sub">We supply the product, store it, ship every order, build your storefront, and put our affiliates to work selling your brand. Drop your logo in and see it.</p>
         <div class="hero__cta">
-          <a class="btn" href="#apply" data-cta="hero">Become a partner <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          <a class="btn btn--ghost" href="#apply" data-book data-cta="hero-book"><svg aria-hidden="true"><use href="#i-phone"/></svg>Book a call</a>
+          <a class="btn" href="#apply" data-preselect-type="founder" data-preselect-interest="ruo-box,storefront,affiliate" data-cta="brand">Start my brand <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--ghost" href="#apply" data-book data-cta="brand-book"><svg aria-hidden="true"><use href="#i-phone"/></svg>Book a call</a>
         </div>
-        <p class="trust"><svg aria-hidden="true"><use href="#i-check-circle"/></svg>Already powering multiple RUO brands</p>
+        <p class="trust"><svg aria-hidden="true"><use href="#i-check-circle"/></svg>White-label, 3PL, dropship, storefront, and affiliates</p>
       </div>
 
       <div class="preview" aria-labelledby="previewLabel">
@@ -603,7 +671,7 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
           <li class="kit__item" style="--i:7"><span class="kit__ic"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><span><b>Private partner portal</b><small>Access</small></span></li>
         </ul>
       </div>
-      <div class="scrollcue"><a href="#partners">See how it works for you <svg aria-hidden="true"><use href="#i-down"/></svg></a></div>
+      <div class="scrollcue"><a href="#partners">See every way we work with you <svg aria-hidden="true"><use href="#i-down"/></svg></a></div>
     </div>
   </section>
 
@@ -813,37 +881,6 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
     </div>
   </section>
 
-  <!-- D2C -->
-  <section class="d2c" id="d2c" aria-labelledby="d2cTitle">
-    <div class="wrap">
-      <div class="d2c__in">
-        <div>
-          <h2 id="d2cTitle">Buying for yourself, not a business?</h2>
-          <p>This page is for business partners. If you are D2C, click here and we'll send you to the right place.</p>
-        </div>
-        <a class="btn btn--ghost" id="d2cBtn" href="#d2c" aria-expanded="false" aria-controls="d2cForm">I'm a D2C customer <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-      </div>
-      <form class="d2c__form" id="d2cForm" hidden novalidate>
-        <div class="row">
-          <div class="field">
-            <label for="d2c_name">First name</label>
-            <input class="input" id="d2c_name" autocomplete="given-name" required>
-          </div>
-          <div class="field">
-            <label for="d2c_email">Email</label>
-            <input class="input" id="d2c_email" type="email" autocomplete="email" required>
-          </div>
-          <div class="field">
-            <label for="d2c_state">State</label>
-            <select class="input" id="d2c_state" required><option value="">State</option></select>
-          </div>
-          <button class="btn btn--ink" type="submit" id="d2cSubmit">Email me the link</button>
-        </div>
-        <p class="err" id="err-d2c"><svg width="16" height="16" aria-hidden="true"><use href="#i-alert"/></svg>Enter your first name, a valid email, and your state.</p>
-        <p id="d2cDone" hidden style="margin-top:16px;color:var(--ok);font-weight:500">Thanks. Check your inbox for the link.</p>
-      </form>
-    </div>
-  </section>
 </main>
 
 <footer class="foot">
@@ -958,10 +995,10 @@ $("#yr").textContent = new Date().getFullYear();
 
 /* Nav border on scroll */
 const nav = $("#nav");
-const heroEl = $(".hero");
+const heroEl = $("#your-brand");
 const navState = () => {
   nav.classList.toggle("is-scrolled", scrollY > 8);
-  nav.classList.toggle("on-dark", scrollY < heroEl.offsetHeight - 68);
+  nav.classList.toggle("on-dark", scrollY < heroEl.offsetTop + heroEl.offsetHeight - 68);
 };
 addEventListener("scroll", navState, {passive:true});
 navState();
@@ -1342,7 +1379,7 @@ d2cForm.addEventListener("submit", async e => {
     description: describe({"Lead type":"D2C","Action":"Email D2C site link","Variant":CONFIG.landingVariant,"UTM source":utm.utm_source,"UTM campaign":utm.utm_campaign})
   };
   await Promise.all([sendEmail(d2cData, {"Action needed": "Email this person the D2C site link"}), sendToSalesforce(d2cData)]);
-  $(".row", d2cForm).hidden = true; $("#d2cDone").hidden = false;
+  $$(".field, #d2cSubmit", d2cForm).forEach(el => el.hidden = true); $("#d2cDone").hidden = false;
 });
 </script>
 </body>
