@@ -84,6 +84,12 @@ p{margin:0;text-wrap:pretty}
 /* Nav */
 .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
 .nav.is-scrolled{border-bottom-color:var(--line)}
+.nav .logo .on-dark{display:none}
+.nav.on-dark{background:rgba(30,33,42,.82);border-bottom-color:rgba(255,255,255,.06)}
+.nav.on-dark .logo .on-light{display:none}
+.nav.on-dark .logo .on-dark{display:block}
+.nav.on-dark .nav__links a{color:#BCC2CC}
+.nav.on-dark .nav__links a:hover{color:#fff}
 .nav__in{display:flex;align-items:center;gap:32px;height:68px}
 .logo{display:inline-flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:700;font-size:19px;letter-spacing:-.03em}
 .logo img{display:block;height:34px;width:auto}
@@ -96,20 +102,45 @@ p{margin:0;text-wrap:pretty}
 @media (max-width:360px){.nav .btn{padding:0 12px;font-size:14px}.logo{font-size:17px}}
 
 /* Hero */
-.hero{padding:clamp(40px,7vw,88px) 0 clamp(56px,8vw,104px);background:linear-gradient(var(--paper),var(--paper)) padding-box;position:relative}
-.hero__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,72px);align-items:center}
-@media (max-width:960px){.hero__grid{grid-template-columns:1fr}}
-.hero h1{font-size:clamp(40px,5.4vw,66px);letter-spacing:-.035em;font-weight:650;max-width:20ch}
-.hero h1 em{font-style:normal;color:var(--teal);white-space:nowrap;display:block}
+.hero{position:relative;overflow:hidden;color:#fff;padding:clamp(40px,6vw,80px) 0 clamp(40px,5vw,64px);margin-top:-68px;padding-top:calc(68px + clamp(40px,6vw,80px));
+  background:radial-gradient(60% 55% at 85% 10%,rgba(95,182,194,.22),transparent 70%),radial-gradient(45% 50% at 0% 100%,rgba(95,182,194,.08),transparent 70%),var(--ink)}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:28px 28px;mask-image:linear-gradient(180deg,#000,transparent 75%);-webkit-mask-image:linear-gradient(180deg,#000,transparent 75%);pointer-events:none}
+.hero>.wrap{position:relative}
+.hero__grid{display:grid;grid-template-columns:1fr minmax(0,560px);gap:clamp(32px,5vw,72px);align-items:center}
+@media (max-width:1000px){.hero__grid{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(42px,5.6vw,72px);letter-spacing:-.04em;font-weight:650;color:#fff;line-height:1.02}
+.hero h1 em{font-style:normal;color:var(--teal-glow);white-space:nowrap;display:block}
 .hero h1 .l{display:block}
-.hero__sub{margin-top:24px;font-size:clamp(18px,1.6vw,20px);line-height:1.55;color:var(--ink-2);max-width:52ch}
+.hero__sub{margin-top:24px;font-size:clamp(17px,1.5vw,19px);line-height:1.6;color:#BCC2CC;max-width:46ch}
 .hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-.facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin:40px 0 0;padding:20px 0 0;border-top:1px solid var(--line);list-style:none}
-.facts li{display:flex;align-items:center;gap:10px;font-size:15px;color:var(--ink-2);font-weight:500}
-.facts svg{width:20px;height:20px;color:var(--teal);flex:none}
+.hero .btn--ghost{--fg:#fff;border-color:rgba(255,255,255,.22)}
+.hero .btn--ghost:hover{background:rgba(255,255,255,.08);color:#fff}
+.trust{display:flex;align-items:center;gap:10px;margin-top:28px;font-size:14px;color:#9AA1AD}
+.trust svg{width:18px;height:18px;color:var(--teal-glow)}
+.kit{margin-top:clamp(48px,6vw,72px);padding-top:clamp(28px,3vw,36px);border-top:1px solid rgba(255,255,255,.1);display:grid;grid-template-columns:240px 1fr;gap:clamp(24px,3vw,48px);align-items:start}
+@media (max-width:1000px){.kit{grid-template-columns:1fr}}
+.kit__head h2{font-size:24px;letter-spacing:-.02em;color:#fff}
+.kit__head p{margin-top:8px;color:#9AA1AD;font-size:15px}
+.kit__grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+@media (max-width:1100px){.kit__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.kit__item{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start;padding:14px;border-radius:14px;background:rgba(255,255,255,.04);box-shadow:inset 0 0 0 1px rgba(255,255,255,.07);transition:transform .25s var(--ease-out),box-shadow .25s var(--ease-out),background .25s}
+.kit__item:hover{transform:translateY(-3px);background:rgba(95,182,194,.08);box-shadow:inset 0 0 0 1px rgba(95,182,194,.45)}
+.kit__ic{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:rgba(95,182,194,.14);color:var(--teal-glow)}
+.kit__ic svg{width:18px;height:18px}
+.kit__item b{display:block;font-size:15px;font-weight:600;color:#fff;line-height:1.3}
+.kit__item small{display:block;margin-top:4px;font:500 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--teal-glow)}
+.js .kit__item{opacity:0;transform:translateY(10px)}
+.js .kit.in .kit__item{animation:kitIn .55s var(--ease-out) forwards;animation-delay:calc(var(--i) * 70ms + 150ms)}
+@keyframes kitIn{to{opacity:1;transform:none}}
+.scrollcue{display:flex;justify-content:center;margin-top:clamp(28px,4vw,40px)}
+.scrollcue a{display:inline-flex;align-items:center;gap:8px;color:#9AA1AD;font-size:14px;font-weight:500;text-decoration:none}
+.scrollcue a:hover{color:#fff}
+.scrollcue svg{width:16px;height:16px;animation:nudge 2s var(--ease-out) infinite}
+@keyframes nudge{0%,100%{transform:none}50%{transform:translateY(4px)}}
+@media (prefers-reduced-motion:reduce){.js .kit__item{opacity:1;transform:none;animation:none!important}.scrollcue svg{animation:none}}
 
 /* White-label preview */
-.preview{background:var(--ink);border-radius:var(--radius-lg);padding:20px;box-shadow:var(--shadow-lg)}
+.preview{background:#272B35;border-radius:20px;padding:20px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),0 40px 80px -30px rgba(0,0,0,.7)}
 .preview__bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .preview__title{font-size:15px;font-weight:600;color:#fff;margin:0}
 .seg2{display:inline-flex;padding:3px;border-radius:999px;background:rgba(255,255,255,.08)}
@@ -187,22 +218,15 @@ p{margin:0;text-wrap:pretty}
 @keyframes panelIn{from{opacity:.001;transform:translateY(6px)}to{opacity:1;transform:none}}
 
 /* Business in a box */
-.box{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,80px);align-items:start}
-@media (max-width:900px){.box{grid-template-columns:1fr}}
-.steps{list-style:none;padding:0;margin:0;counter-reset:s;display:grid}
-.steps li{counter-increment:s;display:grid;grid-template-columns:56px 1fr;gap:20px;padding:28px 0;border-top:1px solid var(--line)}
-.steps li:last-child{border-bottom:1px solid var(--line)}
-.steps li::before{content:counter(s,decimal-leading-zero);font:500 15px/1 var(--mono);color:var(--accent-ink);padding-top:6px}
-.steps h3{font-size:22px;letter-spacing:-.02em}
-.steps p{margin-top:8px;color:var(--ink-2)}
-.included{background:var(--ink);color:#E8EBEF;border-radius:var(--radius-lg);padding:clamp(28px,4vw,44px);position:sticky;top:96px}
-.included h3{color:#fff;font-size:26px}
-.included>p{margin-top:12px;color:#BCC2CC}
-.included ul{list-style:none;padding:0;margin:28px 0;display:grid;gap:0}
-.included li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid rgba(255,255,255,.12);font-size:16px}
-.included li span:last-child{font-family:var(--mono);font-size:13px;color:var(--teal-glow);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
-.included .btn{width:100%}
-.ruo-note{margin-top:20px;font-size:13px;line-height:1.5;color:#9AA1AD}
+.steps{list-style:none;padding:0;margin:0;counter-reset:s;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(20px,3vw,40px)}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+.steps li{counter-increment:s;padding-top:24px;border-top:1px solid var(--line)}
+.steps li::before{content:counter(s,decimal-leading-zero);display:block;margin-bottom:16px;font:500 15px/1 var(--mono);color:var(--accent-ink)}
+.steps h3{font-size:21px;letter-spacing:-.02em}
+.steps p{margin-top:8px;color:var(--ink-2);font-size:16px}
+.box__cta{display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px;margin-top:clamp(36px,4vw,48px)}
+.ruo-note{font-size:13px;line-height:1.5;color:var(--muted);max-width:70ch;margin:0}
 
 /* Telehealth */
 .tele{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,80px);align-items:center}
@@ -387,13 +411,17 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
     <symbol id="i-steth" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a4 4 0 0 0 8 0V3"/><path d="M10 13v2a5 5 0 0 0 10 0v-2"/><circle cx="20" cy="11" r="2"/></symbol>
     <symbol id="i-cells" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="4"/><circle cx="16.5" cy="15.5" r="4.5"/><circle cx="8" cy="8" r="1"/><circle cx="16.5" cy="15.5" r="1.2"/></symbol>
     <symbol id="i-store" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5 5.5 4h13L20 9.5"/><path d="M4 9.5a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0 2.7 2.7 0 0 0 5.3 0"/><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 7.5 12 3l8.5 4.5v9L12 21l-8.5-4.5z"/><path d="M3.5 7.5 12 12l8.5-4.5M12 12v9"/></symbol>
+    <symbol id="i-mega" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4a1 1 0 0 0 1 1h2l6 4V5L7 9H5a1 1 0 0 0-1 1z"/><path d="M17 9a4 4 0 0 1 0 6M8 15l1.5 5"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
     <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></symbol>
   </defs>
 </svg>
 
 <header class="nav" id="nav">
   <div class="wrap nav__in">
-    <a class="logo" href="#top" aria-label="Peplogix home"><img src="assets/peplogix-logo.png" alt="" width="130" height="34"></a>
+    <a class="logo" href="#top" aria-label="Peplogix home"><img class="on-light" src="assets/peplogix-logo.png" alt="" width="130" height="34"><img class="on-dark" src="assets/peplogix-logo-white.png" alt="" width="130" height="34"></a>
     <ul class="nav__links">
       <li><a href="#partners">Who we work with</a></li>
       <li><a href="#business-in-a-box">Business in a box</a></li>
@@ -410,17 +438,12 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
     <div class="wrap hero__grid">
       <div>
         <h1><span class="l">Put your brand on it.</span> <em>We’ll do the rest.</em></h1>
-        <p class="hero__sub">We supply the product, store it, ship every order, and put our affiliates to work selling your brand. Plus telehealth and regenerative medicine programs in all 50 states. Built for clinics, physicians, med spas, practices, RUO brands, and affiliates.</p>
+        <p class="hero__sub">We supply the product, store it, ship every order, build your storefront, and put our affiliates to work selling your brand. Drop your logo in and see it.</p>
         <div class="hero__cta">
           <a class="btn" href="#apply" data-cta="hero">Become a partner <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
           <a class="btn btn--ghost" href="#apply" data-book data-cta="hero-book"><svg aria-hidden="true"><use href="#i-phone"/></svg>Book a call</a>
         </div>
-        <ul class="facts">
-          <li><svg aria-hidden="true"><use href="#i-tag"/></svg>Already powering multiple RUO brands</li>
-          <li><svg aria-hidden="true"><use href="#i-truck"/></svg>White-label, 3PL &amp; dropship</li>
-          <li><svg aria-hidden="true"><use href="#i-map"/></svg>Telehealth in all 50 states</li>
-          <li><svg aria-hidden="true"><use href="#i-arrow"/></svg>Affiliates who sell your brand</li>
-        </ul>
+        <p class="trust"><svg aria-hidden="true"><use href="#i-check-circle"/></svg>Already powering multiple RUO brands</p>
       </div>
 
       <div class="preview" aria-labelledby="previewLabel">
@@ -563,6 +586,25 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
         <p class="preview__note">Illustration only. Your storefront, labels, packaging, and product lineup are set during onboarding.</p>
       </div>
     </div>
+    <div class="wrap">
+      <div class="kit" id="kit">
+        <div class="kit__head">
+          <h2>What's in the box</h2>
+          <p>The parts most new brands spend months piecing together. You get them on day one.</p>
+        </div>
+        <ul class="kit__grid">
+          <li class="kit__item" style="--i:0"><span class="kit__ic"><svg aria-hidden="true"><use href="#i-tag"/></svg></span><span><b>Your label &amp; packaging</b><small>White-label</small></span></li>
+          <li class="kit__item" style="--i:1"><span class="kit__ic"><svg aria-hidden="true"><use href="#i-box"/></svg></span><span><b>Inventory storage</b><small>3PL</small></span></li>
+          <li class="kit__item" style="--i:2"><span class="kit__ic"><svg aria-hidden="true"><use href="#i-truck"/></svg></span><span><b>Orders shipped to your customers</b><small>Dropship</small></span></li>
+          <li class="kit__item" style="--i:3"><span class="kit__ic"><svg aria-hidden="true"><use href="#i-store"/></svg></span><span><b>Your online storefront</b><small>Built for you</small></span></li>
+          <li class="kit__item" style="--i:4"><span class="kit__ic"><svg aria-hidden="true"><use href="#i-mega"/></svg></span><span><b>Affiliates selling your brand</b><small>Growth</small></span></li>
+          <li class="kit__item" style="--i:5"><span class="kit__ic"><svg aria-hidden="true"><use href="#i-steth"/></svg></span><span><b>Telehealth in all 50 states</b><small>White-label</small></span></li>
+          <li class="kit__item" style="--i:6"><span class="kit__ic"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><span><b>A partner manager on the phone</b><small>Onboarding</small></span></li>
+          <li class="kit__item" style="--i:7"><span class="kit__ic"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><span><b>Private partner portal</b><small>Access</small></span></li>
+        </ul>
+      </div>
+      <div class="scrollcue"><a href="#partners">See how it works for you <svg aria-hidden="true"><use href="#i-down"/></svg></a></div>
+    </div>
   </section>
 
   <!-- Segments -->
@@ -586,28 +628,15 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
         <h2>Start your RUO business in a box.</h2>
         <p>We already white-label, warehouse, and dropship for multiple RUO brands. Yours runs on the same setup, so you can launch without building a supply chain first.</p>
       </div>
-      <div class="box">
-        <ol class="steps rv">
-          <li><div><h3>Choose your lineup</h3><p>Pick the research products you want to carry from our catalog. Your partner manager helps you build a lineup that fits your market.</p></div></li>
-          <li><div><h3>Put your name on it</h3><p>Your brand on the labels and packaging. Customers see your company, not ours.</p></div></li>
-          <li><div><h3>We store and ship it</h3><p>Inventory sits in our 3PL warehouse. Orders dropship straight to your customers under your brand.</p></div></li>
-          <li><div><h3>You sell</h3><p>You focus on marketing and your customers. We handle the shelves, the boxes, and the shipping labels, and we can build your online store too.</p></div></li>
-        </ol>
-        <aside class="included rv" aria-labelledby="inclTitle">
-          <h3 id="inclTitle">What's in the box</h3>
-          <p>The parts most new brands spend months piecing together.</p>
-          <ul>
-            <li><span>Your label &amp; packaging</span><span>White-label</span></li>
-            <li><span>Inventory storage</span><span>3PL</span></li>
-            <li><span>Order fulfillment to your customers</span><span>Dropship</span></li>
-            <li><span>Your online storefront</span><span>Optional</span></li>
-            <li><span>Affiliates selling your brand</span><span>Growth</span></li>
-            <li><span>A partner manager on the phone</span><span>Onboarding</span></li>
-            <li><span>Private partner portal</span><span>Access</span></li>
-          </ul>
-          <a class="btn" href="#apply" data-preselect-type="founder" data-preselect-interest="ruo-box" data-cta="box">Start my brand <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          <p class="ruo-note">RUO products are sold strictly for research use only and are not for human consumption. They are not drugs, supplements, or medical devices, and are not intended to diagnose, treat, cure, or prevent any disease.</p>
-        </aside>
+      <ol class="steps rv">
+        <li><h3>Choose your lineup</h3><p>Pick the research products you want to carry from our catalog. Your partner manager helps you build a lineup that fits your market.</p></li>
+        <li><h3>Put your name on it</h3><p>Your brand on the labels, the packaging, and your storefront. Customers see your company, not ours.</p></li>
+        <li><h3>We store and ship it</h3><p>Inventory sits in our 3PL warehouse. Orders dropship straight to your customers under your brand.</p></li>
+        <li><h3>You sell, with help</h3><p>You focus on your customers while our affiliates promote your brand. We handle the shelves, the boxes, and the shipping labels.</p></li>
+      </ol>
+      <div class="box__cta rv">
+        <a class="btn" href="#apply" data-preselect-type="founder" data-preselect-interest="ruo-box,storefront,affiliate" data-cta="box">Start my brand <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <p class="ruo-note">RUO products are sold strictly for research use only and are not for human consumption. They are not drugs, supplements, or medical devices, and are not intended to diagnose, treat, cure, or prevent any disease.</p>
       </div>
     </div>
   </section>
@@ -929,7 +958,13 @@ $("#yr").textContent = new Date().getFullYear();
 
 /* Nav border on scroll */
 const nav = $("#nav");
-addEventListener("scroll", () => nav.classList.toggle("is-scrolled", scrollY > 8), {passive:true});
+const heroEl = $(".hero");
+const navState = () => {
+  nav.classList.toggle("is-scrolled", scrollY > 8);
+  nav.classList.toggle("on-dark", scrollY < heroEl.offsetHeight - 68);
+};
+addEventListener("scroll", navState, {passive:true});
+navState();
 
 /* Live white-label preview */
 /* Logo preview: storefront + packaging (file stays in the browser) */
@@ -1097,6 +1132,7 @@ const io = new IntersectionObserver(entries => entries.forEach(en => {
   io.unobserve(en.target);
 }), {threshold:.18, rootMargin:"0px 0px -40px 0px"});
 $$(".rv").forEach(el => io.observe(el));
+io.observe($("#kit"));
 
 /* Form: build chips and state lists */
 $("#typeChips").innerHTML = TYPE_OPTIONS.map(o =>
