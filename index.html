@@ -181,7 +181,17 @@ p{margin:0;text-wrap:pretty}
 .map{position:relative}
 .map__grid{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:repeat(8,1fr);gap:clamp(3px,.6vw,6px);aspect-ratio:12/8.4}
 .st{display:grid;place-items:center;border-radius:clamp(4px,.6vw,8px);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);font:500 clamp(9px,1.05vw,13px)/1 var(--mono);color:#858C98;transition:background .5s var(--ease-out),color .5s var(--ease-out),border-color .5s var(--ease-out)}
-.map.is-lit .st{background:var(--teal);border-color:var(--teal-glow);color:#fff}
+.st{appearance:none;-webkit-appearance:none;margin:0;padding:0;min-width:0;cursor:pointer}
+.map.is-lit .st,.st.on{background:var(--teal);border-color:var(--teal-glow);color:#fff}
+.st:hover,.st:focus-visible,.st[aria-pressed="true"]{background:var(--accent);border-color:#F0A08C;color:#fff;transition-duration:.15s}
+.st:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.map__status{margin-top:16px;min-height:76px;padding:16px 18px;border-radius:12px;background:rgba(255,255,255,.05);color:#BCC2CC;font-size:15px;line-height:1.5}
+.map__status strong{color:#fff;font-weight:600}
+.map__ok{display:inline-flex;align-items:center;gap:6px;margin-left:8px;padding:2px 10px;border-radius:999px;background:rgba(95,182,194,.16);color:var(--teal-glow);font-size:13px;font-weight:600;vertical-align:1px}
+.map__ok svg{width:14px;height:14px}
+.map__status a{color:#fff;font-weight:600;text-underline-offset:.2em}
+.map__status a:hover{color:var(--teal-glow)}
+.map__status.flash{animation:panelIn .35s var(--ease-out)}
 .map__total{display:flex;align-items:baseline;gap:12px;margin-top:20px;color:#BCC2CC;font-size:15px}
 .map__total strong{font:500 40px/1 var(--mono);color:#fff;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
 
@@ -553,8 +563,9 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
         <p class="tele__fine">Clinical services are provided by independent, licensed healthcare providers. Program details, eligibility, and requirements vary by state and by your role. We'll go through what applies to you on your call.</p>
       </div>
       <div class="map rv" id="usMap">
-        <div class="map__grid" id="mapGrid" role="img" aria-label="Map of the United States with all 50 states covered"></div>
+        <div class="map__grid" id="mapGrid" role="group" aria-label="All 50 states are covered. Select a state to check it."></div>
         <p class="map__total"><strong class="mono" id="mapCount">50</strong> of 50 states covered</p>
+        <div class="map__status" id="mapStatus" aria-live="polite">Hover or tap any state to check coverage.</div>
       </div>
     </div>
   </section>
@@ -957,14 +968,28 @@ $("#planCta").addEventListener("click", () => {
 renderPlan();
 
 /* 50-state map */
-$("#mapGrid").innerHTML = TILES.map(([a,r,c]) => `<span class="st" style="grid-row:${r+1};grid-column:${c+1}" aria-hidden="true">${a}</span>`).join("");
+const ABBR = {AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"California",CO:"Colorado",CT:"Connecticut",DE:"Delaware",FL:"Florida",GA:"Georgia",HI:"Hawaii",ID:"Idaho",IL:"Illinois",IN:"Indiana",IA:"Iowa",KS:"Kansas",KY:"Kentucky",LA:"Louisiana",ME:"Maine",MD:"Maryland",MA:"Massachusetts",MI:"Michigan",MN:"Minnesota",MS:"Mississippi",MO:"Missouri",MT:"Montana",NE:"Nebraska",NV:"Nevada",NH:"New Hampshire",NJ:"New Jersey",NM:"New Mexico",NY:"New York",NC:"North Carolina",ND:"North Dakota",OH:"Ohio",OK:"Oklahoma",OR:"Oregon",PA:"Pennsylvania",RI:"Rhode Island",SC:"South Carolina",SD:"South Dakota",TN:"Tennessee",TX:"Texas",UT:"Utah",VT:"Vermont",VA:"Virginia",WA:"Washington",WV:"West Virginia",WI:"Wisconsin",WY:"Wyoming"};
+$("#mapGrid").innerHTML = TILES.map(([a,r,c]) => `<button type="button" class="st" style="grid-row:${r+1};grid-column:${c+1}" data-st="${a}" aria-label="${ABBR[a]}" aria-pressed="false">${a}</button>`).join("");
+const mapStatus = $("#mapStatus");
+const showState = a => {
+  const name = ABBR[a];
+  $$(".st").forEach(t => t.setAttribute("aria-pressed", t.dataset.st === a));
+  mapStatus.innerHTML = `<strong>${name}</strong><span class="map__ok">${icon("i-check")}Covered</span><br>White-label telehealth and regenerative medicine programs are available in ${name}. <a href="#apply" data-apply-state="${name}">Apply from ${name} →</a>`;
+  if (!reduced) { mapStatus.classList.remove("flash"); void mapStatus.offsetWidth; mapStatus.classList.add("flash"); }
+};
+$("#mapGrid").addEventListener("click", e => { const t = e.target.closest(".st"); if (t) showState(t.dataset.st); });
+mapStatus.addEventListener("click", e => {
+  const a = e.target.closest("[data-apply-state]"); if (!a) return;
+  $("#state").value = a.dataset.applyState; clearErr("state");
+  preselect(null, "telehealth,regen");
+});
 const map = $("#usMap");
 const lightMap = () => {
   if (reduced) { map.classList.add("is-lit"); return; }
   const tiles = $$(".st", map), count = $("#mapCount");
   [...tiles].sort((a,b) => (parseInt(a.style.gridColumn) - parseInt(b.style.gridColumn)) || (parseInt(a.style.gridRow) - parseInt(b.style.gridRow)))
     .forEach((t,i) => setTimeout(() => {
-      t.style.background = "var(--teal)"; t.style.borderColor = "var(--teal-glow)"; t.style.color = "#fff";
+      t.classList.add("on");
       count.textContent = i + 1;
     }, 120 + i * 22));
 };
