@@ -209,14 +209,14 @@ p{margin:0;text-wrap:pretty}
 .shop__chrome i{width:1.8cqi;height:1.8cqi;border-radius:50%;background:#CDD3DA}
 .shop__url{margin-left:2cqi;flex:1;max-width:46cqi;padding:.8cqi 2.4cqi;border-radius:99px;background:#fff;font-size:2.2cqi;color:#5F6673}
 .shop__nav{display:flex;align-items:center;gap:3cqi;padding:2.6cqi 4cqi;border-bottom:1px solid #EEF1F4}
-.shop__logo{display:flex;align-items:center;height:7cqi;max-width:30cqi}
-.shop__logo img{max-height:100%;max-width:100%;object-fit:contain}
+.shop__logo{display:flex;align-items:center;flex:none;height:7cqi;max-width:34cqi}
+.shop__logo img{display:block;height:100%;width:auto;max-width:34cqi;object-fit:contain;object-position:left center}
 .shop__ph{font-size:2.4cqi;font-weight:700;letter-spacing:.08em;color:#9AA1AD;border:1.5px dashed #CDD3DA;border-radius:1cqi;padding:1.2cqi 2.4cqi}
 .shop__links{margin-left:auto;display:flex;gap:3.4cqi;font-size:2.5cqi;color:#5F6673}
 .shop__cart{width:3.6cqi;height:3.6cqi;color:var(--ink)}
 .shop__body{flex:1;display:grid;grid-template-columns:42% 1fr;gap:4cqi;align-items:center;padding:3cqi 5cqi;min-height:0}
 .shop__img{height:100%;min-height:0;display:grid;place-items:center;background:linear-gradient(#F4F6F8,#EBEFF2);border-radius:2cqi}
-.shop__img svg{height:88%;width:auto}
+.shop__img svg{height:92%;width:auto}
 .shop__info h4{margin:0;font-size:4.6cqi;line-height:1.15;letter-spacing:-.02em;font-weight:650}
 .shop__meta{margin:1.4cqi 0 0;font-size:2.4cqi;color:#5F6673}
 .shop__pills{display:flex;gap:1.4cqi;margin-top:2.6cqi}
@@ -225,7 +225,6 @@ p{margin:0;text-wrap:pretty}
 .shop__btn{display:block;margin-top:3cqi;text-align:center;padding:2.2cqi;border-radius:99px;background:var(--ink);color:#fff;font-size:2.6cqi;font-weight:600}
 .shop__ruo{margin:2cqi 0 0;font-size:1.9cqi;color:#858C98}
 .preview__note{margin-top:12px;font-size:13px;color:#9AA1AD}
-#brandText,#cartonBrand,#labelFrom{transition:opacity .25s var(--ease-out)}
 
 /* Sections */
 .section{padding:clamp(72px,9vw,128px) 0}
@@ -536,7 +535,7 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
           <div class="shop" id="shopView" role="img" aria-label="Illustrative online storefront showing your logo">
             <div class="shop__chrome" aria-hidden="true"><i></i><i></i><i></i><span class="shop__url">yourbrand.com</span></div>
             <div class="shop__nav">
-              <span class="shop__logo"><img id="shopLogo" alt="" hidden><span class="shop__ph" id="shopPh">YOUR LOGO</span></span>
+              <span class="shop__logo"><img id="shopLogo" src="assets/peplogix-logo.png" alt=""></span>
               <span class="shop__links"><span>Shop</span><span>About</span><span>Contact</span></span>
               <svg class="shop__cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h10.2L20 8H6.2"/><circle cx="9" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></svg>
             </div>
@@ -582,15 +581,13 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
               <path d="M300 108 340 80h40l-40 28z" fill="#D6BE93" opacity=".8"/>
               <rect x="240" y="196" width="160" height="104" rx="4" fill="#FFFFFF" stroke="#C9B48F"/>
               <text x="252" y="216" font-family="Geist Mono, ui-monospace, monospace" font-size="8.5" fill="#5F6673" letter-spacing=".08em">FROM</text>
-              <text id="labelFrom" x="252" y="230" font-family="Geist, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1E212A">Your brand</text>
-              <image id="fromLogo" x="252" y="219" width="90" height="14" preserveAspectRatio="xMinYMid meet" visibility="hidden"/>
+              <image id="fromLogo" href="assets/peplogix-logo.png" x="252" y="220" width="90" height="16" preserveAspectRatio="xMinYMid meet"/>
               <path d="M252 240h88M252 248h64" stroke="#CDD3DA" stroke-width="3" stroke-linecap="round"/>
               <g fill="#1E212A">
                 <rect x="252" y="262" width="2" height="26"/><rect x="256" y="262" width="1" height="26"/><rect x="259" y="262" width="3" height="26"/><rect x="264" y="262" width="1" height="26"/><rect x="267" y="262" width="2" height="26"/><rect x="271" y="262" width="1" height="26"/><rect x="274" y="262" width="3" height="26"/><rect x="279" y="262" width="1" height="26"/><rect x="282" y="262" width="2" height="26"/><rect x="286" y="262" width="3" height="26"/><rect x="291" y="262" width="1" height="26"/><rect x="294" y="262" width="2" height="26"/><rect x="298" y="262" width="1" height="26"/><rect x="301" y="262" width="3" height="26"/><rect x="306" y="262" width="1" height="26"/><rect x="309" y="262" width="2" height="26"/><rect x="313" y="262" width="1" height="26"/><rect x="316" y="262" width="3" height="26"/>
               </g>
               <text x="388" y="290" text-anchor="end" font-family="Geist Mono, ui-monospace, monospace" font-size="9" fill="#5F6673">DROPSHIP</text>
-              <text id="cartonBrand" x="320" y="160" text-anchor="middle" font-family="Geist, system-ui, sans-serif" font-size="20" font-weight="700" fill="#5B4423" letter-spacing=".06em">YOUR LOGO</text>
-              <image id="cartonLogo" x="252" y="120" width="136" height="48" preserveAspectRatio="xMidYMid meet" visibility="hidden"/>
+              <image id="cartonLogo" href="assets/peplogix-logo.png" x="252" y="120" width="136" height="48" preserveAspectRatio="xMidYMid meet"/>
               <path d="M262 176h116" stroke="#B89462" stroke-width="1"/>
             </g>
             <!-- Vial: replica of the client's reference vial (gray flip-off cap, aluminum crimp, wrap label) -->
@@ -616,9 +613,8 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
               <clipPath id="bodyClip"><rect x="81" y="138" width="95" height="181" rx="6"/></clipPath>
             </defs>
             <g id="vialArt">
-              <image href="assets/vial-cut.webp" x="71" y="58" width="116" height="262" preserveAspectRatio="xMidYMid meet"/>
-              <text id="brandText" x="129" y="171" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="6.5" font-weight="700" fill="#9AA1AD" letter-spacing=".12em">YOUR LOGO</text>
-              <image id="vialLogo" x="96" y="158" width="66" height="18" preserveAspectRatio="xMidYMid meet" visibility="hidden"/>
+              <image href="assets/vial-10ml.webp" x="77.5" y="54" width="103" height="270" preserveAspectRatio="xMidYMid meet"/>
+              <image id="vialLogo" href="assets/peplogix-logo.png" x="90" y="148" width="78" height="42" preserveAspectRatio="xMidYMid meet"/>
             </g>
           </svg>
         </div>
@@ -965,15 +961,12 @@ const resetDrop = (msg) => {
   $("#dropD").innerHTML = msg ? `<span class="drop__err">${msg}</span>` : "PNG, JPG, SVG or WebP. It stays on your device.";
   $("#dropX").hidden = true;
 };
+const DEFAULT_LOGO = "assets/peplogix-logo.png";
 const setLogo = url => {
   hasLogo = !!url;
-  $("#shopLogo").hidden = !url; $("#shopPh").hidden = !!url;
-  if (url) $("#shopLogo").src = url; else $("#shopLogo").removeAttribute("src");
-  [["#vialLogo","#brandText"],["#cartonLogo","#cartonBrand"],["#fromLogo","#labelFrom"]].forEach(([img, txt]) => {
-    if (url) $(img).setAttribute("href", url); else $(img).removeAttribute("href");
-    $(img).setAttribute("visibility", url ? "visible" : "hidden");
-    $(txt).setAttribute("visibility", url ? "hidden" : "visible");
-  });
+  const src = url || DEFAULT_LOGO;
+  $("#shopLogo").src = src;
+  ["#vialLogo","#cartonLogo","#fromLogo"].forEach(sel => $(sel).setAttribute("href", src));
 };
 const readLogo = file => {
   if (!file) return;
