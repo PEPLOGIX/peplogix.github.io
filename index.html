@@ -110,12 +110,48 @@ p{margin:0;text-wrap:pretty}
 
 /* White-label preview */
 .preview{background:var(--ink);border-radius:var(--radius-lg);padding:20px;box-shadow:var(--shadow-lg)}
-.preview__bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.preview__bar label{font-size:14px;font-weight:600;color:#fff}
-.preview__input{flex:1 1 200px;min-width:0;height:44px;border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:0 18px;font:500 16px var(--sans);color:#fff;background:rgba(255,255,255,.06);transition:border-color .2s,box-shadow .2s}
-.preview__input::placeholder{color:#9AA1AD}
-.preview__input:focus{outline:none;border-color:var(--teal-glow);box-shadow:0 0 0 4px rgba(95,182,194,.22)}
-.preview__stage{margin-top:16px;border-radius:12px;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.07)}
+.preview__bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.preview__title{font-size:15px;font-weight:600;color:#fff;margin:0}
+.seg2{display:inline-flex;padding:3px;border-radius:999px;background:rgba(255,255,255,.08)}
+.seg2 button{all:unset;cursor:pointer;padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;color:#BCC2CC;transition:background .2s,color .2s}
+.seg2 button[aria-selected="true"]{background:#fff;color:var(--ink)}
+.seg2 button:focus-visible{outline:2px solid var(--teal-glow);outline-offset:2px}
+.drop{display:flex;align-items:center;gap:14px;margin-top:14px;padding:14px 16px;border-radius:12px;border:1.5px dashed rgba(255,255,255,.22);background:rgba(255,255,255,.04);cursor:pointer;transition:border-color .2s,background .2s}
+.drop:hover,.drop.is-over{border-color:var(--teal-glow);background:rgba(95,182,194,.10)}
+.drop:focus-within{outline:2px solid var(--teal-glow);outline-offset:2px}
+.drop__ic{width:40px;height:40px;flex:none;border-radius:10px;display:grid;place-items:center;background:rgba(95,182,194,.16);color:var(--teal-glow);overflow:hidden}
+.drop__ic svg{width:20px;height:20px}
+.drop__ic img{width:100%;height:100%;object-fit:contain;background:#fff}
+.drop__t{display:block;color:#fff;font-size:15px;font-weight:600}
+.drop__t u{color:var(--teal-glow);text-underline-offset:.2em}
+.drop__d{display:block;color:#9AA1AD;font-size:13px;margin-top:2px}
+.drop__x{all:unset;margin-left:auto;cursor:pointer;font-size:13px;font-weight:600;color:#BCC2CC;padding:6px 10px;border-radius:8px}
+.drop__x:hover{color:#fff;background:rgba(255,255,255,.08)}
+.drop__err{color:#F0A08C}
+.preview__stage{margin-top:14px;border-radius:12px;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.07);aspect-ratio:520/360;position:relative}
+.preview__stage>svg,.preview__stage>.shop{position:absolute;inset:0;width:100%;height:100%}
+.preview__stage>svg,.preview__stage>.shop{transition:opacity .3s var(--ease-out)}
+.preview__stage>[data-off]{opacity:0;pointer-events:none}
+.shop{container-type:inline-size;background:#fff;display:flex;flex-direction:column;font-family:var(--sans);color:var(--ink)}
+.shop__chrome{display:flex;align-items:center;gap:1.2cqi;padding:1.8cqi 2.4cqi;background:#EEF1F4;border-bottom:1px solid #E1E5EA}
+.shop__chrome i{width:1.8cqi;height:1.8cqi;border-radius:50%;background:#CDD3DA}
+.shop__url{margin-left:2cqi;flex:1;max-width:46cqi;padding:.8cqi 2.4cqi;border-radius:99px;background:#fff;font-size:2.2cqi;color:#5F6673}
+.shop__nav{display:flex;align-items:center;gap:3cqi;padding:2.6cqi 4cqi;border-bottom:1px solid #EEF1F4}
+.shop__logo{display:flex;align-items:center;height:7cqi;max-width:30cqi}
+.shop__logo img{max-height:100%;max-width:100%;object-fit:contain}
+.shop__ph{font-size:2.4cqi;font-weight:700;letter-spacing:.08em;color:#9AA1AD;border:1.5px dashed #CDD3DA;border-radius:1cqi;padding:1.2cqi 2.4cqi}
+.shop__links{margin-left:auto;display:flex;gap:3.4cqi;font-size:2.5cqi;color:#5F6673}
+.shop__cart{width:3.6cqi;height:3.6cqi;color:var(--ink)}
+.shop__body{flex:1;display:grid;grid-template-columns:42% 1fr;gap:4cqi;align-items:center;padding:3cqi 5cqi;min-height:0}
+.shop__img{height:100%;min-height:0;display:grid;place-items:center;background:linear-gradient(#F4F6F8,#EBEFF2);border-radius:2cqi}
+.shop__img svg{height:88%;width:auto}
+.shop__info h4{margin:0;font-size:4.6cqi;line-height:1.15;letter-spacing:-.02em;font-weight:650}
+.shop__meta{margin:1.4cqi 0 0;font-size:2.4cqi;color:#5F6673}
+.shop__pills{display:flex;gap:1.4cqi;margin-top:2.6cqi}
+.shop__pills span{font-size:2.2cqi;padding:.9cqi 2cqi;border-radius:99px;border:1px solid #CDD3DA;color:#363B46}
+.shop__pills span:first-child{border-color:var(--ink);background:var(--ink);color:#fff}
+.shop__btn{display:block;margin-top:3cqi;text-align:center;padding:2.2cqi;border-radius:99px;background:var(--ink);color:#fff;font-size:2.6cqi;font-weight:600}
+.shop__ruo{margin:2cqi 0 0;font-size:1.9cqi;color:#858C98}
 .preview__note{margin-top:12px;font-size:13px;color:#9AA1AD}
 #brandText,#cartonBrand,#labelFrom{transition:opacity .25s var(--ease-out)}
 
@@ -389,12 +425,39 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
 
       <div class="preview" aria-labelledby="previewLabel">
         <div class="preview__bar">
-          <label id="previewLabel" for="brandInput">See your brand on it</label>
-          <input class="preview__input" id="brandInput" type="text" maxlength="28" placeholder="Your brand name" autocomplete="organization">
+          <p class="preview__title" id="previewLabel">See your logo on it</p>
+          <div class="seg2" role="tablist" aria-label="Preview">
+            <button type="button" role="tab" aria-selected="true" data-view="store">Storefront</button>
+            <button type="button" role="tab" aria-selected="false" data-view="pack">Packaging</button>
+          </div>
         </div>
+        <label class="drop" id="drop">
+          <input type="file" id="logoFile" class="sr-only" accept="image/png,image/jpeg,image/svg+xml,image/webp">
+          <span class="drop__ic" id="dropIc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4M7.5 8.5 12 4l4.5 4.5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg></span>
+          <span><span class="drop__t" id="dropT"><strong>Drop your logo here</strong> or <u>browse</u></span><span class="drop__d" id="dropD">PNG, JPG, SVG or WebP. It stays on your device.</span></span>
+          <button type="button" class="drop__x" id="dropX" hidden>Remove</button>
+        </label>
         <div class="preview__stage">
-          <svg viewBox="0 0 520 360" role="img" aria-labelledby="previewTitle" id="previewSvg">
-            <title id="previewTitle">Illustrative white-label vial and shipping carton showing your brand name</title>
+          <div class="shop" id="shopView" role="img" aria-label="Illustrative online storefront showing your logo">
+            <div class="shop__chrome" aria-hidden="true"><i></i><i></i><i></i><span class="shop__url">yourbrand.com</span></div>
+            <div class="shop__nav">
+              <span class="shop__logo"><img id="shopLogo" alt="" hidden><span class="shop__ph" id="shopPh">YOUR LOGO</span></span>
+              <span class="shop__links"><span>Shop</span><span>About</span><span>Contact</span></span>
+              <svg class="shop__cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h10.2L20 8H6.2"/><circle cx="9" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></svg>
+            </div>
+            <div class="shop__body">
+              <div class="shop__img"><svg viewBox="70 52 118 276" aria-hidden="true"><use href="#vialArt"/></svg></div>
+              <div class="shop__info">
+                <h4>Tirzepatide 60 mg</h4>
+                <p class="shop__meta">Purity 99% · Ships under your brand</p>
+                <div class="shop__pills"><span>60 mg</span><span>30 mg</span><span>10 mg</span></div>
+                <span class="shop__btn">Add to cart</span>
+                <p class="shop__ruo">For research use only. Not for human consumption.</p>
+              </div>
+            </div>
+          </div>
+          <svg viewBox="0 0 520 360" role="img" aria-labelledby="previewTitle" id="previewSvg" data-off>
+            <title id="previewTitle">Illustrative white-label vial and shipping carton showing your logo</title>
             <defs>
               <linearGradient id="studioWall" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0" stop-color="#323743"/><stop offset=".6" stop-color="#2A2E38"/><stop offset=".78" stop-color="#252830"/><stop offset="1" stop-color="#1C1F26"/>
@@ -424,13 +487,15 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
               <path d="M300 108 340 80h40l-40 28z" fill="#D6BE93" opacity=".8"/>
               <rect x="240" y="196" width="160" height="104" rx="4" fill="#FFFFFF" stroke="#C9B48F"/>
               <text x="252" y="216" font-family="Geist Mono, ui-monospace, monospace" font-size="8.5" fill="#5F6673" letter-spacing=".08em">FROM</text>
-              <text id="labelFrom" x="252" y="230" font-family="Geist, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1E212A">Your Brand Co.</text>
+              <text id="labelFrom" x="252" y="230" font-family="Geist, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1E212A">Your brand</text>
+              <image id="fromLogo" x="252" y="219" width="90" height="14" preserveAspectRatio="xMinYMid meet" visibility="hidden"/>
               <path d="M252 240h88M252 248h64" stroke="#CDD3DA" stroke-width="3" stroke-linecap="round"/>
               <g fill="#1E212A">
                 <rect x="252" y="262" width="2" height="26"/><rect x="256" y="262" width="1" height="26"/><rect x="259" y="262" width="3" height="26"/><rect x="264" y="262" width="1" height="26"/><rect x="267" y="262" width="2" height="26"/><rect x="271" y="262" width="1" height="26"/><rect x="274" y="262" width="3" height="26"/><rect x="279" y="262" width="1" height="26"/><rect x="282" y="262" width="2" height="26"/><rect x="286" y="262" width="3" height="26"/><rect x="291" y="262" width="1" height="26"/><rect x="294" y="262" width="2" height="26"/><rect x="298" y="262" width="1" height="26"/><rect x="301" y="262" width="3" height="26"/><rect x="306" y="262" width="1" height="26"/><rect x="309" y="262" width="2" height="26"/><rect x="313" y="262" width="1" height="26"/><rect x="316" y="262" width="3" height="26"/>
               </g>
               <text x="388" y="290" text-anchor="end" font-family="Geist Mono, ui-monospace, monospace" font-size="9" fill="#5F6673">DROPSHIP</text>
-              <text id="cartonBrand" x="320" y="160" text-anchor="middle" font-family="Geist, system-ui, sans-serif" font-size="22" font-weight="700" fill="#5B4423" letter-spacing="-.02em">Your Brand Co.</text>
+              <text id="cartonBrand" x="320" y="160" text-anchor="middle" font-family="Geist, system-ui, sans-serif" font-size="20" font-weight="700" fill="#5B4423" letter-spacing=".06em">YOUR LOGO</text>
+              <image id="cartonLogo" x="252" y="120" width="136" height="48" preserveAspectRatio="xMidYMid meet" visibility="hidden"/>
               <path d="M262 176h116" stroke="#B89462" stroke-width="1"/>
             </g>
             <!-- Vial: replica of the client's reference vial (gray flip-off cap, aluminum crimp, wrap label) -->
@@ -455,7 +520,7 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
               </linearGradient>
               <clipPath id="bodyClip"><rect x="81" y="138" width="95" height="181" rx="6"/></clipPath>
             </defs>
-            <g>
+            <g id="vialArt">
               <!-- glass body: short neck, tight shoulder, straight walls -->
               <path d="M94 108h70v22q0 5 6 8l1 .5q5 3 5 9v165q0 6-6 6H87q-6 0-6-6V147.5q0-6 5-9l1-.5q6-3 6-8z" fill="url(#glass)" stroke="#A3ACB2" stroke-width=".9"/>
               <!-- gray rubber stopper seen through the neck -->
@@ -472,7 +537,8 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
                   <rect x="104.5" y="186" width="18.80" height="13.46" fill="#3C3B6E"/>
                   <circle cx="106.10" cy="187.20" r=".38" fill="#FFFFFF"/><circle cx="107.85" cy="187.20" r=".38" fill="#FFFFFF"/><circle cx="109.60" cy="187.20" r=".38" fill="#FFFFFF"/><circle cx="111.35" cy="187.20" r=".38" fill="#FFFFFF"/><circle cx="113.10" cy="187.20" r=".38" fill="#FFFFFF"/><circle cx="114.85" cy="187.20" r=".38" fill="#FFFFFF"/><circle cx="106.97" cy="188.65" r=".38" fill="#FFFFFF"/><circle cx="108.72" cy="188.65" r=".38" fill="#FFFFFF"/><circle cx="110.47" cy="188.65" r=".38" fill="#FFFFFF"/><circle cx="112.22" cy="188.65" r=".38" fill="#FFFFFF"/><circle cx="113.97" cy="188.65" r=".38" fill="#FFFFFF"/><circle cx="106.10" cy="190.10" r=".38" fill="#FFFFFF"/><circle cx="107.85" cy="190.10" r=".38" fill="#FFFFFF"/><circle cx="109.60" cy="190.10" r=".38" fill="#FFFFFF"/><circle cx="111.35" cy="190.10" r=".38" fill="#FFFFFF"/><circle cx="113.10" cy="190.10" r=".38" fill="#FFFFFF"/><circle cx="114.85" cy="190.10" r=".38" fill="#FFFFFF"/><circle cx="106.97" cy="191.55" r=".38" fill="#FFFFFF"/><circle cx="108.72" cy="191.55" r=".38" fill="#FFFFFF"/><circle cx="110.47" cy="191.55" r=".38" fill="#FFFFFF"/><circle cx="112.22" cy="191.55" r=".38" fill="#FFFFFF"/><circle cx="113.97" cy="191.55" r=".38" fill="#FFFFFF"/><circle cx="106.10" cy="193.00" r=".38" fill="#FFFFFF"/><circle cx="107.85" cy="193.00" r=".38" fill="#FFFFFF"/><circle cx="109.60" cy="193.00" r=".38" fill="#FFFFFF"/><circle cx="111.35" cy="193.00" r=".38" fill="#FFFFFF"/><circle cx="113.10" cy="193.00" r=".38" fill="#FFFFFF"/><circle cx="114.85" cy="193.00" r=".38" fill="#FFFFFF"/><circle cx="106.97" cy="194.45" r=".38" fill="#FFFFFF"/><circle cx="108.72" cy="194.45" r=".38" fill="#FFFFFF"/><circle cx="110.47" cy="194.45" r=".38" fill="#FFFFFF"/><circle cx="112.22" cy="194.45" r=".38" fill="#FFFFFF"/><circle cx="113.97" cy="194.45" r=".38" fill="#FFFFFF"/><circle cx="106.10" cy="195.90" r=".38" fill="#FFFFFF"/><circle cx="107.85" cy="195.90" r=".38" fill="#FFFFFF"/><circle cx="109.60" cy="195.90" r=".38" fill="#FFFFFF"/><circle cx="111.35" cy="195.90" r=".38" fill="#FFFFFF"/><circle cx="113.10" cy="195.90" r=".38" fill="#FFFFFF"/><circle cx="114.85" cy="195.90" r=".38" fill="#FFFFFF"/><circle cx="106.97" cy="197.35" r=".38" fill="#FFFFFF"/><circle cx="108.72" cy="197.35" r=".38" fill="#FFFFFF"/><circle cx="110.47" cy="197.35" r=".38" fill="#FFFFFF"/><circle cx="112.22" cy="197.35" r=".38" fill="#FFFFFF"/><circle cx="113.97" cy="197.35" r=".38" fill="#FFFFFF"/><circle cx="106.10" cy="198.80" r=".38" fill="#FFFFFF"/><circle cx="107.85" cy="198.80" r=".38" fill="#FFFFFF"/><circle cx="109.60" cy="198.80" r=".38" fill="#FFFFFF"/><circle cx="111.35" cy="198.80" r=".38" fill="#FFFFFF"/><circle cx="113.10" cy="198.80" r=".38" fill="#FFFFFF"/><circle cx="114.85" cy="198.80" r=".38" fill="#FFFFFF"/>
                 </g>
-                <text id="brandText" x="128" y="177" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#2B3A55" letter-spacing=".04em">YOUR BRAND</text>
+                <text id="brandText" x="128" y="177" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="700" fill="#9AA1AD" letter-spacing=".1em">YOUR LOGO</text>
+                <image id="vialLogo" x="94" y="160" width="68" height="22" preserveAspectRatio="xMidYMid meet" visibility="hidden"/>
                 <text x="128" y="219" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="3.6" font-weight="700" fill="#2B3A55">MADE IN USA</text>
                 <text x="128" y="237" text-anchor="middle" textLength="80" lengthAdjust="spacingAndGlyphs" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#2B3A55">TIRZEPATIDE</text>
                 <text x="128" y="247" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="7.4" fill="#2B3A55">(GLP-1,GIP)</text>
@@ -494,7 +560,7 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
             </g>
           </svg>
         </div>
-        <p class="preview__note">Illustration only. Your labels, packaging, and product lineup are set during onboarding.</p>
+        <p class="preview__note">Illustration only. Your storefront, labels, packaging, and product lineup are set during onboarding.</p>
       </div>
     </div>
   </section>
@@ -866,24 +932,49 @@ const nav = $("#nav");
 addEventListener("scroll", () => nav.classList.toggle("is-scrolled", scrollY > 8), {passive:true});
 
 /* Live white-label preview */
-const brandInput = $("#brandInput");
-const fitText = (el, max, base) => {
-  el.setAttribute("font-size", base);
-  const w = el.getComputedTextLength();
-  if (w > max) el.setAttribute("font-size", (base * max / w).toFixed(2));
+/* Logo preview: storefront + packaging (file stays in the browser) */
+let hasLogo = false;
+const drop = $("#drop"), logoFile = $("#logoFile");
+const resetDrop = (msg) => {
+  $("#dropIc").innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4M7.5 8.5 12 4l4.5 4.5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>`;
+  $("#dropT").innerHTML = "<strong>Drop your logo here</strong> or <u>browse</u>";
+  $("#dropD").innerHTML = msg ? `<span class="drop__err">${msg}</span>` : "PNG, JPG, SVG or WebP. It stays on your device.";
+  $("#dropX").hidden = true;
 };
-const renderBrand = () => {
-  const name = brandInput.value.trim() || "Your Brand Co.";
-  const vb = $("#brandText"); vb.textContent = (brandInput.value.trim() || "Your Brand").toUpperCase(); fitText(vb, 80, 9);
-  [["#cartonBrand",176,22],["#labelFrom",136,12]].forEach(([sel,max,base]) => {
-    const el = $(sel); el.textContent = name; fitText(el, max, base);
+const setLogo = url => {
+  hasLogo = !!url;
+  $("#shopLogo").hidden = !url; $("#shopPh").hidden = !!url;
+  if (url) $("#shopLogo").src = url; else $("#shopLogo").removeAttribute("src");
+  [["#vialLogo","#brandText"],["#cartonLogo","#cartonBrand"],["#fromLogo","#labelFrom"]].forEach(([img, txt]) => {
+    if (url) $(img).setAttribute("href", url); else $(img).removeAttribute("href");
+    $(img).setAttribute("visibility", url ? "visible" : "hidden");
+    $(txt).setAttribute("visibility", url ? "hidden" : "visible");
   });
 };
-brandInput.addEventListener("input", renderBrand);
-brandInput.addEventListener("change", () => { if (!$("#company").value) $("#company").value = brandInput.value.trim(); });
-renderBrand();
-document.fonts?.ready.then(renderBrand);
-addEventListener("load", renderBrand);
+const readLogo = file => {
+  if (!file) return;
+  if (!/^image\/(png|jpeg|svg\+xml|webp)$/.test(file.type)) return resetDrop("That file isn't an image. Try a PNG, JPG, SVG or WebP.");
+  if (file.size > 5 * 1024 * 1024) return resetDrop("That file is over 5 MB. Try a smaller version.");
+  const r = new FileReader();
+  r.onload = () => {
+    setLogo(r.result);
+    $("#dropIc").innerHTML = `<img src="${r.result}" alt="">`;
+    $("#dropT").textContent = "Looking good.";
+    $("#dropD").textContent = "Drop another file to replace it.";
+    $("#dropX").hidden = false;
+  };
+  r.readAsDataURL(file);
+};
+logoFile.addEventListener("change", () => readLogo(logoFile.files[0]));
+["dragenter","dragover"].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add("is-over"); }));
+["dragleave","drop"].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove("is-over"); }));
+drop.addEventListener("drop", e => readLogo(e.dataTransfer.files[0]));
+$("#dropX").addEventListener("click", e => { e.preventDefault(); e.stopPropagation(); setLogo(null); logoFile.value = ""; resetDrop(); });
+$$(".seg2 button").forEach(b => b.addEventListener("click", () => {
+  $$(".seg2 button").forEach(x => x.setAttribute("aria-selected", x === b));
+  $("#shopView").toggleAttribute("data-off", b.dataset.view !== "store");
+  $("#previewSvg").toggleAttribute("data-off", b.dataset.view !== "pack");
+}));
 
 /* Segments: tabs with roving focus */
 const tabs = $("#segTabs"), panel = $("#segPanel");
@@ -1029,7 +1120,6 @@ document.addEventListener("click", e => {
 
 /* Personalized re-engagement links: ?first_name=&last_name=&email=&company=&phone=&type=&interest= */
 ["first_name","last_name","email","company","phone"].forEach(k => { const v = params.get(k); if (v) $("#"+k).value = v; });
-if (params.get("company")) { brandInput.value = params.get("company"); renderBrand(); }
 preselect(params.get("type"), params.get("interest"));
 if (CONFIG.responseTime) $("#responseLine").textContent = `A partner manager reaches out ${CONFIG.responseTime}.`;
 
@@ -1167,11 +1257,11 @@ $("#b2bForm").addEventListener("submit", async e => {
   };
   data.description = describe({
     "Lead type": "B2B", "Business type": data.businessType, "Interests": data.interests.replaceAll(";", ", "),
-    "Stage": data.stage, "Brand preview": brandInput.value.trim(), "Variant": CONFIG.landingVariant,
+    "Stage": data.stage, "Logo tried in preview": hasLogo ? "Yes" : "", "Variant": CONFIG.landingVariant,
     "UTM source": utm.utm_source, "UTM medium": utm.utm_medium, "UTM campaign": utm.utm_campaign, "UTM content": utm.utm_content, "UTM term": utm.utm_term
   });
   const mailed = await sendEmail(data, {
-    "Brand name typed in preview": brandInput.value.trim(),
+    "Logo tried in preview": hasLogo ? "Yes" : "",
     "Program builder selection": SERVICES.filter(s => on.has(s.key)).map(s => s.label).join(", ")
   });
   const sfSent = await sendToSalesforce(data);
