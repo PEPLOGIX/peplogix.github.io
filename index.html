@@ -226,26 +226,50 @@ p{margin:0;text-wrap:pretty}
 .preview__stage>svg,.preview__stage>.shop{position:absolute;inset:0;width:100%;height:100%}
 .preview__stage>svg,.preview__stage>.shop{transition:opacity .3s var(--ease-out)}
 .preview__stage>[data-off]{opacity:0;pointer-events:none}
-.shop{container-type:inline-size;background:#fff;display:flex;flex-direction:column;font-family:var(--sans);color:var(--ink)}
-.shop__chrome{display:flex;align-items:center;gap:1.2cqi;padding:1.8cqi 2.4cqi;background:#EEF1F4;border-bottom:1px solid #E1E5EA}
-.shop__chrome i{width:1.8cqi;height:1.8cqi;border-radius:50%;background:#CDD3DA}
-.shop__url{margin-left:2cqi;flex:1;max-width:46cqi;padding:.8cqi 2.4cqi;border-radius:99px;background:#fff;font-size:2.2cqi;color:#5F6673}
-.shop__nav{display:flex;align-items:center;gap:3cqi;padding:2.6cqi 4cqi;border-bottom:1px solid #EEF1F4}
-.shop__logo{display:flex;align-items:center;flex:none;height:7cqi;max-width:34cqi}
-.shop__logo img{display:block;height:100%;width:auto;max-width:34cqi;object-fit:contain;object-position:left center}
-.shop__ph{font-size:2.4cqi;font-weight:700;letter-spacing:.08em;color:#9AA1AD;border:1.5px dashed #CDD3DA;border-radius:1cqi;padding:1.2cqi 2.4cqi}
-.shop__links{margin-left:auto;display:flex;gap:3.4cqi;font-size:2.5cqi;color:#5F6673}
-.shop__cart{width:3.6cqi;height:3.6cqi;color:var(--ink)}
-.shop__body{flex:1;display:grid;grid-template-columns:42% 1fr;gap:4cqi;align-items:center;padding:3cqi 5cqi;min-height:0}
-.shop__img{height:100%;min-height:0;display:grid;place-items:center;background:linear-gradient(#F4F6F8,#EBEFF2);border-radius:2cqi}
-.shop__img svg{height:92%;width:auto}
-.shop__info h4{margin:0;font-size:4.6cqi;line-height:1.15;letter-spacing:-.02em;font-weight:650}
-.shop__meta{margin:1.4cqi 0 0;font-size:2.4cqi;color:#5F6673}
-.shop__pills{display:flex;gap:1.4cqi;margin-top:2.6cqi}
-.shop__pills span{font-size:2.2cqi;padding:.9cqi 2cqi;border-radius:99px;border:1px solid #CDD3DA;color:#363B46}
+.shop{container-type:inline-size;background:#fff;display:flex;flex-direction:column;font-family:var(--sans);color:var(--ink);overflow:hidden}
+.shop__chrome{display:flex;align-items:center;gap:1.1cqi;padding:1.2cqi 2.2cqi;background:#EEF1F4;border-bottom:1px solid #E1E5EA}
+.shop__chrome i{width:1.6cqi;height:1.6cqi;border-radius:50%;background:#CDD3DA}
+.shop__chrome i:first-child{background:#F0A08C}.shop__chrome i:nth-child(2){background:#F2CF7B}.shop__chrome i:nth-child(3){background:#9ED3A3}
+.shop__url{margin-left:2cqi;flex:1;max-width:44cqi;display:flex;align-items:center;gap:.8cqi;padding:.7cqi 2cqi;border-radius:99px;background:#fff;font-size:2cqi;color:#5F6673}
+.shop__url svg{width:1.9cqi;height:1.9cqi;color:#17795A}
+.shop__bar{display:flex;justify-content:center;align-items:center;gap:1.4cqi;padding:.9cqi;background:#1E212A;color:#E8EBEF;font-size:1.7cqi;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.shop__bar span{color:#5FB6C2}
+.shop__nav{display:flex;align-items:center;gap:3cqi;padding:1.5cqi 4cqi;border-bottom:1px solid #EEF1F4}
+.shop__logo{display:flex;align-items:center;flex:none;height:5.4cqi;width:22cqi}
+.shop__logo svg,.shop__logo img{display:block;height:100%;width:auto;max-width:24cqi;object-fit:contain;object-position:left center}
+.shop__links{display:flex;gap:3cqi;margin-left:2cqi;font-size:2.2cqi;font-weight:500;color:#5F6673}
+.shop__links .is-on{color:var(--ink);font-weight:600;box-shadow:inset 0 -.35cqi 0 var(--teal);padding-bottom:.6cqi}
+.shop__icons{margin-left:auto;display:flex;align-items:center;gap:2.4cqi;color:var(--ink)}
+.shop__icons svg{width:3.1cqi;height:3.1cqi}
+.shop__cart{position:relative;display:flex}
+.shop__cart b{position:absolute;top:-1cqi;right:-1.3cqi;min-width:2.4cqi;height:2.4cqi;padding:0 .5cqi;border-radius:99px;background:var(--accent-ink);color:#fff;font-size:1.5cqi;display:grid;place-items:center;font-weight:700}
+.shop__body{flex:1;display:grid;grid-template-columns:43% 1fr;gap:4.5cqi;padding:2.4cqi 4cqi 2.6cqi;min-height:0}
+.shop__gallery{display:grid;grid-template-rows:1fr auto;gap:1.6cqi;min-height:0}
+.shop__img{position:relative;min-height:0;display:grid;place-items:center;border-radius:2cqi;background:radial-gradient(80% 70% at 50% 45%,#FFFFFF,#E9EEF2)}
+.shop__img svg{height:90%;width:auto;filter:drop-shadow(0 1.6cqi 1.6cqi rgba(30,33,42,.18))}
+.shop__tag{position:absolute;top:1.6cqi;left:1.6cqi;padding:.6cqi 1.4cqi;border-radius:99px;background:#1E212A;color:#fff;font-size:1.5cqi;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.shop__thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4cqi}
+.shop__thumbs span{height:6.4cqi;border-radius:1.2cqi;background:#F1F4F6;display:grid;place-items:center;box-shadow:inset 0 0 0 1px #E1E5EA}
+.shop__thumbs span.is-on{box-shadow:inset 0 0 0 .35cqi var(--teal)}
+.shop__thumbs svg{height:82%;width:auto}
+.shop__info{display:flex;flex-direction:column;justify-content:center;min-width:0}
+.shop__crumb{margin:0;font-size:1.7cqi;color:#858C98;letter-spacing:.02em}
+.shop__info h4{margin:.6cqi 0 0;font-size:5.2cqi;line-height:1;letter-spacing:-.03em;font-weight:700}
+.shop__info h4 small{font-size:2.6cqi;font-weight:600;color:#5F6673;letter-spacing:0;margin-left:.6cqi}
+.shop__meta{margin:1cqi 0 0;font-size:2cqi;color:#5F6673}
+.shop__price{margin:1.4cqi 0 0;font-size:3.8cqi;font-weight:700;letter-spacing:-.02em}
+.shop__price sup{font-size:2cqi;vertical-align:1.6cqi}
+.shop__pills{display:flex;gap:1.2cqi;margin-top:1.5cqi}
+.shop__pills span{font-size:1.9cqi;font-weight:600;padding:.9cqi 1.9cqi;border-radius:99px;border:1px solid #CDD3DA;color:#363B46}
 .shop__pills span:first-child{border-color:var(--teal);background:var(--teal);color:#fff}
-.shop__btn{display:block;margin-top:3cqi;text-align:center;padding:2.2cqi;border-radius:99px;background:var(--teal);color:#fff;font-size:2.6cqi;font-weight:600}
-.shop__ruo{margin:2cqi 0 0;font-size:1.9cqi;color:#858C98}
+.shop__buy{display:flex;gap:1.4cqi;margin-top:1.7cqi}
+.shop__qty{display:flex;align-items:center;gap:1.8cqi;padding:0 1.8cqi;border-radius:99px;border:1px solid #CDD3DA;font-size:2.1cqi;font-weight:600}
+.shop__qty i{font-style:normal;color:#858C98}
+.shop__btn{flex:1;display:block;text-align:center;padding:1.9cqi;border-radius:99px;background:var(--teal);color:#fff;font-size:2.3cqi;font-weight:600;box-shadow:0 1cqi 2cqi -1cqi rgba(33,127,140,.6)}
+.shop__trust{display:flex;gap:2.4cqi;margin-top:1.7cqi;font-size:1.65cqi;color:#5F6673;font-weight:500}
+.shop__trust span{display:flex;align-items:center;gap:.7cqi}
+.shop__trust svg{width:2.2cqi;height:2.2cqi;color:var(--teal)}
+.shop__ruo{margin:1.4cqi 0 0;font-size:1.5cqi;color:#9AA1AD}
 .preview__note{margin-top:12px;font-size:13px;color:#9AA1AD}
 
 /* Sections */
@@ -474,6 +498,21 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
     <symbol id="i-mega" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4a1 1 0 0 0 1 1h2l6 4V5L7 9H5a1 1 0 0 0-1 1z"/><path d="M17 9a4 4 0 0 1 0 6M8 15l1.5 5"/></symbol>
     <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol>
     <symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+    <symbol id="demoLogo" viewBox="0 0 220 56">
+      <defs><linearGradient id="dlg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5FB6C2"/><stop offset="1" stop-color="#1B6974"/></linearGradient></defs>
+      <path d="M28 4 48.8 16v24L28 52 7.2 40V16z" fill="url(#dlg)"/>
+      <path d="M28 14 40.1 21v14L28 42 15.9 35V21z" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round" opacity=".9"/>
+      <circle cx="28" cy="28" r="4.2" fill="#fff"/>
+      <circle cx="28" cy="14" r="2.4" fill="#fff"/><circle cx="40.1" cy="35" r="2.4" fill="#fff"/><circle cx="15.9" cy="35" r="2.4" fill="#fff"/>
+      <text x="62" y="31" font-family="Geist, system-ui, sans-serif" font-size="25" font-weight="700" letter-spacing="3" fill="#1E212A">LUMORA</text>
+      <text x="63" y="47" font-family="Geist, system-ui, sans-serif" font-size="9.5" font-weight="600" letter-spacing="3.6" fill="#5F6673">RESEARCH LABS</text>
+    </symbol>
+    <symbol id="shopVial" viewBox="70 52 118 276">
+      <image href="assets/vial-10ml.webp?v=tirz" x="77.5" y="54" width="103" height="270"/>
+      <text x="129" y="256" text-anchor="middle" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="600" fill="#04447C" letter-spacing=".5">TIRZ</text>
+      <use class="shopVialDemo" href="#demoLogo" x="92" y="150" width="74" height="19"/>
+      <image id="shopVialLogo" x="90" y="146" width="78" height="40" preserveAspectRatio="xMidYMid meet" visibility="hidden"/>
+    </symbol>
     <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></symbol>
   </defs>
 </svg>
@@ -557,20 +596,33 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
         </label>
         <div class="preview__stage">
           <div class="shop" id="shopView" role="img" aria-label="Illustrative online storefront showing your logo">
-            <div class="shop__chrome" aria-hidden="true"><i></i><i></i><i></i><span class="shop__url">yourbrand.com</span></div>
+            <div class="shop__chrome" aria-hidden="true"><i></i><i></i><i></i><span class="shop__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="6" y="11" width="12" height="9" rx="2"/><path d="M8.5 11V8a3.5 3.5 0 0 1 7 0v3"/></svg>yourbrand.com</span></div>
+            <div class="shop__bar">Research use only<span>•</span>Shipped under your brand<span>•</span>Secure checkout</div>
             <div class="shop__nav">
-              <span class="shop__logo"><img id="shopLogo" alt="" hidden><span class="shop__ph" id="shopPh">YOUR LOGO HERE</span></span>
-              <span class="shop__links"><span>Shop</span><span>About</span><span>Contact</span></span>
-              <svg class="shop__cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h10.2L20 8H6.2"/><circle cx="9" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></svg>
+              <span class="shop__logo"><svg class="shop__demo" viewBox="0 0 220 56" aria-hidden="true"><use href="#demoLogo"/></svg><img id="shopLogo" alt="" hidden></span>
+              <span class="shop__links"><span class="is-on">Shop</span><span>Peptides</span><span>Bundles</span><span>About</span></span>
+              <span class="shop__icons" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></svg>
+                <span class="shop__cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 11h10.2L20 8H6.2"/><circle cx="9" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></svg><b>2</b></span>
+              </span>
             </div>
             <div class="shop__body">
-              <div class="shop__img"><svg viewBox="70 52 118 276" aria-hidden="true"><use href="#vialArt"/></svg></div>
+              <div class="shop__gallery">
+                <div class="shop__img"><span class="shop__tag">New</span><svg viewBox="0 0 118 276" aria-hidden="true"><use href="#shopVial" width="118" height="276"/></svg></div>
+                <div class="shop__thumbs"><span class="is-on"><svg viewBox="0 0 118 276"><use href="#shopVial" width="118" height="276"/></svg></span><span><svg viewBox="0 0 118 276"><use href="#shopVial" width="118" height="276"/></svg></span><span><svg viewBox="0 0 118 276"><use href="#shopVial" width="118" height="276"/></svg></span></div>
+              </div>
               <div class="shop__info">
-                <h4>Tirzepatide 60 mg</h4>
-                <p class="shop__meta">Purity 99% · Ships under your brand</p>
+                <p class="shop__crumb">Shop / Research peptides</p>
+                <h4>TIRZ <small>60 mg</small></h4>
+                <p class="shop__meta">Purity 99% · Lyophilized powder</p>
+                <p class="shop__price">$199<sup>.00</sup></p>
                 <div class="shop__pills"><span>60 mg</span><span>30 mg</span><span>10 mg</span></div>
-                <span class="shop__btn">Add to cart</span>
-                <p class="shop__ruo">For research use only. Not for human consumption.</p>
+                <div class="shop__buy"><span class="shop__qty"><i>−</i>1<i>+</i></span><span class="shop__btn">Add to cart</span></div>
+                <div class="shop__trust">
+                  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 6v6c0 4.4 3.2 7.9 7.5 9 4.3-1.1 7.5-4.6 7.5-9V6z"/><path d="m9 12 2 2 4-4"/></svg>Secure checkout</span>
+                  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg>Fast US shipping</span>
+                </div>
               </div>
             </div>
           </div>
@@ -639,7 +691,8 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
               <clipPath id="bodyClip"><rect x="81" y="138" width="95" height="181" rx="6"/></clipPath>
             </defs>
             <g id="vialArt">
-              <image href="assets/vial-10ml.webp" x="77.5" y="54" width="103" height="270" preserveAspectRatio="xMidYMid meet"/>
+              <image href="assets/vial-10ml.webp?v=tirz" x="77.5" y="54" width="103" height="270" preserveAspectRatio="xMidYMid meet"/>
+              <text x="129" y="256" text-anchor="middle" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="600" fill="#04447C" letter-spacing=".5">TIRZ</text>
               <text id="vialPh" x="129" y="172" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="7.6" font-weight="700" fill="#7D8592" letter-spacing=".08em">YOUR LOGO HERE</text>
               <image id="vialLogo" x="90" y="148" width="78" height="42" preserveAspectRatio="xMidYMid meet" visibility="hidden"/>
             </g>
@@ -998,7 +1051,11 @@ const setLogo = url => {
   hasLogo = !!url;
   const img = $("#shopLogo");
   if (url) img.src = url; else img.removeAttribute("src");
-  img.hidden = !url; $("#shopPh").hidden = !!url;
+  img.hidden = !url; $(".shop__demo").style.display = url ? "none" : "";
+  const sv = $("#shopVialLogo");
+  if (url) sv.setAttribute("href", url); else sv.removeAttribute("href");
+  sv.setAttribute("visibility", url ? "visible" : "hidden");
+  $$(".shopVialDemo").forEach(d => d.setAttribute("visibility", url ? "hidden" : "visible"));
   [["#vialLogo","#vialPh"],["#cartonLogo","#cartonPh"],["#fromLogo","#fromPh"]].forEach(([im, ph]) => {
     if (url) $(im).setAttribute("href", url); else $(im).removeAttribute("href");
     $(im).setAttribute("visibility", url ? "visible" : "hidden");
