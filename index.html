@@ -148,6 +148,7 @@ p{margin:0;text-wrap:pretty}
 .heroart::after{content:"";position:absolute;bottom:58px;left:8%;width:84%;height:26px;border-radius:50%;background:rgba(0,0,0,.5);filter:blur(14px)}
 .heroart__photo{position:relative;z-index:1;margin:0;width:100%;animation:floaty 6s ease-in-out infinite}
 .heroart__photo{container-type:inline-size}
+.ylh{position:absolute;transform:translate(-50%,-50%);padding:.7em 1em;border:1.5px dashed rgba(43,58,85,.38);border-radius:.4em;font-family:var(--sans);font-weight:700;line-height:1;letter-spacing:.12em;color:#5F6B80;white-space:nowrap;pointer-events:none}
 .fixlbl{position:absolute;display:flex;align-items:center;padding-left:.17cqi;background:#F7F7F7;font:700 1.24cqi/1 Arial,"Helvetica Neue",Helvetica,sans-serif;color:#2B2B2B;letter-spacing:-.04em;white-space:nowrap;overflow:hidden}
 .heroart__photo img{display:block;width:100%;height:auto;filter:drop-shadow(0 18px 22px rgba(0,0,0,.42))}
 .heroart>svg{width:auto;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45));animation:floaty 6s ease-in-out infinite}
@@ -517,7 +518,7 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
         <a class="btn btn--ghost hero__more" href="#your-brand">See wholesale, white-label &amp; more <svg aria-hidden="true"><use href="#i-down"/></svg></a>
       </div>
       <div class="heroart">
-        <figure class="heroart__photo"><img src="assets/product-lineup-float.webp?v=clean3" width="1800" height="1125" alt="Peplogix Peptides product lineup: Reta (GLP-3) 60 mg vial, Gut Inflammation capsules, NAD+ nasal spray, and GHK-Cu peptide serum, all labeled research use only" fetchpriority="high"><span class="fixlbl" style="left:30.3%;top:64.45%;width:5.4%;height:2.4%">BPC-157:</span><span class="fixlbl" style="left:30.3%;top:67.3%;width:4.95%;height:2.45%">TB-500:</span></figure>
+        <figure class="heroart__photo"><img src="assets/product-lineup-float.webp?v=nologo" width="1800" height="1125" alt="Peplogix Peptides product lineup: Reta (GLP-3) 60 mg vial, Gut Inflammation capsules, NAD+ nasal spray, and GHK-Cu peptide serum, all labeled research use only" fetchpriority="high"><span class="ylh" style="left:13.5%;top:51.1%;font-size:1.45cqi">YOUR LOGO HERE</span><span class="ylh" style="left:43.2%;top:43.9%;font-size:1.95cqi">YOUR LOGO HERE</span><span class="ylh" style="left:69.2%;top:60.6%;font-size:1.15cqi">YOUR LOGO HERE</span><span class="ylh" style="left:89.2%;top:54.4%;font-size:1.2cqi">YOUR LOGO HERE</span><span class="fixlbl" style="left:30.3%;top:64.45%;width:5.4%;height:2.4%">BPC-157:</span><span class="fixlbl" style="left:30.3%;top:67.3%;width:4.95%;height:2.45%">TB-500:</span></figure>
         <div class="heroart__pills">
           <span class="heroart__pill"><svg aria-hidden="true"><use href="#i-check-circle"/></svg>Wholesale for clinics</span>
           <span class="heroart__pill"><svg aria-hidden="true"><use href="#i-truck"/></svg>Direct to individuals</span>
@@ -556,7 +557,7 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
           <div class="shop" id="shopView" role="img" aria-label="Illustrative online storefront showing your logo">
             <div class="shop__chrome" aria-hidden="true"><i></i><i></i><i></i><span class="shop__url">yourbrand.com</span></div>
             <div class="shop__nav">
-              <span class="shop__logo"><img id="shopLogo" src="assets/peplogix-logo.png" alt=""></span>
+              <span class="shop__logo"><img id="shopLogo" alt="" hidden><span class="shop__ph" id="shopPh">YOUR LOGO HERE</span></span>
               <span class="shop__links"><span>Shop</span><span>About</span><span>Contact</span></span>
               <svg class="shop__cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h10.2L20 8H6.2"/><circle cx="9" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></svg>
             </div>
@@ -602,13 +603,15 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
               <path d="M300 108 340 80h40l-40 28z" fill="#D6BE93" opacity=".8"/>
               <rect x="240" y="196" width="160" height="104" rx="4" fill="#FFFFFF" stroke="#C9B48F"/>
               <text x="252" y="216" font-family="Geist Mono, ui-monospace, monospace" font-size="8.5" fill="#5F6673" letter-spacing=".08em">FROM</text>
-              <image id="fromLogo" href="assets/peplogix-logo.png" x="252" y="220" width="90" height="16" preserveAspectRatio="xMinYMid meet"/>
+              <text id="fromPh" x="252" y="232" font-family="Geist, system-ui, sans-serif" font-size="10" font-weight="700" fill="#9AA1AD" letter-spacing=".08em">YOUR LOGO HERE</text>
+              <image id="fromLogo" x="252" y="220" width="90" height="16" preserveAspectRatio="xMinYMid meet" visibility="hidden"/>
               <path d="M252 240h88M252 248h64" stroke="#CDD3DA" stroke-width="3" stroke-linecap="round"/>
               <g fill="#1E212A">
                 <rect x="252" y="262" width="2" height="26"/><rect x="256" y="262" width="1" height="26"/><rect x="259" y="262" width="3" height="26"/><rect x="264" y="262" width="1" height="26"/><rect x="267" y="262" width="2" height="26"/><rect x="271" y="262" width="1" height="26"/><rect x="274" y="262" width="3" height="26"/><rect x="279" y="262" width="1" height="26"/><rect x="282" y="262" width="2" height="26"/><rect x="286" y="262" width="3" height="26"/><rect x="291" y="262" width="1" height="26"/><rect x="294" y="262" width="2" height="26"/><rect x="298" y="262" width="1" height="26"/><rect x="301" y="262" width="3" height="26"/><rect x="306" y="262" width="1" height="26"/><rect x="309" y="262" width="2" height="26"/><rect x="313" y="262" width="1" height="26"/><rect x="316" y="262" width="3" height="26"/>
               </g>
               <text x="388" y="290" text-anchor="end" font-family="Geist Mono, ui-monospace, monospace" font-size="9" fill="#5F6673">DROPSHIP</text>
-              <image id="cartonLogo" href="assets/peplogix-logo.png" x="252" y="120" width="136" height="48" preserveAspectRatio="xMidYMid meet"/>
+              <text id="cartonPh" x="320" y="150" text-anchor="middle" font-family="Geist, system-ui, sans-serif" font-size="15" font-weight="700" fill="#5B4423" letter-spacing=".1em">YOUR LOGO HERE</text>
+              <image id="cartonLogo" x="252" y="120" width="136" height="48" preserveAspectRatio="xMidYMid meet" visibility="hidden"/>
               <path d="M262 176h116" stroke="#B89462" stroke-width="1"/>
             </g>
             <!-- Vial: replica of the client's reference vial (gray flip-off cap, aluminum crimp, wrap label) -->
@@ -635,7 +638,8 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
             </defs>
             <g id="vialArt">
               <image href="assets/vial-10ml.webp" x="77.5" y="54" width="103" height="270" preserveAspectRatio="xMidYMid meet"/>
-              <image id="vialLogo" href="assets/peplogix-logo.png" x="90" y="148" width="78" height="42" preserveAspectRatio="xMidYMid meet"/>
+              <text id="vialPh" x="129" y="172" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="7.6" font-weight="700" fill="#7D8592" letter-spacing=".08em">YOUR LOGO HERE</text>
+              <image id="vialLogo" x="90" y="148" width="78" height="42" preserveAspectRatio="xMidYMid meet" visibility="hidden"/>
             </g>
           </svg>
         </div>
@@ -982,12 +986,16 @@ const resetDrop = (msg) => {
   $("#dropD").innerHTML = msg ? `<span class="drop__err">${msg}</span>` : "PNG, JPG, SVG or WebP. It stays on your device.";
   $("#dropX").hidden = true;
 };
-const DEFAULT_LOGO = "assets/peplogix-logo.png";
 const setLogo = url => {
   hasLogo = !!url;
-  const src = url || DEFAULT_LOGO;
-  $("#shopLogo").src = src;
-  ["#vialLogo","#cartonLogo","#fromLogo"].forEach(sel => $(sel).setAttribute("href", src));
+  const img = $("#shopLogo");
+  if (url) img.src = url; else img.removeAttribute("src");
+  img.hidden = !url; $("#shopPh").hidden = !!url;
+  [["#vialLogo","#vialPh"],["#cartonLogo","#cartonPh"],["#fromLogo","#fromPh"]].forEach(([im, ph]) => {
+    if (url) $(im).setAttribute("href", url); else $(im).removeAttribute("href");
+    $(im).setAttribute("visibility", url ? "visible" : "hidden");
+    $(ph).setAttribute("visibility", url ? "hidden" : "visible");
+  });
 };
 const readLogo = file => {
   if (!file) return;
