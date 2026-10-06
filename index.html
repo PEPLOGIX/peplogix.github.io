@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Peplogix | Research peptides direct, wholesale and retail</title>
-<meta name="description" content="Peplogix partners with clinics, physicians, med spas, RUO resellers and affiliates: white-label products, 3PL and dropship fulfillment, and white-label telehealth and regenerative medicine programs in all 50 states.">
+<meta name="description" content="Peplogix partners with clinics, physicians, med spas, RUO resellers and affiliates: white-label products, 3PL and dropship fulfillment, and white-label telehealth and regenerative medicine programs in 48 states.">
 <link rel="canonical" href="https://peplogix.github.io/">
 <meta property="og:title" content="Research peptides, direct from the source | Peplogix">
 <meta property="og:description" content="White-label, 3PL, dropship, and 50-state telehealth programs for clinics, practices, and RUO brands.">
@@ -308,6 +308,9 @@ p{margin:0;text-wrap:pretty}
 .map.is-lit .st,.st.on{background:var(--teal);border-color:var(--teal-glow);color:#fff}
 .st:hover,.st:focus-visible,.st[aria-pressed="true"]{background:var(--accent);border-color:#F0A08C;color:#fff;transition-duration:.15s}
 .st:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.map.is-lit .st.off,.st.off,.st.off.on{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.08);border-style:dashed;color:#5F6673}
+.st.off:hover,.st.off:focus-visible,.st.off[aria-pressed="true"]{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.25);color:#BCC2CC}
+.map__no{display:inline-flex;margin-left:8px;padding:2px 10px;border-radius:999px;background:rgba(255,255,255,.08);color:#BCC2CC;font-size:13px;font-weight:600;vertical-align:1px}
 .map__status{margin-top:16px;min-height:76px;padding:16px 18px;border-radius:12px;background:rgba(255,255,255,.05);color:#BCC2CC;font-size:15px;line-height:1.5}
 .map__status strong{color:#fff;font-weight:600}
 .map__ok{display:inline-flex;align-items:center;gap:6px;margin-left:8px;padding:2px 10px;border-radius:999px;background:rgba(95,182,194,.16);color:var(--teal-glow);font-size:13px;font-weight:600;vertical-align:1px}
@@ -657,7 +660,7 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
           <li class="kit__item" style="--i:2"><span class="kit__ic"><svg aria-hidden="true"><use href="#i-truck"/></svg></span><span><b>Orders shipped to your customers</b><small>Dropship</small></span></li>
           <li class="kit__item" style="--i:3"><span class="kit__ic"><svg aria-hidden="true"><use href="#i-store"/></svg></span><span><b>Your online storefront</b><small>Built for you</small></span></li>
           <li class="kit__item" style="--i:4"><span class="kit__ic"><svg aria-hidden="true"><use href="#i-mega"/></svg></span><span><b>Affiliates selling your brand</b><small>Growth</small></span></li>
-          <li class="kit__item" style="--i:5"><span class="kit__ic"><svg aria-hidden="true"><use href="#i-steth"/></svg></span><span><b>Telehealth in all 50 states</b><small>White-label</small></span></li>
+          <li class="kit__item" style="--i:5"><span class="kit__ic"><svg aria-hidden="true"><use href="#i-steth"/></svg></span><span><b>Telehealth in 48 states</b><small>White-label</small></span></li>
           <li class="kit__item" style="--i:6"><span class="kit__ic"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><span><b>A partner manager on the phone</b><small>Onboarding</small></span></li>
           <li class="kit__item" style="--i:7"><span class="kit__ic"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><span><b>Private partner portal</b><small>Access</small></span></li>
         </ul>
@@ -685,7 +688,7 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
   <section class="section section--ink" id="telehealth">
     <div class="wrap tele">
       <div class="tele__copy rv">
-        <h2>Your own telehealth program, in&nbsp;all&nbsp;50&nbsp;states.</h2>
+        <h2>Your own telehealth program, in&nbsp;48&nbsp;states.</h2>
         <p>Offer telehealth and regenerative medicine under your practice's brand, without building the platform, the provider network, or the pharmacy relationships yourself.</p>
         <div class="tele__cols">
           <div>
@@ -694,15 +697,15 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
           </div>
           <div>
             <h3><svg aria-hidden="true"><use href="#i-cells"/></svg>Regenerative medicine</h3>
-            <p>Add regenerative medicine programs to your practice's menu, available nationwide.</p>
+            <p>Add regenerative medicine programs to your practice's menu, available in 48 states.</p>
           </div>
         </div>
         <a class="btn btn--call" href="#apply" data-preselect-interest="telehealth" data-cta="telehealth">Talk to us about telehealth <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
         <p class="tele__fine">Clinical services are provided by independent, licensed healthcare providers. Program details, eligibility, and requirements vary by state and by your role. We'll go through what applies to you on your call.</p>
       </div>
       <div class="map rv" id="usMap">
-        <div class="map__grid" id="mapGrid" role="group" aria-label="All 50 states are covered. Select a state to check it."></div>
-        <p class="map__total"><strong class="mono" id="mapCount">50</strong> of 50 states covered</p>
+        <div class="map__grid" id="mapGrid" role="group" aria-label="48 states are covered. Select a state to check it."></div>
+        <p class="map__total"><strong class="mono" id="mapCount">48</strong> of 50 states covered</p>
         <div class="map__status" id="mapStatus" aria-live="polite">Hover or tap any state to check coverage.</div>
       </div>
     </div>
@@ -921,12 +924,12 @@ const CONFIG = {
 
 const SEGMENTS = [
   { key:"clinic", label:"Clinics", title:"Add programs and supply without adding overhead.",
-    body:"Run white-label telehealth and regenerative medicine programs under your clinic's name, in all 50 states, and source supply through one partner.",
-    points:["White-label telehealth your patients book with you","Regenerative medicine programs available nationwide","Wholesale supply for your clinic","One partner manager for everything"],
+    body:"Run white-label telehealth and regenerative medicine programs under your clinic's name, in 48 states, and source supply through one partner.",
+    points:["White-label telehealth your patients book with you","Regenerative medicine programs in 48 states","Wholesale supply for your clinic","One partner manager for everything"],
     interests:["telehealth","regen","supply"] },
   { key:"physician", label:"Physicians", title:"Your name on a telehealth practice, without building one.",
     body:"Offer telehealth and regenerative medicine under your own brand. We provide the platform and operations so you can focus on patients.",
-    points:["Branded telehealth offering","Regenerative medicine programs in all 50 states","No platform to build or maintain","Requirements reviewed for your state and role"],
+    points:["Branded telehealth offering","Regenerative medicine programs in 48 states","No platform to build or maintain","Requirements reviewed for your state and role"],
     interests:["telehealth","regen"] },
   { key:"medspa", label:"Med spas", title:"New programs for your menu, under your brand.",
     body:"Extend what you offer with white-label telehealth and regenerative medicine programs, plus supply for your locations.",
@@ -934,7 +937,7 @@ const SEGMENTS = [
     interests:["telehealth","regen","supply"] },
   { key:"practice", label:"Medical practices", title:"One partner for programs, supply, and fulfillment.",
     body:"Multi-provider practices use Peplogix to add branded telehealth and regenerative medicine programs and simplify supply.",
-    points:["Programs available in all 50 states","White-label under your practice name","Wholesale supply and fulfillment","A single point of contact"],
+    points:["Programs available in 48 states","White-label under your practice name","Wholesale supply and fulfillment","A single point of contact"],
     interests:["telehealth","regen","supply"] },
   { key:"ruo", label:"RUO buyers & resellers", title:"Wholesale research supply, shipped under your label.",
     body:"Buy wholesale for research resale, or have us warehouse and dropship for you so you never touch a box.",
@@ -1064,8 +1067,8 @@ const SERVICES = [
   {key:"ship", icon:"i-truck", label:"Dropship fulfillment", desc:"We pack and ship each order", interest:"ruo-box"},
   {key:"shop", icon:"i-store", label:"Storefront build", desc:"We build your online store", interest:"storefront"},
   {key:"supply", icon:"i-check-circle", label:"Wholesale supply", desc:"Product for your clinic or resale", interest:"supply"},
-  {key:"tele", icon:"i-steth", label:"White-label telehealth", desc:"A branded telehealth offering, 50 states", interest:"telehealth"},
-  {key:"regen", icon:"i-cells", label:"Regenerative medicine", desc:"Programs for your practice, 50 states", interest:"regen"},
+  {key:"tele", icon:"i-steth", label:"White-label telehealth", desc:"A branded telehealth offering, 48 states", interest:"telehealth"},
+  {key:"regen", icon:"i-cells", label:"Regenerative medicine", desc:"Programs for your practice, 48 states", interest:"regen"},
   {key:"aff", icon:"i-arrow", label:"Affiliate sales", desc:"Our affiliates promote and sell your brand", interest:"affiliate"}
 ];
 const TASKS = [
@@ -1112,13 +1115,19 @@ $("#planCta").addEventListener("click", () => {
 });
 renderPlan();
 
-/* 50-state map */
+/* State coverage map */
+const NOT_COVERED = new Set(["KY","CT"]);
 const ABBR = {AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"California",CO:"Colorado",CT:"Connecticut",DE:"Delaware",FL:"Florida",GA:"Georgia",HI:"Hawaii",ID:"Idaho",IL:"Illinois",IN:"Indiana",IA:"Iowa",KS:"Kansas",KY:"Kentucky",LA:"Louisiana",ME:"Maine",MD:"Maryland",MA:"Massachusetts",MI:"Michigan",MN:"Minnesota",MS:"Mississippi",MO:"Missouri",MT:"Montana",NE:"Nebraska",NV:"Nevada",NH:"New Hampshire",NJ:"New Jersey",NM:"New Mexico",NY:"New York",NC:"North Carolina",ND:"North Dakota",OH:"Ohio",OK:"Oklahoma",OR:"Oregon",PA:"Pennsylvania",RI:"Rhode Island",SC:"South Carolina",SD:"South Dakota",TN:"Tennessee",TX:"Texas",UT:"Utah",VT:"Vermont",VA:"Virginia",WA:"Washington",WV:"West Virginia",WI:"Wisconsin",WY:"Wyoming"};
-$("#mapGrid").innerHTML = TILES.map(([a,r,c]) => `<button type="button" class="st" style="grid-row:${r+1};grid-column:${c+1}" data-st="${a}" aria-label="${ABBR[a]}" aria-pressed="false">${a}</button>`).join("");
+$("#mapGrid").innerHTML = TILES.map(([a,r,c]) => `<button type="button" class="st" style="grid-row:${r+1};grid-column:${c+1}" data-st="${a}" aria-label="${ABBR[a]}${NOT_COVERED.has(a) ? " (not available)" : ""}" aria-pressed="false">${a}</button>`).join("");
 const mapStatus = $("#mapStatus");
 const showState = a => {
   const name = ABBR[a];
   $$(".st").forEach(t => t.setAttribute("aria-pressed", t.dataset.st === a));
+  if (NOT_COVERED.has(a)) {
+    mapStatus.innerHTML = `<strong>${name}</strong><span class="map__no">Not available</span><br>Telehealth and regenerative medicine programs aren't currently offered in ${name}. Wholesale and white-label services may still be available. <a href="#apply">Ask us about ${name} →</a>`;
+    if (!reduced) { mapStatus.classList.remove("flash"); void mapStatus.offsetWidth; mapStatus.classList.add("flash"); }
+    return;
+  }
   mapStatus.innerHTML = `<strong>${name}</strong><span class="map__ok">${icon("i-check")}Covered</span><br>White-label telehealth and regenerative medicine programs are available in ${name}. <a href="#apply" data-apply-state="${name}">Apply from ${name} →</a>`;
   if (!reduced) { mapStatus.classList.remove("flash"); void mapStatus.offsetWidth; mapStatus.classList.add("flash"); }
 };
@@ -1131,14 +1140,15 @@ mapStatus.addEventListener("click", e => {
 const map = $("#usMap");
 const lightMap = () => {
   if (reduced) { map.classList.add("is-lit"); return; }
-  const tiles = $$(".st", map), count = $("#mapCount");
+  const tiles = $$(".st", map).filter(t => !NOT_COVERED.has(t.dataset.st)), count = $("#mapCount");
   [...tiles].sort((a,b) => (parseInt(a.style.gridColumn) - parseInt(b.style.gridColumn)) || (parseInt(a.style.gridRow) - parseInt(b.style.gridRow)))
     .forEach((t,i) => setTimeout(() => {
       t.classList.add("on");
       count.textContent = i + 1;
     }, 120 + i * 22));
 };
-$("#mapCount").textContent = reduced ? "50" : "0";
+$("#mapGrid").querySelectorAll(".st").forEach(t => NOT_COVERED.has(t.dataset.st) && t.classList.add("off"));
+$("#mapCount").textContent = reduced ? "48" : "0";
 
 /* Reveal + map trigger */
 const io = new IntersectionObserver(entries => entries.forEach(en => {
