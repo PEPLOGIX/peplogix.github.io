@@ -76,6 +76,29 @@ li svg{width:18px;height:18px;margin-top:2px;color:var(--aqua)}
 .btn svg{width:18px;height:18px}
 .spacer{flex:1}
 
+
+.flow{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:1200px;margin:0 auto}
+@media (max-width:900px){.flow{grid-template-columns:minmax(0,1fr);gap:44px}}
+.group{display:flex;flex-direction:column;align-items:center;padding:22px 20px 24px;border-radius:20px;background:rgba(255,255,255,.02);box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
+.gl{margin:0 0 16px;font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;width:100%;align-items:stretch}
+@media (max-width:520px){.pair{grid-template-columns:minmax(0,1fr)}.pair .col{display:flex;flex-direction:column}}
+.pair .col{display:grid;grid-template-rows:subgrid;grid-row:span 3;row-gap:0;padding:20px 18px 18px}
+.pair .col h2{font-size:clamp(16px,1.35vw,19px);white-space:nowrap}
+.pair{grid-template-rows:auto auto 1fr}
+.conn{display:block;width:100%;height:56px;overflow:visible}
+.conn path{fill:none;stroke:rgba(95,182,194,.55);stroke-width:1.6;vector-effect:non-scaling-stroke;stroke-dasharray:4 5;animation:flowdash 1.4s linear infinite}
+@keyframes flowdash{to{stroke-dashoffset:-18}}
+.arrow{width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-top:9px solid var(--aqua);margin:-6px 0 10px}
+@media (max-width:520px){.conn{height:40px}}
+.dest{width:min(100%,380px);text-align:center;padding:24px 24px 22px;border-radius:16px;
+  background:linear-gradient(160deg,rgba(95,182,194,.20),rgba(95,182,194,.05));box-shadow:inset 0 0 0 1px rgba(95,182,194,.45),0 30px 60px -36px rgba(0,0,0,.9)}
+.dest img{height:24px;width:auto;margin:0 auto 12px;display:block;opacity:.9}
+.dest h3{margin:0;font-size:26px;letter-spacing:-.025em;font-weight:650}
+.dest .tag{margin:6px 0 0;font:500 11.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--aqua)}
+.dest p:not(.tag){margin:12px 0 0;font-size:14.5px;color:var(--soft)}
+.dest .btn{margin-top:18px}
+@media (prefers-reduced-motion:reduce){.conn path{animation:none}}
 .foot{margin-top:28px;text-align:center;font-size:13px;color:#A3AAB5}
 .foot strong{color:var(--soft);font-weight:600}
 @media (prefers-reduced-motion:reduce){.col{transition:none}.col:hover{transform:none}}
@@ -96,51 +119,10 @@ li svg{width:18px;height:18px;margin-top:2px;color:var(--aqua)}
   <div class="wrap">
     <div class="head">
       <h1 id="pathsTitle">Where are you starting from? <em>Pick your path.</em></h1>
-      <p>Already with us or just getting started, practitioners and consumers each have their own path.</p>
+      <p>Existing partners and customers head to PeplogixMD. New partners and customers start at Peplogix Peptides.</p>
     </div>
 
-    <div class="grid">
-      <article class="col col--med">
-        <div class="num"><span>Existing</span><b>01</b></div>
-        <h2>B2B / Practitioners</h2>
-        <ul>
-          <li><svg aria-hidden="true"><use href="#ck"/></svg>Wholesale reorders &amp; volume pricing</li>
-          <li><svg aria-hidden="true"><use href="#ck"/></svg>White-label telehealth &amp; regen programs</li>
-          <li><svg aria-hidden="true"><use href="#ck"/></svg>Your dedicated account manager</li>
-        </ul>
-        <a class="btn" href="#">Wholesale login <svg aria-hidden="true"><use href="#ar"/></svg></a>
-      </article>
-      <article class="col col--con">
-        <div class="num"><span>Existing</span><b>02</b></div>
-        <h2>Consumer / Affiliates</h2>
-        <ul>
-          <li><svg aria-hidden="true"><use href="#ck"/></svg>Order research peptides direct</li>
-          <li><svg aria-hidden="true"><use href="#ck"/></svg>Track your affiliate referrals</li>
-          <li><svg aria-hidden="true"><use href="#ck"/></svg>Get paid on every sale you send</li>
-        </ul>
-        <a class="btn" href="#">Shop &amp; earn <svg aria-hidden="true"><use href="#ar"/></svg></a>
-      </article>
-      <article class="col col--med">
-        <div class="num"><span>New</span><b>03</b></div>
-        <h2>B2B / Practitioners</h2>
-        <ul>
-          <li><svg aria-hidden="true"><use href="#ck"/></svg>Open a wholesale account</li>
-          <li><svg aria-hidden="true"><use href="#ck"/></svg>Launch your own brand or storefront</li>
-          <li><svg aria-hidden="true"><use href="#ck"/></svg>Telehealth &amp; regen in 48 states</li>
-        </ul>
-        <a class="btn" href="#">Open an account <svg aria-hidden="true"><use href="#ar"/></svg></a>
-      </article>
-      <article class="col col--con">
-        <div class="num"><span>New</span><b>04</b></div>
-        <h2>Consumer / Affiliates</h2>
-        <ul>
-          <li><svg aria-hidden="true"><use href="#ck"/></svg>Order direct, shipped to you (21+)</li>
-          <li><svg aria-hidden="true"><use href="#ck"/></svg>Join the affiliate program</li>
-          <li><svg aria-hidden="true"><use href="#ck"/></svg>Earn commission on referrals</li>
-        </ul>
-        <a class="btn" href="#">Join now <svg aria-hidden="true"><use href="#ar"/></svg></a>
-      </article>
-    </div>
+    <div class="flow"><div class="group"><p class="gl">Already with us</p><div class="pair"><article class="col col--med"><div class="num"><span>Existing</span><b>01</b></div><h2>B2B / Practitioners</h2><ul><li><svg aria-hidden="true"><use href="#ck"/></svg>Wholesale reorders &amp; pricing</li><li><svg aria-hidden="true"><use href="#ck"/></svg>Telehealth &amp; regen programs</li><li><svg aria-hidden="true"><use href="#ck"/></svg>Your account manager</li></ul></article><article class="col col--con"><div class="num"><span>Existing</span><b>02</b></div><h2>Consumer / Affiliates</h2><ul><li><svg aria-hidden="true"><use href="#ck"/></svg>Order peptides direct</li><li><svg aria-hidden="true"><use href="#ck"/></svg>Track affiliate referrals</li><li><svg aria-hidden="true"><use href="#ck"/></svg>Get paid on every sale</li></ul></article></div><svg class="conn" viewBox="0 0 400 70" preserveAspectRatio="none" aria-hidden="true"><path d="M100 0 C100 38 200 30 200 64" /><path d="M300 0 C300 38 200 30 200 64" /></svg><span class="arrow" aria-hidden="true"></span><div class="dest dest--md"><img src="assets/peplogix-logo-white.png" alt="" width="104" height="27"><h3>PeplogixMD</h3><p class="tag">Existing partners &amp; customers</p><p>Log in to reorder, manage programs and track your earnings.</p><a class="btn" href="#">Continue to PeplogixMD <svg aria-hidden="true"><use href="#ar"/></svg></a></div></div><div class="group"><p class="gl">New to Peplogix</p><div class="pair"><article class="col col--med"><div class="num"><span>New</span><b>03</b></div><h2>B2B / Practitioners</h2><ul><li><svg aria-hidden="true"><use href="#ck"/></svg>Open a wholesale account</li><li><svg aria-hidden="true"><use href="#ck"/></svg>Launch your own brand</li><li><svg aria-hidden="true"><use href="#ck"/></svg>Telehealth &amp; regen, 48 states</li></ul></article><article class="col col--con"><div class="num"><span>New</span><b>04</b></div><h2>Consumer / Affiliates</h2><ul><li><svg aria-hidden="true"><use href="#ck"/></svg>Order direct, 21+ only</li><li><svg aria-hidden="true"><use href="#ck"/></svg>Join the affiliate program</li><li><svg aria-hidden="true"><use href="#ck"/></svg>Earn on every referral</li></ul></article></div><svg class="conn" viewBox="0 0 400 70" preserveAspectRatio="none" aria-hidden="true"><path d="M100 0 C100 38 200 30 200 64" /><path d="M300 0 C300 38 200 30 200 64" /></svg><span class="arrow" aria-hidden="true"></span><div class="dest dest--pp"><img src="assets/peplogix-logo-white.png" alt="" width="104" height="27"><h3>Peplogix Peptides</h3><p class="tag">New partners &amp; customers</p><p>Open an account, shop research peptides or start earning as an affiliate.</p><a class="btn" href="#">Continue to Peplogix Peptides <svg aria-hidden="true"><use href="#ar"/></svg></a></div></div></div>
 
     <p class="foot"><strong>Research use only.</strong> RUO products are not for human consumption. Clinical programs are provided by independent licensed providers.</p>
   </div>
