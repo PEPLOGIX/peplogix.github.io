@@ -102,7 +102,24 @@ li svg{width:18px;height:18px;margin-top:2px;color:var(--aqua)}
 .dest p:not(.tag){margin:12px 0 0;font-size:14.5px;color:var(--soft)}
 .dest .btn{margin-top:18px}
 @media (prefers-reduced-motion:reduce){.conn path{animation:none}}
-.foot{margin-top:28px;text-align:center;font-size:13px;color:#A3AAB5}
+
+.earn{max-width:1200px;margin:clamp(64px,8vw,96px) auto 0;padding-top:clamp(48px,6vw,72px);border-top:1px solid var(--line);text-align:center}
+.earn h2{margin:0;font-size:clamp(30px,3.6vw,46px);line-height:1.08;letter-spacing:-.035em;font-weight:650}
+.earn h2 em{font-style:normal;color:#EE9479}
+.earn__sub{margin:14px auto 0;color:var(--soft);font-size:17px}
+.earn__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:36px;text-align:left}
+@media (max-width:1060px){.earn__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.earn__grid{grid-template-columns:minmax(0,1fr)}}
+.way{display:flex;flex-direction:column;padding:22px 20px;border-radius:16px;text-decoration:none;background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.02));box-shadow:inset 0 0 0 1px var(--line);transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.way:hover{transform:translateY(-3px);box-shadow:inset 0 0 0 1px rgba(210,101,74,.55)}
+.way__n{font:500 13px/1 var(--mono);color:#EA8A70;letter-spacing:.1em}
+.way h3{margin:14px 0 0;font-size:19px;letter-spacing:-.02em;font-weight:650;color:#fff}
+.way p{margin:8px 0 18px;font-size:14.5px;color:var(--soft);line-height:1.5}
+.way__go{margin-top:auto;display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:14.5px;color:#EA8A70}
+.way__go svg{width:16px;height:16px;transition:transform .25s var(--ease)}
+.way:hover .way__go svg{transform:translateX(3px)}
+@media (prefers-reduced-motion:reduce){.way{transition:none}.way:hover{transform:none}}
+.foot{margin-top:48px;text-align:center;font-size:13px;color:#A3AAB5}
 .foot strong{color:var(--soft);font-weight:600}
 @media (prefers-reduced-motion:reduce){.col{transition:none}.col:hover{transform:none}}
 </style>
@@ -122,10 +139,21 @@ li svg{width:18px;height:18px;margin-top:2px;color:var(--aqua)}
   <div class="wrap">
     <div class="head">
       <h1 id="pathsTitle">Where are you starting from? <em>Pick your path.</em></h1>
-      <p>Existing partners and customers head to PeplogixMD. New partners and customers start at Peplogix Peptides.</p>
+      <p>Practitioners and clinics go to PeplogixMD. Consumers and affiliates go to Peplogix Peptides.</p>
     </div>
 
-    <div class="flow"><div class="group"><p class="gl">Already with us</p><div class="dest dest--md"><img src="assets/peplogix-logo-white.png" alt="" width="104" height="27"><h2>PeplogixMD</h2><p class="tag">Existing partners &amp; customers</p><p>Log in to reorder, manage programs and track your earnings.</p><a class="btn" href="#">Continue to PeplogixMD <svg aria-hidden="true"><use href="#ar"/></svg></a></div><div class="connw" aria-hidden="true"><svg class="conn" viewBox="0 0 400 70" preserveAspectRatio="none"><path d="M200 0 C200 32 100 30 100 62"/><path d="M200 0 C200 32 300 30 300 62"/></svg><span class="arrow a1"></span><span class="arrow a2"></span></div><div class="pair"><article class="col col--med"><div class="num"><span>Existing</span><b>01</b></div><h3>B2B / Practitioners</h3><ul><li><svg aria-hidden="true"><use href="#ck"/></svg>Wholesale reorders &amp; pricing</li><li><svg aria-hidden="true"><use href="#ck"/></svg>Telehealth &amp; regen programs</li><li><svg aria-hidden="true"><use href="#ck"/></svg>Your account manager</li></ul></article><article class="col col--con"><div class="num"><span>Existing</span><b>02</b></div><h3>Consumer / Affiliates</h3><ul><li><svg aria-hidden="true"><use href="#ck"/></svg>Order peptides direct</li><li><svg aria-hidden="true"><use href="#ck"/></svg>Track affiliate referrals</li><li><svg aria-hidden="true"><use href="#ck"/></svg>Get paid on every sale</li></ul></article></div></div><div class="group"><p class="gl">New to Peplogix</p><div class="dest dest--pp"><img src="assets/peplogix-logo-white.png" alt="" width="104" height="27"><h2>Peplogix Peptides</h2><p class="tag">New partners &amp; customers</p><p>Open an account, shop research peptides or start earning as an affiliate.</p><a class="btn" href="#">Continue to Peplogix Peptides <svg aria-hidden="true"><use href="#ar"/></svg></a></div><div class="connw" aria-hidden="true"><svg class="conn" viewBox="0 0 400 70" preserveAspectRatio="none"><path d="M200 0 C200 32 100 30 100 62"/><path d="M200 0 C200 32 300 30 300 62"/></svg><span class="arrow a1"></span><span class="arrow a2"></span></div><div class="pair"><article class="col col--med"><div class="num"><span>New</span><b>03</b></div><h3>B2B / Practitioners</h3><ul><li><svg aria-hidden="true"><use href="#ck"/></svg>Open a wholesale account</li><li><svg aria-hidden="true"><use href="#ck"/></svg>Launch your own brand</li><li><svg aria-hidden="true"><use href="#ck"/></svg>Telehealth &amp; regen, 48 states</li></ul></article><article class="col col--con"><div class="num"><span>New</span><b>04</b></div><h3>Consumer / Affiliates</h3><ul><li><svg aria-hidden="true"><use href="#ck"/></svg>Order direct, 21+ only</li><li><svg aria-hidden="true"><use href="#ck"/></svg>Join the affiliate program</li><li><svg aria-hidden="true"><use href="#ck"/></svg>Earn on every referral</li></ul></article></div></div></div>
+    <div class="flow"><div class="group"><p class="gl">Practitioners &amp; clinics</p><div class="dest dest--md"><img src="assets/peplogix-logo-white.png" alt="" width="104" height="27"><h2>PeplogixMD</h2><p class="tag">B2B partners &amp; practitioners</p><p>Wholesale accounts, reorders, and white-label telehealth &amp; regen programs.</p><a class="btn" href="#">Continue to PeplogixMD <svg aria-hidden="true"><use href="#ar"/></svg></a></div><div class="connw" aria-hidden="true"><svg class="conn" viewBox="0 0 400 70" preserveAspectRatio="none"><path d="M200 0 C200 32 100 30 100 62"/><path d="M200 0 C200 32 300 30 300 62"/></svg><span class="arrow a1"></span><span class="arrow a2"></span></div><div class="pair"><article class="col col--med"><div class="num"><span>Existing</span><b>01</b></div><h3>B2B / Practitioners</h3><ul><li><svg aria-hidden="true"><use href="#ck"/></svg>Wholesale reorders &amp; pricing</li><li><svg aria-hidden="true"><use href="#ck"/></svg>Telehealth &amp; regen programs</li><li><svg aria-hidden="true"><use href="#ck"/></svg>Your account manager</li></ul></article><article class="col col--med"><div class="num"><span>New</span><b>02</b></div><h3>B2B / Practitioners</h3><ul><li><svg aria-hidden="true"><use href="#ck"/></svg>Open a wholesale account</li><li><svg aria-hidden="true"><use href="#ck"/></svg>Launch your own brand</li><li><svg aria-hidden="true"><use href="#ck"/></svg>Telehealth &amp; regen, 48 states</li></ul></article></div></div><div class="group"><p class="gl">Consumers &amp; affiliates</p><div class="dest dest--pp"><img src="assets/peplogix-logo-white.png" alt="" width="104" height="27"><h2>Peplogix Peptides</h2><p class="tag">Consumers &amp; affiliates</p><p>Shop research peptides direct and earn as an affiliate.</p><a class="btn" href="#">Continue to Peplogix Peptides <svg aria-hidden="true"><use href="#ar"/></svg></a></div><div class="connw" aria-hidden="true"><svg class="conn" viewBox="0 0 400 70" preserveAspectRatio="none"><path d="M200 0 C200 32 100 30 100 62"/><path d="M200 0 C200 32 300 30 300 62"/></svg><span class="arrow a1"></span><span class="arrow a2"></span></div><div class="pair"><article class="col col--con"><div class="num"><span>Existing</span><b>03</b></div><h3>Consumer / Affiliates</h3><ul><li><svg aria-hidden="true"><use href="#ck"/></svg>Order peptides direct</li><li><svg aria-hidden="true"><use href="#ck"/></svg>Track affiliate referrals</li><li><svg aria-hidden="true"><use href="#ck"/></svg>Get paid on every sale</li></ul></article><article class="col col--con"><div class="num"><span>New</span><b>04</b></div><h3>Consumer / Affiliates</h3><ul><li><svg aria-hidden="true"><use href="#ck"/></svg>Order direct, 21+ only</li><li><svg aria-hidden="true"><use href="#ck"/></svg>Join the affiliate program</li><li><svg aria-hidden="true"><use href="#ck"/></svg>Earn on every referral</li></ul></article></div></div></div>
+
+    <section class="earn" aria-labelledby="earnTitle">
+      <h2 id="earnTitle">How do you want to <em>make money?</em></h2>
+      <p class="earn__sub">Pick the model that fits you. Most partners combine two or more.</p>
+      <div class="earn__grid">
+        <a class="way" href="#"><span class="way__n">A</span><h3>Resell wholesale</h3><p>Buy at partner pricing and sell to your patients or customers at your own margin.</p><span class="way__go">Get wholesale pricing <svg aria-hidden="true"><use href="#ar"/></svg></span></a>
+        <a class="way" href="#"><span class="way__n">B</span><h3>Launch your own brand</h3><p>Your label, your storefront. We stock, pack and ship every order for you.</p><span class="way__go">Start my brand <svg aria-hidden="true"><use href="#ar"/></svg></span></a>
+        <a class="way" href="#"><span class="way__n">C</span><h3>Offer telehealth &amp; regen</h3><p>Add white-label telehealth and regenerative programs under your practice name.</p><span class="way__go">Add programs <svg aria-hidden="true"><use href="#ar"/></svg></span></a>
+        <a class="way" href="#"><span class="way__n">D</span><h3>Earn as an affiliate</h3><p>Share your link and get paid on every brand, clinic and customer you refer.</p><span class="way__go">Join the program <svg aria-hidden="true"><use href="#ar"/></svg></span></a>
+      </div>
+    </section>
 
     <p class="foot"><strong>Research use only.</strong> RUO products are not for human consumption. Clinical programs are provided by independent licensed providers.</p>
   </div>
