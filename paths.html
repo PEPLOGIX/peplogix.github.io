@@ -61,13 +61,13 @@ a{color:inherit}
 .ic{width:52px;height:52px;border-radius:6px;display:grid;place-items:center;background:rgba(95,182,194,.12);color:var(--aqua);margin-bottom:22px}
 .col--con .ic{background:rgba(210,101,74,.14);color:var(--orange-hi)}
 .ic svg{width:26px;height:26px}
-.col h3{margin:0;font-size:clamp(20px,1.7vw,23px);line-height:1.15;letter-spacing:-.025em;font-weight:650}
+.col h3,.col .et{margin:0;font-size:clamp(20px,1.7vw,23px);line-height:1.15;letter-spacing:-.025em;font-weight:650}
 .who{margin:8px 0 0;font-size:14.5px;line-height:1.5;color:var(--soft)}
 .chips{display:flex;flex-wrap:wrap;align-content:flex-start;gap:6px;margin:16px 0 0}
 .chips span{font-size:12.5px;font-weight:500;padding:5px 10px;border-radius:4px;background:rgba(255,255,255,.06);color:var(--soft);box-shadow:inset 0 0 0 1px var(--line)}
 .rule{height:1px;background:var(--line);margin:24px 0 20px}
 .lab{margin:0 0 12px;font:500 11.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-ul{list-style:none;margin:14px 0 0;padding:14px 0 0;display:grid;gap:9px;align-content:start;border-top:1px solid var(--line)}
+ul{list-style:none;margin:0;padding:0;display:grid;gap:9px;align-content:start}
 li{display:grid;grid-template-columns:18px 1fr;gap:9px;font-size:14px;color:var(--text);line-height:1.45}
 li svg{width:18px;height:18px;margin-top:2px;color:var(--aqua)}
 .col--con li svg{color:var(--orange-hi)}
@@ -84,7 +84,7 @@ li svg{width:18px;height:18px;margin-top:2px;color:var(--aqua)}
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;width:100%;align-items:stretch}
 @media (max-width:520px){.pair{grid-template-columns:minmax(0,1fr)}.pair .col{display:flex;flex-direction:column}}
 .pair .col{display:grid;grid-template-rows:subgrid;grid-row:span 3;row-gap:0;padding:20px 18px 18px}
-.pair .col h3{font-size:clamp(16px,1.35vw,19px);white-space:nowrap}
+.pair .col h3,.col .et{font-size:clamp(16px,1.35vw,19px);white-space:nowrap}
 .pair{grid-template-rows:auto auto 1fr}
 .conn{display:block;width:100%;overflow:visible}
 .conn path{fill:none;stroke:rgba(95,182,194,.55);stroke-width:1.6;vector-effect:non-scaling-stroke;stroke-dasharray:4 5;animation:flowdash 1.4s linear infinite}
@@ -122,7 +122,7 @@ li svg{width:18px;height:18px;margin-top:2px;color:var(--aqua)}
 
 .entries{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;max-width:1200px;margin:0 auto}
 .entries .col{display:flex;flex-direction:column;grid-row:auto;padding:18px 18px 16px}
-.entries .col h3{font-size:clamp(16px,1.35vw,19px);white-space:nowrap}
+.entries .col .et{font-size:clamp(16px,1.35vw,19px);white-space:nowrap}
 .entries .who{margin:6px 0 0;font-size:14px}
 .cross{position:relative;max-width:1200px;height:110px;margin:6px auto 4px}
 .cross svg{display:block;width:100%;height:100%;overflow:visible}
@@ -188,7 +188,7 @@ li svg{width:18px;height:18px;margin-top:2px;color:var(--aqua)}
       <p>Practitioners and clinics go to PeplogixMD. Consumers and affiliates go to Peplogix Peptides.</p>
     </div>
 
-    <div class="entries"><article class="col col--med"><div class="num"><span>Existing</span><b>01</b></div><h3>B2B / Practitioners</h3><p class="who">Reorder wholesale, manage your programs.</p></article><article class="col col--con"><div class="num"><span>Existing</span><b>02</b></div><h3>Consumer / Affiliates</h3><p class="who">Shop direct, track your referrals.</p></article><article class="col col--med"><div class="num"><span>New</span><b>03</b></div><h3>B2B / Practitioners</h3><p class="who">Open a wholesale or white-label account.</p></article><article class="col col--con"><div class="num"><span>New</span><b>04</b></div><h3>Consumer / Affiliates</h3><p class="who">Order direct or start earning.</p></article></div>
+    <div class="entries"><article class="col col--med"><div class="num"><span>Existing</span><b>01</b></div><h2 class="et">B2B / Practitioners</h2><p class="who">Reorder wholesale, manage your programs.</p></article><article class="col col--con"><div class="num"><span>Existing</span><b>02</b></div><h2 class="et">Consumer / Affiliates</h2><p class="who">Shop direct, track your referrals.</p></article><article class="col col--med"><div class="num"><span>New</span><b>03</b></div><h2 class="et">B2B / Practitioners</h2><p class="who">Open a wholesale or white-label account.</p></article><article class="col col--con"><div class="num"><span>New</span><b>04</b></div><h2 class="et">Consumer / Affiliates</h2><p class="who">Order direct or start earning.</p></article></div>
     <div class="cross" aria-hidden="true">
       <svg viewBox="0 0 800 110" preserveAspectRatio="none">
         <path class="t" d="M100 0 C100 55 200 55 200 102"/>
