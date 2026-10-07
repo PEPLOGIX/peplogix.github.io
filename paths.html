@@ -38,10 +38,10 @@ a{color:inherit}
 .head h1 em{font-style:normal;color:var(--aqua);display:block}
 .head p{margin:18px auto 0;max-width:58ch;font-size:clamp(16px,1.4vw,18px);color:var(--soft)}
 
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px;row-gap:0}
-@media (max-width:980px){.grid{grid-template-columns:minmax(0,1fr);row-gap:18px}.col{grid-row:auto;display:flex;flex-direction:column}.col .btn{margin-top:28px}}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:16px;row-gap:0;max-width:1080px;margin:0 auto}
+@media (max-width:980px){.grid{grid-template-columns:minmax(0,1fr);row-gap:18px}.col{grid-row:auto;display:flex;flex-direction:column}.col .btn{margin-top:20px}}
 
-.col{position:relative;display:grid;grid-template-rows:subgrid;grid-row:span 9;row-gap:0;padding:30px 28px 28px;border-radius:6px;
+.col{position:relative;display:grid;grid-template-rows:subgrid;grid-row:span 4;row-gap:0;padding:22px 22px 22px;border-radius:6px;
   background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.02));
   box-shadow:inset 0 0 0 1px var(--line),0 30px 60px -40px rgba(0,0,0,.8);
   transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
@@ -51,7 +51,8 @@ a{color:inherit}
 .col--con{--bar:linear-gradient(90deg,#D2654A,#B94F37)}
 .col--new{--bar:linear-gradient(90deg,#5FB6C2,#D2654A)}
 
-.num{margin-bottom:6px}
+.num{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.num b{font:500 13px/1 var(--mono);color:var(--muted)}
 .big{font:600 64px/1 var(--sans);letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1px rgba(95,182,194,.55);margin:6px 0 18px}
 .col--con .big{-webkit-text-stroke-color:rgba(210,101,74,.6)}
 .num span{font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--aqua)}
@@ -59,8 +60,8 @@ a{color:inherit}
 .ic{width:52px;height:52px;border-radius:6px;display:grid;place-items:center;background:rgba(95,182,194,.12);color:var(--aqua);margin-bottom:22px}
 .col--con .ic{background:rgba(210,101,74,.14);color:var(--orange-hi)}
 .ic svg{width:26px;height:26px}
-.col h2{margin:0;font-size:clamp(23px,2vw,27px);line-height:1.15;letter-spacing:-.025em;font-weight:650}
-.who{margin:10px 0 0;font-size:15px;color:var(--soft)}
+.col h2{margin:0;font-size:clamp(20px,1.7vw,23px);line-height:1.15;letter-spacing:-.025em;font-weight:650}
+.who{margin:8px 0 0;font-size:14.5px;line-height:1.5;color:var(--soft)}
 .chips{display:flex;flex-wrap:wrap;align-content:flex-start;gap:6px;margin:16px 0 0}
 .chips span{font-size:12.5px;font-weight:500;padding:5px 10px;border-radius:4px;background:rgba(255,255,255,.06);color:var(--soft);box-shadow:inset 0 0 0 1px var(--line)}
 .rule{height:1px;background:var(--line);margin:24px 0 20px}
@@ -69,7 +70,7 @@ ul{list-style:none;margin:0;padding:0;display:grid;gap:11px}
 li{display:grid;grid-template-columns:20px 1fr;gap:10px;font-size:15px;color:var(--text);line-height:1.45}
 li svg{width:18px;height:18px;margin-top:2px;color:var(--aqua)}
 .col--con li svg{color:var(--orange-hi)}
-.btn{margin-top:28px;align-self:end;display:flex;align-items:center;justify-content:center;gap:8px;min-height:50px;border-radius:999px;background:var(--orange);color:#fff;text-decoration:none;font-weight:600;font-size:16px;transition:background .2s}
+.btn{margin-top:20px;align-self:end;display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;border-radius:999px;background:var(--orange);color:#fff;text-decoration:none;font-weight:600;font-size:15px;transition:background .2s}
 .btn:hover{background:#A3442F}
 .btn svg{width:18px;height:18px}
 .spacer{flex:1}
@@ -100,55 +101,25 @@ li svg{width:18px;height:18px;margin-top:2px;color:var(--aqua)}
     <div class="grid">
       <!-- 1 -->
       <article class="col col--med">
-        <div class="num"><span>Existing medical</span></div>
-        <div class="big">01</div>
+        <div class="num"><span>Existing medical</span><b>01</b></div>
         <h2>Med spas, physicians &amp; practices</h2>
-        <p class="who">You already see patients. Add supply and new programs without adding overhead.</p>
-        <div class="chips"><span>Med spas</span><span>Physicians</span><span>Clinics</span><span>Practices</span></div>
-        <div class="rule"></div>
-        <p class="lab">What you get</p>
-        <ul>
-          <li><svg aria-hidden="true"><use href="#ck"/></svg>Wholesale pricing and volume ordering</li>
-          <li><svg aria-hidden="true"><use href="#ck"/></svg>White-label telehealth under your practice name</li>
-          <li><svg aria-hidden="true"><use href="#ck"/></svg>Regenerative medicine programs in 48 states</li>
-          <li><svg aria-hidden="true"><use href="#ck"/></svg>A dedicated account manager</li>
-        </ul>
+        <p class="who">Wholesale supply plus white-label telehealth and regenerative programs.</p>
         <a class="btn" href="#">Get wholesale pricing <svg aria-hidden="true"><use href="#ar"/></svg></a>
       </article>
 
       <!-- 2 -->
       <article class="col col--con">
-        <div class="num"><span>Existing consumer</span></div>
-        <div class="big">02</div>
+        <div class="num"><span>Existing consumer</span><b>02</b></div>
         <h2>Brands already selling to customers</h2>
-        <p class="who">You have customers and a store. Move your supply and fulfillment to us and grow faster.</p>
-        <div class="chips"><span>Online stores</span><span>RUO resellers</span><span>D2C brands</span></div>
-        <div class="rule"></div>
-        <p class="lab">What you get</p>
-        <ul>
-          <li><svg aria-hidden="true"><use href="#ck"/></svg>Your brand on every label and box</li>
-          <li><svg aria-hidden="true"><use href="#ck"/></svg>3PL warehousing, so you never touch inventory</li>
-          <li><svg aria-hidden="true"><use href="#ck"/></svg>Dropship straight to your customers</li>
-          <li><svg aria-hidden="true"><use href="#ck"/></svg>Affiliates who promote and sell your brand</li>
-        </ul>
+        <p class="who">Your brand, our warehouse, dropship and affiliates selling for you.</p>
         <a class="btn" href="#">Move my brand to Peplogix <svg aria-hidden="true"><use href="#ar"/></svg></a>
       </article>
 
       <!-- 3 -->
       <article class="col col--new">
-        <div class="num"><span>New B2B, consumer &amp; affiliate</span></div>
-        <div class="big">03</div>
+        <div class="num"><span>New B2B, consumer &amp; affiliate</span><b>03</b></div>
         <h2>New brands, businesses &amp; affiliates</h2>
-        <p class="who">Starting from zero, or want to earn by referring others? Launch a business in a box or join as an affiliate.</p>
-        <div class="chips"><span>New brands</span><span>New clinics</span><span>Affiliates</span></div>
-        <div class="rule"></div>
-        <p class="lab">What you get</p>
-        <ul>
-          <li><svg aria-hidden="true"><use href="#ck"/></svg>Your product lineup, branded and ready</li>
-          <li><svg aria-hidden="true"><use href="#ck"/></svg>An online storefront built for you</li>
-          <li><svg aria-hidden="true"><use href="#ck"/></svg>Inventory, packing and shipping handled</li>
-          <li><svg aria-hidden="true"><use href="#ck"/></svg>Affiliate program: earn on every brand and clinic you refer</li>
-        </ul>
+        <p class="who">Launch a business in a box, or earn as an affiliate.</p>
         <a class="btn" href="#">Start my brand or join <svg aria-hidden="true"><use href="#ar"/></svg></a>
       </article>
     </div>
