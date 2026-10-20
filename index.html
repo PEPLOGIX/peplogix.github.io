@@ -255,6 +255,14 @@ p{margin:0;text-wrap:pretty}
 .shop__thumbs span{height:6.4cqi;border-radius:1.2cqi;background:#F1F4F6;display:grid;place-items:center;box-shadow:inset 0 0 0 1px #E1E5EA}
 .shop__thumbs span.is-on{box-shadow:inset 0 0 0 .35cqi var(--teal)}
 .shop__thumbs svg{height:82%;width:auto}
+.shop__thumbs--line{grid-template-columns:repeat(4,1fr)}
+.shop__thumbs--line>span{position:relative;height:auto;aspect-ratio:1;overflow:hidden;background:#fff}
+.shop__thumbs--line>span>img{width:100%;height:100%;object-fit:cover;display:block}
+/* Uploaded logo laid over a product's YOUR LOGO HERE box (box measured on each 640px product photo) */
+.logoslot{position:absolute;display:grid;place-items:center;background:#fff;border-radius:2px}
+.logoslot[hidden]{display:none}
+.logoslot img{max-width:94%;max-height:90%;width:auto;height:auto;object-fit:contain}
+
 .shop__info{display:flex;flex-direction:column;justify-content:center;min-width:0}
 .shop__crumb{margin:0;font-size:1.7cqi;color:#858C98;letter-spacing:.02em}
 .shop__info h4{margin:.6cqi 0 0;font-size:5.2cqi;line-height:1;letter-spacing:-.03em;font-weight:700}
@@ -660,7 +668,7 @@ textarea.input.ob__notes{height:auto;min-height:96px;padding:12px 14px;resize:ve
             <div class="shop__body">
               <div class="shop__gallery">
                 <div class="shop__img"><span class="shop__tag">New</span><svg viewBox="0 0 118 276" aria-hidden="true"><use href="#shopVial" width="118" height="276"/></svg></div>
-                <div class="shop__thumbs"><span class="is-on"><svg viewBox="0 0 118 276"><use href="#shopVial" width="118" height="276"/></svg></span><span><svg viewBox="0 0 118 276"><use href="#shopVial" width="118" height="276"/></svg></span><span><svg viewBox="0 0 118 276"><use href="#shopVial" width="118" height="276"/></svg></span></div>
+                <div class="shop__thumbs shop__thumbs--line"><span class=""><img src="assets/prod-caps.webp" alt="BPC-157 capsules with a your-logo-here label" width="640" height="640"><span class="logoslot" style="left:29.8%;top:37.6%;width:34.8%;height:8.8%" hidden><img alt=""></span></span><span class=""><img src="assets/prod-spray.webp" alt="Cartalax Pro oral spray with a your-logo-here label" width="640" height="640"><span class="logoslot" style="left:34.6%;top:57.1%;width:19.4%;height:6.9%" hidden><img alt=""></span></span><span class=""><img src="assets/prod-serum.webp" alt="4-in-1 serum with a your-logo-here label" width="640" height="640"><span class="logoslot" style="left:38.0%;top:48.0%;width:24.8%;height:7.4%" hidden><img alt=""></span></span><span class=""><img src="assets/prod-nasal.webp" alt="ARA-290 nasal spray with a your-logo-here label" width="640" height="640"><span class="logoslot" style="left:40.9%;top:54.6%;width:18.6%;height:7.2%" hidden><img alt=""></span></span></div>
               </div>
               <div class="shop__info">
                 <p class="shop__crumb">Shop / Research peptides</p>
@@ -1201,6 +1209,7 @@ const setLogo = url => {
   const img = $("#shopLogo");
   if (url) img.src = url; else img.removeAttribute("src");
   img.hidden = !url; $(".shop__demo").style.display = url ? "none" : "";
+  $$(".logoslot").forEach(sl => { sl.hidden = !url; const im = sl.querySelector("img"); if (url) im.src = url; else im.removeAttribute("src"); });
   const sv = $("#shopVialLogo");
   if (url) sv.setAttribute("href", url); else sv.removeAttribute("href");
   sv.setAttribute("visibility", url ? "visible" : "hidden");

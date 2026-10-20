@@ -255,6 +255,14 @@ p{margin:0;text-wrap:pretty}
 .shop__thumbs span{height:6.4cqi;border-radius:1.2cqi;background:#F1F4F6;display:grid;place-items:center;box-shadow:inset 0 0 0 1px #E1E5EA}
 .shop__thumbs span.is-on{box-shadow:inset 0 0 0 .35cqi var(--teal)}
 .shop__thumbs svg{height:82%;width:auto}
+.shop__thumbs--line{grid-template-columns:repeat(4,1fr)}
+.shop__thumbs--line>span{position:relative;height:auto;aspect-ratio:1;overflow:hidden;background:#fff}
+.shop__thumbs--line>span>img{width:100%;height:100%;object-fit:cover;display:block}
+/* Uploaded logo laid over a product's YOUR LOGO HERE box (box measured on each 640px product photo) */
+.logoslot{position:absolute;display:grid;place-items:center;background:#fff;border-radius:2px}
+.logoslot[hidden]{display:none}
+.logoslot img{max-width:94%;max-height:90%;width:auto;height:auto;object-fit:contain}
+
 .shop__info{display:flex;flex-direction:column;justify-content:center;min-width:0}
 .shop__crumb{margin:0;font-size:1.7cqi;color:#858C98;letter-spacing:.02em}
 .shop__info h4{margin:.6cqi 0 0;font-size:5.2cqi;line-height:1;letter-spacing:-.03em;font-weight:700}
@@ -571,6 +579,14 @@ textarea.input.ob__notes{height:auto;min-height:96px;padding:12px 14px;resize:ve
 .combo .plan li{font-size:13.5px;padding:7px 10px}
 .combo .plan__cta{margin-top:18px;min-height:44px}
 .combo .plan__note{margin-top:10px;font-size:12.5px}
+.starthead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(20px,4vw,48px);align-items:center;margin-bottom:24px}
+@media (max-width:900px){.starthead{grid-template-columns:minmax(0,1fr)}}
+.page-start .starthead .section__head{margin-bottom:0}
+.lineup{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:0}
+.lineup figure{position:relative;margin:0;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 0 0 1px var(--line),0 10px 24px -16px rgba(30,33,42,.35)}
+.lineup figure>img{display:block;width:100%;height:auto;aspect-ratio:1}
+.lineup figcaption{grid-column:1/-1;font-size:13.5px;color:var(--muted);margin-top:4px}
+.lineup figcaption b{font-weight:600;color:var(--ink-2);letter-spacing:.02em}
 </style>
 </head>
 <body class="page-start">
@@ -647,10 +663,10 @@ textarea.input.ob__notes{height:auto;min-height:96px;padding:12px 14px;resize:ve
 <main id="top">
   <section class="section" id="build">
     <div class="wrap">
-      <div class="section__head rv">
+      <div class="starthead rv"><div class="section__head">
         <h2>Choose what we run for you.</h2>
         <p>Switch services on and off to see who handles what. Then send your brand details below and we'll price your setup on the call.</p>
-      </div>
+      </div><div class="lineup"><figure><img src="assets/prod-caps.webp" alt="BPC-157 capsules with a your-logo-here label" width="640" height="640"><span class="logoslot" style="left:29.8%;top:37.6%;width:34.8%;height:8.8%" hidden><img alt=""></span></figure><figure><img src="assets/prod-spray.webp" alt="Cartalax Pro oral spray with a your-logo-here label" width="640" height="640"><span class="logoslot" style="left:34.6%;top:57.1%;width:19.4%;height:6.9%" hidden><img alt=""></span></figure><figure><img src="assets/prod-serum.webp" alt="4-in-1 serum with a your-logo-here label" width="640" height="640"><span class="logoslot" style="left:38.0%;top:48.0%;width:24.8%;height:7.4%" hidden><img alt=""></span></figure><figure><img src="assets/prod-nasal.webp" alt="ARA-290 nasal spray with a your-logo-here label" width="640" height="640"><span class="logoslot" style="left:40.9%;top:54.6%;width:18.6%;height:7.2%" hidden><img alt=""></span></figure><figcaption>Your logo goes where it says <b>YOUR LOGO HERE</b>. Add it in the brand details below to see it on your line.</figcaption></div></div>
       <div class="build combo rv">
         <div class="svcs" id="svcList" role="group" aria-label="Services"></div>
         <aside class="plan" aria-live="polite" aria-labelledby="planCount">
@@ -864,8 +880,9 @@ const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const params = new URLSearchParams(location.search);
 const icon = id => `<svg aria-hidden="true"><use href="#${id}"/></svg>`;
 const emailOk = v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
-// no storefront preview on this page; the intake's logo upload has nothing else to update
-let hasLogo = true; const setLogo = () => {};
+// the intake's logo upload previews on the product lineup at the top
+let hasLogo = false;
+const setLogo = url => { hasLogo = !!url; $$(".logoslot").forEach(sl => { sl.hidden = !url; const im = sl.querySelector("img"); if (url) im.src = url; else im.removeAttribute("src"); }); };
 document.documentElement.classList.add("js");
 $("#yr").textContent = new Date().getFullYear();
 const nav = $("#nav");
