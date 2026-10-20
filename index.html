@@ -344,7 +344,9 @@ p{margin:0;text-wrap:pretty}
 .svc:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
 .svc__ic{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:var(--mist);color:var(--ink-2);transition:background .2s,color .2s}
 .svc__ic svg{width:20px;height:20px}
-.svc__ic--emoji{font-size:22px;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+.svc{grid-template-columns:48px 1fr 44px}
+.svc__ic.svc__ic--emoji{width:48px;height:48px;border-radius:12px}
+.svc__ic--emoji{font-size:28px;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
 .svc__t{display:block;font-weight:600;font-size:16px;letter-spacing:-.01em}
 .svc__d{display:block;font-size:14px;color:var(--muted);margin-top:2px;line-height:1.4}
 .sw{width:44px;height:26px;border-radius:999px;background:var(--line-2);position:relative;transition:background .25s var(--ease-out)}
