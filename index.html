@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Peplogix | Research peptides direct, wholesale and retail</title>
-<meta name="description" content="Peplogix partners with clinics, physicians, med spas, RUO resellers and affiliates: white-label products, 3PL and dropship fulfillment, and white-label telehealth and regenerative medicine programs in 48 states.">
+<meta name="description" content="Peplogix partners with clinics, physicians, med spas, RUO resellers and affiliates: white-label products, 3PL and dropship fulfillment, storefronts, and affiliate sales.">
 <link rel="canonical" href="https://peplogix.github.io/">
 <meta property="og:title" content="Research peptides, direct from the source | Peplogix">
-<meta property="og:description" content="White-label, 3PL, dropship, and 50-state telehealth programs for clinics, practices, and RUO brands.">
+<meta property="og:description" content="White-label, 3PL, dropship, storefronts, and affiliate sales for clinics, practices, and RUO brands.">
 <meta property="og:url" content="https://peplogix.github.io/">
 <meta property="og:image" content="https://peplogix.github.io/assets/peplogix-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -111,9 +111,12 @@ p{margin:0;text-wrap:pretty}
 .hero--brand{margin-top:0;padding-top:clamp(72px,9vw,112px);border-top:1px solid rgba(255,255,255,.06);background:radial-gradient(55% 50% at 100% 0%,rgba(95,182,194,.16),transparent 70%),#23262F}
 .hero--brand .h1like{font-size:clamp(36px,4.4vw,58px)}
 .hero--brand .h1like .l:first-child{font-size:.5em;letter-spacing:-.01em;color:#9AA1AD;margin-bottom:.4em}
-.hero__main{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(24px,4vw,56px);align-items:center}
+.hero__main{display:grid;grid-template-columns:minmax(0,1fr);justify-items:center}
+.hero__main .heroart{width:100%;max-width:980px}
 @media (max-width:1000px){.hero__main{grid-template-columns:minmax(0,1fr)}.heroart__photo{animation:none}}
 .hero--main{padding-bottom:clamp(56px,7vw,96px)}
+.hero--brand:first-child{margin-top:-68px;padding-top:calc(68px + clamp(48px,7vw,96px));border-top:0}
+.hero--brand+.hero--main{margin-top:0;padding-top:clamp(40px,5vw,72px);border-top:1px solid rgba(255,255,255,.06)}
 .paths{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px;align-items:start}
 @media (max-width:640px){.paths{grid-template-columns:minmax(0,1fr)}}
 .path{padding:22px;border-radius:18px;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);transition:box-shadow .25s var(--ease-out),transform .25s var(--ease-out)}
@@ -314,36 +317,6 @@ p{margin:0;text-wrap:pretty}
 .box__cta{display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px;margin-top:clamp(36px,4vw,48px)}
 .ruo-note{font-size:13px;line-height:1.5;color:var(--muted);max-width:70ch;margin:0}
 
-/* Telehealth */
-.tele{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,80px);align-items:center}
-@media (max-width:960px){.tele{grid-template-columns:1fr}}
-.tele__copy h2{font-size:clamp(32px,4.2vw,52px)}
-.tele__copy>p{margin-top:18px;font-size:19px;color:#BCC2CC;max-width:52ch}
-.tele__cols{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:36px 0}
-@media (max-width:520px){.tele__cols{grid-template-columns:1fr}}
-.tele__cols h3{color:#fff;font-size:19px;display:flex;align-items:center;gap:10px}
-.tele__cols h3 svg{width:20px;height:20px;color:var(--teal-glow)}
-.tele__cols p{margin-top:8px;color:#BCC2CC;font-size:16px}
-.tele__copy>.tele__fine{font-size:13px;color:#9AA1AD;margin-top:24px;max-width:60ch;line-height:1.5}
-.map{position:relative}
-.map__grid{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:repeat(8,1fr);gap:clamp(3px,.6vw,6px);aspect-ratio:12/8.4}
-.st{display:grid;place-items:center;border-radius:clamp(4px,.6vw,8px);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);font:500 clamp(9px,1.05vw,13px)/1 var(--mono);color:#858C98;transition:background .5s var(--ease-out),color .5s var(--ease-out),border-color .5s var(--ease-out)}
-.st{appearance:none;-webkit-appearance:none;margin:0;padding:0;min-width:0;cursor:pointer}
-.map.is-lit .st,.st.on{background:var(--teal);border-color:var(--teal-glow);color:#fff}
-.st:hover,.st:focus-visible,.st[aria-pressed="true"]{background:var(--accent);border-color:#F0A08C;color:#fff;transition-duration:.15s}
-.st:focus-visible{outline:2px solid #fff;outline-offset:2px}
-.map.is-lit .st.off,.st.off,.st.off.on{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.08);border-style:dashed;color:#5F6673}
-.st.off:hover,.st.off:focus-visible,.st.off[aria-pressed="true"]{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.25);color:#BCC2CC}
-.map__no{display:inline-flex;margin-left:8px;padding:2px 10px;border-radius:999px;background:rgba(255,255,255,.08);color:#BCC2CC;font-size:13px;font-weight:600;vertical-align:1px}
-.map__status{margin-top:16px;min-height:76px;padding:16px 18px;border-radius:12px;background:rgba(255,255,255,.05);color:#BCC2CC;font-size:15px;line-height:1.5}
-.map__status strong{color:#fff;font-weight:600}
-.map__ok{display:inline-flex;align-items:center;gap:6px;margin-left:8px;padding:2px 10px;border-radius:999px;background:rgba(95,182,194,.16);color:var(--teal-glow);font-size:13px;font-weight:600;vertical-align:1px}
-.map__ok svg{width:14px;height:14px}
-.map__status a{color:#fff;font-weight:600;text-underline-offset:.2em}
-.map__status a:hover{color:var(--teal-glow)}
-.map__status.flash{animation:panelIn .35s var(--ease-out)}
-.map__total{display:flex;align-items:baseline;gap:12px;margin-top:20px;color:#BCC2CC;font-size:15px}
-.map__total strong{font:500 40px/1 var(--mono);color:#fff;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
 
 /* Build your program */
 .build{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(24px,4vw,56px);align-items:start}
@@ -473,9 +446,104 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
 .foot__legal strong{color:#FFFFFF}
 
 /* Reveal: visible by default, enhanced only with JS */
+/* Partner onboarding: dark section, step rail, white working card (same card language as the apply form) */
+.ob{display:grid;gap:18px}
+.ob__steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.ob__steps button{all:unset;box-sizing:border-box;display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:center;padding:16px 18px;border-radius:14px;background:rgba(255,255,255,.04);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);cursor:pointer;transition:background .25s var(--ease-out),box-shadow .25s var(--ease-out)}
+.ob__steps button:hover{background:rgba(255,255,255,.07)}
+.ob__steps button:focus-visible{outline:2px solid var(--teal-glow);outline-offset:2px}
+.ob__steps button[aria-selected="true"]{background:linear-gradient(160deg,rgba(95,182,194,.18),rgba(95,182,194,.05));box-shadow:inset 0 0 0 1px rgba(95,182,194,.45)}
+.ob__n{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:14px;color:#9AA1AD;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.18);transition:background .25s,color .25s,box-shadow .25s}
+.ob__steps button[aria-selected="true"] .ob__tt small{color:#C4CAD3}
+.ob__steps button[aria-selected="true"] .ob__n{color:var(--ink);background:var(--teal-glow);box-shadow:none}
+.ob__steps button[data-done] .ob__n{color:var(--teal-glow);box-shadow:inset 0 0 0 1.5px var(--teal-glow)}
+.ob__tt b{display:block;color:#fff;font-weight:600;font-size:16px;letter-spacing:-.01em}
+.ob__tt small{display:block;color:#9AA1AD;font-size:13px;margin-top:2px;line-height:1.35}
+@media (max-width:760px){.ob__steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.ob__steps button{grid-template-columns:1fr;justify-items:center;text-align:center;padding:12px 8px;gap:8px}.ob__tt small{display:none}.ob__tt b{font-size:13px}}
+.ob__panel{background:#fff;color:var(--ink);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:clamp(24px,4vw,48px);animation:panelIn .4s var(--ease-out);scroll-margin-top:96px}
+.ob__panel[hidden]{display:none}
+.ob__panel>h3{font-size:clamp(26px,2.8vw,34px);max-width:24ch;color:var(--ink)}
+.ob__lead{margin-top:14px;color:var(--ink-2);max-width:60ch}
+.ob__part{padding-bottom:30px;margin-bottom:30px;border-bottom:1px solid var(--line)}
+.ob__ph{display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:baseline;margin-bottom:22px}
+.ob__pn{font-size:14px;color:var(--accent-ink)}
+.ob__ph h3{font-size:22px;letter-spacing:-.02em;color:var(--ink)}
+.ob__ph p{margin-top:4px;color:var(--muted);font-size:15px}
+@media (max-width:560px){.ob__ph{grid-template-columns:1fr;gap:4px}}
+.ob__fine{margin:8px 0 0;font-size:14px;color:var(--muted)}
+.ob__fine--lock{display:inline-flex;align-items:center;gap:8px;margin:0}
+.ob__fine--lock svg{width:16px;height:16px;color:var(--teal)}
+.ob__check{display:inline-flex;align-items:center;gap:10px;font-size:15px;color:var(--ink-2);cursor:pointer;margin-bottom:14px}
+.ob__check input{width:18px;height:18px;margin:0;accent-color:var(--teal)}
+.ob__swatches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;transition:opacity .25s var(--ease-out)}
+.ob__swatches.is-off{opacity:.4;pointer-events:none}
+@media (max-width:560px){.ob__swatches{grid-template-columns:minmax(0,1fr)}}
+.swatch{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:var(--radius);box-shadow:0 0 0 1px var(--line-2);cursor:pointer;transition:box-shadow .15s}
+.swatch:hover{box-shadow:0 0 0 1px var(--ink-2)}
+.swatch:focus-within{box-shadow:0 0 0 1.5px var(--teal),0 0 0 5px var(--teal-wash)}
+.swatch input{width:36px;height:36px;padding:0;border:0;border-radius:8px;background:none;cursor:pointer;flex:none}
+.swatch input::-webkit-color-swatch-wrapper{padding:0}
+.swatch input::-webkit-color-swatch{border:1px solid rgba(0,0,0,.12);border-radius:8px}
+.swatch input::-moz-color-swatch{border:1px solid rgba(0,0,0,.12);border-radius:8px}
+.swatch b{display:block;font-size:14px;font-weight:600}
+.swatch i{display:block;font-style:normal;font-size:13px;color:var(--muted);text-transform:uppercase}
+.field .drop--light{display:flex;font-weight:400;margin-bottom:0}
+.field .ob__files{display:flex;margin-bottom:0}
+.drop--light{margin-top:0;border-color:var(--line-2);background:var(--mist)}
+.drop--light:hover,.drop--light.is-over{border-color:var(--teal);background:var(--teal-wash)}
+.drop--light:focus-within{outline-color:var(--teal)}
+.drop--light .drop__ic{background:#fff;color:var(--teal);box-shadow:0 0 0 1px var(--line)}
+.drop--light .drop__t{color:var(--ink)}
+.drop--light .drop__t u{color:var(--teal-ink)}
+.drop--light .drop__d{color:var(--muted)}
+.drop--light .drop__x{color:var(--muted)}
+.drop--light .drop__x:hover{color:var(--ink);background:#fff}
+.drop--light .drop__err{color:var(--danger)}
+.ob__files{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;padding:12px 14px;border-radius:var(--radius);box-shadow:inset 0 0 0 1px var(--line-2);cursor:pointer;font-size:15px;font-weight:500;color:var(--ink-2);transition:box-shadow .15s,background .15s}
+.ob__files:hover{box-shadow:inset 0 0 0 1px var(--ink-2)}
+.ob__files svg{width:16px;height:16px;color:var(--teal)}
+.ob__files small{margin-left:auto;color:var(--muted);font-size:13px;font-weight:400}
+#ob_files:focus-visible+.ob__files{outline:2px solid var(--teal);outline-offset:2px}
+.ob__filelist{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:6px}
+.ob__filelist li{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--ink-2);padding:8px 12px;border-radius:8px;background:var(--mist)}
+.ob__filelist li span:last-child{color:var(--muted);white-space:nowrap}
+.conns{display:grid;gap:10px}
+.conn{position:relative;display:grid;grid-template-columns:40px 1fr;gap:16px;align-items:center;padding:16px 18px;border-radius:14px;box-shadow:0 0 0 1px var(--line);cursor:pointer;transition:box-shadow .2s var(--ease-out)}
+.conn:hover{box-shadow:0 0 0 1px var(--line-2),0 6px 18px -10px rgba(0,0,0,.25)}
+.conn input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.conn__ic{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:var(--mist);color:var(--ink-2);transition:background .2s,color .2s}
+.conn__ic svg{width:20px;height:20px}
+.conn__tx b{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font-weight:600;font-size:16px;letter-spacing:-.01em}
+.conn__tx em{font:500 11px/1 var(--mono);font-style:normal;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-ink);background:var(--teal-wash);padding:5px 8px;border-radius:999px}
+.conn__tx small{display:block;font-size:14px;color:var(--muted);margin-top:3px;line-height:1.45}
+.conn:has(input:checked){box-shadow:0 0 0 1.5px var(--teal)}
+.conn:has(input:checked) .conn__ic{background:var(--teal-wash);color:var(--teal-ink)}
+.conn:has(input:focus-visible){outline:2px solid var(--teal);outline-offset:2px}
+textarea.input.ob__notes{height:auto;min-height:96px;padding:12px 14px;resize:vertical;line-height:1.5}
+.ob__next{margin-top:28px}
+.ob__connect{margin-top:32px;padding-top:28px;border-top:1px solid var(--line)}
+.ob__connect h4{font-size:18px;letter-spacing:-.01em}
+.ob__connect>p{margin-top:6px;color:var(--ink-2);font-size:15px;max-width:62ch}
+.ob__connect .label{margin-top:22px}
+.ob__empty{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-top:18px;padding:16px 18px;border-radius:12px;background:var(--mist)}
+.ob__empty p{margin:0;color:var(--muted);font-size:15px;flex:1 1 260px}
+.copyrow{display:flex;align-items:center;gap:10px;padding:8px 8px 8px 16px;border-radius:12px;background:#fff;box-shadow:inset 0 0 0 1px var(--line-2)}
+.copyrow code{flex:1;min-width:0;font-size:14px;color:var(--ink);overflow-wrap:anywhere;line-height:1.5}
+.copyrow--code code{font-size:13px;color:var(--ink-2)}
+.copyrow--big{margin-top:24px;padding:10px 10px 10px 20px}
+.copyrow--big code{font-size:clamp(15px,1.8vw,18px);color:var(--teal-ink)}
+.copyrow .btn{flex:none}
+.copyrow .btn[data-copied]{--bg:var(--ok)}
+.ob__how{margin:14px 0 0;font-size:14px;color:var(--muted);max-width:68ch}
+.ob__cart{margin:22px 0 24px;font-size:15px;color:var(--ink-2);max-width:68ch}
+.ob__facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px;margin:28px 0 0}
+.ob__facts div{padding:14px 0;border-top:1px solid var(--line)}
+.ob__facts dt{font-size:13px;color:var(--muted)}
+.ob__facts dd{margin:4px 0 0;font-weight:600;color:var(--ink)}
+@media (max-width:560px){.ob__facts{grid-template-columns:minmax(0,1fr)}}
 .js .rv{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out)}
 .js .rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}.st,.seg__panel[data-anim],.form__step{transition:none;animation:none}}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}.st,.seg__panel[data-anim],.form__step,.ob__panel{transition:none;animation:none}}
 </style>
 </head>
 <body>
@@ -545,61 +613,18 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
 <header class="nav" id="nav">
   <div class="wrap nav__in">
     <a class="logo" href="#top" aria-label="Peplogix home"><img class="on-light" src="assets/peplogix-logo.png" alt="" width="130" height="34"><img class="on-dark" src="assets/peplogix-logo-white.png" alt="" width="130" height="34"></a>
-    <a class="btn btn--sm btn--call" href="#apply" data-cta="nav">Become a partner</a>
+    <a class="btn btn--sm btn--call" href="#onboard" data-cta="nav">Start your brand</a>
   </div>
 </header>
 
 <main id="top">
-  <!-- Hero -->
-  <section class="hero hero--main">
-    <div class="wrap hero__top">
-      <h1><span class="l">Research peptides,</span> <em>direct from the source.</em></h1>
-        <div class="paths">
-          <div class="path path--b2b">
-            <span class="path__tag">For business</span>
-            <h3>Clinics &amp; practices</h3>
-            <p>Wholesale pricing, volume ordering, and a dedicated account manager.</p>
-            <a class="btn" href="#apply" data-preselect-type="clinic" data-preselect-interest="supply" data-cta="hero-b2b">Get wholesale pricing <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          </div>
-          <div class="path path--d2c">
-            <span class="path__tag">For individuals</span>
-            <h3>Order direct</h3>
-            <p>Research peptides shipped to you. 21+ only.</p>
-            <a class="btn btn--call" id="d2cBtn" href="#d2cForm" aria-expanded="false" aria-controls="d2cForm">Shop direct <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <form class="d2c__form" id="d2cForm" hidden novalidate>
-              <div class="field"><label for="d2c_name">First name</label><input class="input" id="d2c_name" autocomplete="given-name" required></div>
-              <div class="field"><label for="d2c_email">Email</label><input class="input" id="d2c_email" type="email" autocomplete="email" required></div>
-              <div class="field"><label for="d2c_state">State</label><select class="input" id="d2c_state" required><option value="">State</option></select></div>
-              <button class="btn" type="submit" id="d2cSubmit">Email me the store link</button>
-              <p class="err" id="err-d2c"><svg width="16" height="16" aria-hidden="true"><use href="#i-alert"/></svg>Enter your first name, a valid email, and your state.</p>
-              <p class="d2c__done" id="d2cDone" hidden>Thanks. Check your inbox for the link.</p>
-            </form>
-          </div>
-        </div>
-        <p class="hero__ruo hero__ruo--top">All products are for research use only. Not for human consumption.</p>
-    </div>
-    <div class="wrap hero__main">
-      <div>
-        <p class="hero__lead hero__lead--main"><strong>Skip the middlemen.</strong> Clinics and practices get wholesale accounts; individual researchers order direct.</p>
-        <a class="btn btn--call hero__more" href="#your-brand">See wholesale, white-label &amp; more <svg aria-hidden="true"><use href="#i-down"/></svg></a>
-      </div>
-      <div class="heroart">
-        <figure class="heroart__photo"><img src="assets/product-lineup-float.webp?v=straight" width="1800" height="1125" alt="Peplogix Peptides product lineup: Reta (GLP-3) 60 mg vial, Gut Inflammation capsules, NAD+ nasal spray, and GHK-Cu peptide serum, all labeled research use only" fetchpriority="high"><span class="ylh" style="left:13.5%;top:51.1%;font-size:1.45cqi">YOUR LOGO HERE</span><span class="ylh" style="left:43.2%;top:43.9%;font-size:1.95cqi">YOUR LOGO HERE</span><span class="ylh" style="left:69.2%;top:56%;font-size:1cqi">YOUR LOGO HERE</span><span class="ylh" style="left:89.2%;top:54.4%;font-size:1.2cqi">YOUR LOGO HERE</span><span class="fixlbl" style="left:30.3%;top:64.45%;width:5.4%;height:2.4%">BPC-157:</span><span class="fixlbl" style="left:30.3%;top:67.3%;width:4.95%;height:2.45%">TB-500:</span></figure>
-        <div class="heroart__pills">
-          <span class="heroart__pill"><svg aria-hidden="true"><use href="#i-check-circle"/></svg>Wholesale for clinics</span>
-          <span class="heroart__pill"><svg aria-hidden="true"><use href="#i-truck"/></svg>Direct to individuals</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="hero hero--brand" id="your-brand">
     <div class="wrap hero__grid">
       <div>
-        <h2 class="h1like"><span class="l">Want your own brand?</span> <span class="l">Put your name on it.</span> <em>We’ll do the rest.</em></h2>
-        <p class="hero__sub">We supply the product, store it, ship every order, build your storefront, and put our affiliates to work selling your brand. Drop your logo in and see it.</p>
+        <h1 class="h1like"><span class="l">Want your own brand?</span> <span class="l">Put your name on it.</span> <em>We’ll do the rest.</em></h1>
+        <p class="hero__sub">We supply the product, store it, ship every order, build your storefront, and integrate affiliate sales into your brand. Drop your logo in and see it.</p>
         <div class="hero__cta">
-          <a class="btn" href="#apply" data-preselect-type="founder" data-preselect-interest="ruo-box,storefront,affiliate" data-cta="brand">Start my brand <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn" href="#onboard" data-preselect-type="founder" data-preselect-interest="ruo-box,storefront,affiliate" data-cta="brand">Start my brand <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
           <a class="btn btn--call" href="#apply" data-book data-cta="brand-book"><svg aria-hidden="true"><use href="#i-phone"/></svg>Book a call</a>
         </div>
         <p class="trust"><svg aria-hidden="true"><use href="#i-check-circle"/></svg>White-label, 3PL, dropship, storefront, and affiliates</p>
@@ -641,7 +666,7 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
                 <p class="shop__crumb">Shop / Research peptides</p>
                 <h4>TIRZ <small>60 mg</small></h4>
                 <p class="shop__meta">Purity 99% · Lyophilized powder</p>
-                <p class="shop__price">$199<sup>.00</sup></p>
+                <p class="shop__price">$299<sup>.00</sup></p>
                 <div class="shop__pills"><span>60 mg</span><span>30 mg</span><span>10 mg</span></div>
                 <div class="shop__buy"><span class="shop__qty"><i>−</i>1<i>+</i></span><span class="shop__btn">Add to cart</span></div>
                 <div class="shop__trust">
@@ -737,57 +762,27 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
           <li class="kit__item" style="--i:1"><span class="kit__ic"><svg aria-hidden="true"><use href="#i-box"/></svg></span><span><b>Inventory storage</b><small>3PL</small></span></li>
           <li class="kit__item" style="--i:2"><span class="kit__ic"><svg aria-hidden="true"><use href="#i-truck"/></svg></span><span><b>Orders shipped to your customers</b><small>Dropship</small></span></li>
           <li class="kit__item" style="--i:3"><span class="kit__ic"><svg aria-hidden="true"><use href="#i-store"/></svg></span><span><b>Your online storefront</b><small>Built for you</small></span></li>
-          <li class="kit__item" style="--i:4"><span class="kit__ic"><svg aria-hidden="true"><use href="#i-mega"/></svg></span><span><b>Affiliates selling your brand</b><small>Growth</small></span></li>
-          <li class="kit__item" style="--i:5"><span class="kit__ic"><svg aria-hidden="true"><use href="#i-steth"/></svg></span><span><b>Telehealth in 48 states</b><small>White-label</small></span></li>
-          <li class="kit__item" style="--i:6"><span class="kit__ic"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><span><b>A partner manager on the phone</b><small>Onboarding</small></span></li>
-          <li class="kit__item" style="--i:7"><span class="kit__ic"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><span><b>Private partner portal</b><small>Access</small></span></li>
+          <li class="kit__item" style="--i:4"><span class="kit__ic"><svg aria-hidden="true"><use href="#i-mega"/></svg></span><span><b>Affiliate sales built into your brand</b><small>Growth</small></span></li>
+          <li class="kit__item" style="--i:5"><span class="kit__ic"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><span><b>A partner manager on the phone</b><small>Onboarding</small></span></li>
+          <li class="kit__item" style="--i:6"><span class="kit__ic"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><span><b>Private partner portal</b><small>Access</small></span></li>
         </ul>
       </div>
-      <div class="scrollcue"><a href="#partners">See every way we work with you <svg aria-hidden="true"><use href="#i-down"/></svg></a></div>
+      <div class="scrollcue"><a href="#build">See everything we can run for you <svg aria-hidden="true"><use href="#i-down"/></svg></a></div>
     </div>
   </section>
 
-  <!-- Segments -->
-  <section class="section section--mist" id="partners">
-    <div class="wrap">
-      <div class="section__head rv">
-        <h2>Pick what you are. We'll show you what you get.</h2>
-        <p>Every partner plugs into the same infrastructure. What changes is what you sell, who you sell it to, and how much of it we run for you.</p>
-      </div>
-      <div class="seg rv">
-        <div class="seg__tabs" role="tablist" aria-label="Partner types" id="segTabs"></div>
-        <div class="seg__panel" role="tabpanel" id="segPanel" tabindex="0"></div>
+  <!-- Product lineup -->
+  <section class="hero hero--main">
+    <div class="wrap hero__main">
+      <div class="heroart">
+        <figure class="heroart__photo"><img src="assets/product-lineup-float.webp?v=straight" width="1800" height="1125" alt="Peplogix Peptides product lineup: Reta (GLP-3) 60 mg vial, Gut Inflammation capsules, NAD+ nasal spray, and GHK-Cu peptide serum, all labeled research use only" fetchpriority="high"><span class="ylh" style="left:13.5%;top:51.1%;font-size:1.45cqi">YOUR LOGO HERE</span><span class="ylh" style="left:43.2%;top:43.9%;font-size:1.95cqi">YOUR LOGO HERE</span><span class="ylh" style="left:69.2%;top:56%;font-size:1cqi">YOUR LOGO HERE</span><span class="ylh" style="left:89.2%;top:54.4%;font-size:1.2cqi">YOUR LOGO HERE</span><span class="fixlbl" style="left:30.3%;top:64.45%;width:5.4%;height:2.4%">BPC-157:</span><span class="fixlbl" style="left:30.3%;top:67.3%;width:4.95%;height:2.45%">TB-500:</span></figure>
       </div>
     </div>
   </section>
 
 
-  <!-- Telehealth & regen -->
-  <section class="section section--ink" id="telehealth">
-    <div class="wrap tele">
-      <div class="tele__copy rv">
-        <h2>Your own telehealth program, in&nbsp;48&nbsp;states.</h2>
-        <p>Offer telehealth and regenerative medicine under your practice's brand, without building the platform, the provider network, or the pharmacy relationships yourself.</p>
-        <div class="tele__cols">
-          <div>
-            <h3><svg aria-hidden="true"><use href="#i-steth"/></svg>White-label telehealth</h3>
-            <p>A branded telehealth offering your patients book with you. We run the infrastructure behind it.</p>
-          </div>
-          <div>
-            <h3><svg aria-hidden="true"><use href="#i-cells"/></svg>Regenerative medicine</h3>
-            <p>Add regenerative medicine programs to your practice's menu, available in 48 states.</p>
-          </div>
-        </div>
-        <a class="btn btn--call" href="#apply" data-preselect-interest="telehealth" data-cta="telehealth">Talk to us about telehealth <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        <p class="tele__fine">Clinical services are provided by independent, licensed healthcare providers. Program details, eligibility, and requirements vary by state and by your role. We'll go through what applies to you on your call.</p>
-      </div>
-      <div class="map rv" id="usMap">
-        <div class="map__grid" id="mapGrid" role="group" aria-label="48 states are covered. Select a state to check it."></div>
-        <p class="map__total"><strong class="mono" id="mapCount">48</strong> of 50 states covered</p>
-        <div class="map__status" id="mapStatus" aria-live="polite">Hover or tap any state to check coverage.</div>
-      </div>
-    </div>
-  </section>
+
+
 
   <!-- Build your program -->
   <section class="section" id="build">
@@ -808,6 +803,139 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
           <a class="btn btn--call plan__cta" href="#apply" id="planCta">Apply with this setup <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
           <p class="plan__note">Every partner gets a dedicated partner manager.</p>
         </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner onboarding: brand intake, website setup, partner link -->
+  <section class="section section--ink" id="onboard">
+    <div class="wrap">
+      <div class="section__head rv">
+        <h2>Your brand, connected to your website.</h2>
+        <p>Send us your brand details, choose how it plugs into the site you already have, and get a partner link with your referral code built in.</p>
+      </div>
+      <div class="ob rv">
+        <div class="ob__steps" role="tablist" aria-label="Partner onboarding steps">
+          <button type="button" role="tab" id="obt-1" aria-controls="obp-1" aria-selected="true" data-ob="1"><span class="ob__n mono" aria-hidden="true">1</span><span class="ob__tt"><b>Brand intake</b><small>Details, colors and logo</small></span></button>
+          <button type="button" role="tab" id="obt-2" aria-controls="obp-2" aria-selected="false" tabindex="-1" data-ob="2"><span class="ob__n mono" aria-hidden="true">2</span><span class="ob__tt"><b>Website setup</b><small>How it connects to your site</small></span></button>
+          <button type="button" role="tab" id="obt-3" aria-controls="obp-3" aria-selected="false" tabindex="-1" data-ob="3"><span class="ob__n mono" aria-hidden="true">3</span><span class="ob__tt"><b>Your partner link</b><small>Your code, your credit</small></span></button>
+        </div>
+
+        <div class="ob__panel" id="obp-1" role="tabpanel" aria-labelledby="obt-1">
+          <div class="form__alert" id="obAlert" role="alert"></div>
+          <form id="obForm" novalidate>
+            <div class="ob__part">
+              <div class="ob__ph"><span class="ob__pn mono" aria-hidden="true">01</span><div><h3>About your business</h3><p>The basics, so we know who we're working with.</p></div></div>
+              <div class="row">
+                <div class="field"><label for="ob_brand">Business or brand name</label><input class="input" id="ob_brand" autocomplete="organization" required aria-describedby="err-ob_brand"><p class="err" id="err-ob_brand"><svg width="16" height="16" aria-hidden="true"><use href="#i-alert"/></svg>Enter your business or brand name.</p></div>
+                <div class="field"><label for="ob_name">Your name</label><input class="input" id="ob_name" autocomplete="name" required aria-describedby="err-ob_name"><p class="err" id="err-ob_name"><svg width="16" height="16" aria-hidden="true"><use href="#i-alert"/></svg>Enter your name.</p></div>
+              </div>
+              <div class="row">
+                <div class="field"><label for="ob_email">Email</label><input class="input" id="ob_email" type="email" autocomplete="email" inputmode="email" required aria-describedby="err-ob_email"><p class="err" id="err-ob_email"><svg width="16" height="16" aria-hidden="true"><use href="#i-alert"/></svg>Enter a valid email, like name@yourbrand.com.</p></div>
+                <div class="field"><label for="ob_site">Website</label><input class="input" id="ob_site" inputmode="url" autocomplete="url" placeholder="yourbrand.com" required aria-describedby="err-ob_site"><p class="err" id="err-ob_site"><svg width="16" height="16" aria-hidden="true"><use href="#i-alert"/></svg>Enter your website address, like yourbrand.com.</p></div>
+              </div>
+              <div class="field">
+                <label for="ob_platform">What is your website built on?</label>
+                <select class="input" id="ob_platform" required aria-describedby="err-ob_platform"><option value="">Select your platform</option><option>WordPress</option><option>Shopify</option><option>Wix</option><option>Squarespace</option><option>Webflow</option><option>Other</option><option>Not sure</option></select>
+                <p class="err" id="err-ob_platform"><svg width="16" height="16" aria-hidden="true"><use href="#i-alert"/></svg>Pick your platform. "Not sure" is fine.</p>
+              </div>
+            </div>
+
+            <div class="ob__part">
+              <div class="ob__ph"><span class="ob__pn mono" aria-hidden="true">02</span><div><h3>Make it feel like your brand</h3><p>Your colors, your logo, your look.</p></div></div>
+              <fieldset>
+                <legend>Brand colors</legend>
+                <label class="ob__check"><input type="checkbox" id="ob_sitecolors"><span>Use the colors already on my website</span></label>
+                <div class="ob__swatches" id="obSwatches">
+                  <label class="swatch"><input type="color" id="ob_c1" value="#1E212A"><span><b>Primary</b><i class="mono" id="ob_c1v">#1E212A</i></span></label>
+                  <label class="swatch"><input type="color" id="ob_c2" value="#217F8C"><span><b>Secondary</b><i class="mono" id="ob_c2v">#217F8C</i></span></label>
+                  <label class="swatch"><input type="color" id="ob_c3" value="#D2654A"><span><b>Accent</b><i class="mono" id="ob_c3v">#D2654A</i></span></label>
+                </div>
+              </fieldset>
+              <div class="field">
+                <span class="label" id="obLogoLbl">Logo <span class="hint">Recommended</span></span>
+                <label class="drop drop--light" id="obDrop" aria-labelledby="obLogoLbl">
+                  <span class="drop__ic" id="obDropIc"></span>
+                  <span><span class="drop__t" id="obDropT"></span><span class="drop__d" id="obDropD"></span></span>
+                  <button type="button" class="drop__x" id="obDropX" hidden>Remove</button>
+                  <input type="file" id="ob_logo" class="sr-only" accept="image/png,image/jpeg,image/svg+xml,image/webp,application/pdf">
+                </label>
+                <p class="ob__fine">No logo yet? Say so in the notes and we'll work from your brand name.</p>
+              </div>
+              <div class="field">
+                <span class="label">Extra brand files <span class="hint">Optional</span></span>
+                <input type="file" id="ob_files" class="sr-only" multiple accept="image/*,application/pdf">
+                <label class="ob__files" for="ob_files"><svg aria-hidden="true"><use href="#i-plus"/></svg><span>Add brand guidelines or alternate logos</span><small>Up to 3 files, 5 MB each</small></label>
+                <ul class="ob__filelist" id="obFileList"></ul>
+                <p class="err" id="err-ob_files"><svg width="16" height="16" aria-hidden="true"><use href="#i-alert"/></svg><span id="obFilesMsg"></span></p>
+              </div>
+            </div>
+
+            <div class="ob__part">
+              <div class="ob__ph"><span class="ob__pn mono" aria-hidden="true">03</span><div><h3>How should we connect?</h3><p>Pick the setup that fits your business.</p></div></div>
+              <fieldset>
+                <legend class="sr-only">Website connection</legend>
+                <div class="conns">
+                  <label class="conn"><input type="radio" name="ob_conn" value="site" checked><span class="conn__ic"><svg aria-hidden="true"><use href="#i-store"/></svg></span><span class="conn__tx"><b>A branded site, linked from yours <em>Recommended</em></b><small>We build a separate store in your brand and you link to it from your current website.</small></span></label>
+                  <label class="conn"><input type="radio" name="ob_conn" value="cart"><span class="conn__ic"><svg aria-hidden="true"><use href="#i-box"/></svg></span><span class="conn__tx"><b>A shopping-cart connection</b><small>Add or link a shopping experience inside your current site. We scope it with you.</small></span></label>
+                  <label class="conn"><input type="radio" name="ob_conn" value="link"><span class="conn__ic"><svg aria-hidden="true"><use href="#i-arrow"/></svg></span><span class="conn__tx"><b>Just a partner link</b><small>A tracked link to share on your site and socials. No new site needed.</small></span></label>
+                </div>
+              </fieldset>
+              <div class="row">
+                <div class="field"><label for="ob_menu">Menu or button name <span class="hint">Optional</span></label><input class="input" id="ob_menu" placeholder="Shop peptides"></div>
+                <div class="field"><label for="ob_ref">Referral name <span class="hint">Optional</span></label><input class="input" id="ob_ref" placeholder="yourbrand" autocapitalize="none" spellcheck="false" aria-describedby="ob_refHint"><p class="ob__fine" id="ob_refHint">We add a short unique ending to keep your code yours.</p></div>
+              </div>
+            </div>
+
+            <div class="field"><label for="ob_notes">Anything else we should know? <span class="hint">Optional</span></label><textarea class="input ob__notes" id="ob_notes" rows="3"></textarea></div>
+            <input type="text" name="_honey" id="ob_honey" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <label class="consent"><input type="checkbox" id="ob_consent" required aria-describedby="err-ob_consent"><span>I authorize Peplogix to use these details and brand files to prepare my setup, and I have permission to share these assets.</span></label>
+            <p class="err" id="err-ob_consent" style="margin-top:-16px;margin-bottom:20px"><svg width="16" height="16" aria-hidden="true"><use href="#i-alert"/></svg>Please confirm so we can use your brand files.</p>
+            <div class="form__actions">
+              <button class="btn btn--primary" type="submit" id="obSubmit">Send brand details <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+              <p class="ob__fine ob__fine--lock"><svg aria-hidden="true"><use href="#i-lock"/></svg>No passwords or payment details needed.</p>
+            </div>
+          </form>
+        </div>
+
+        <div class="ob__panel" id="obp-2" role="tabpanel" aria-labelledby="obt-2" hidden>
+          <h3 id="obSetupTitle">A branded site, linked from yours.</h3>
+          <p class="ob__lead" id="obSetupLead">We plan a separate store in your brand. Your current website stays exactly where it is, on any platform, and links to it.</p>
+          <ol class="next ob__next">
+            <li><span class="dot mono">1</span><div><strong>Send your brand details</strong><span>Website, colors, logo and how you want to connect.</span></div></li>
+            <li><span class="dot mono">2</span><div><strong>We confirm the setup</strong><span>Your partner manager reviews the site, content and destination with you. Nothing changes on your website automatically.</span></div></li>
+            <li><span class="dot mono">3</span><div><strong>Add your partner link</strong><span>Put it in your menu or on a button. Visitors who click it land on your store with your code attached.</span></div></li>
+          </ol>
+          <div class="ob__connect">
+            <h4>Copy and connect</h4>
+            <p>One link with your referral code already in it. Visitors click, the visit is credited to you, and there's nothing for them to type.</p>
+            <div class="ob__empty" data-ob-empty><p>Your link and button code show up here after you send your brand details.</p><button type="button" class="btn btn--sm btn--ghost" data-ob-go="1">Start brand intake</button></div>
+            <div data-ob-filled hidden>
+              <span class="label">Your partner link</span>
+              <div class="copyrow"><code class="mono" data-ob-link></code><button type="button" class="btn btn--sm btn--ink" data-copy="link">Copy</button></div>
+              <span class="label" style="margin-top:18px">Button code for your site</span>
+              <div class="copyrow copyrow--code"><code class="mono" id="obHtml"></code><button type="button" class="btn btn--sm btn--ink" data-copy="html">Copy</button></div>
+              <p class="ob__how" id="obHow"></p>
+            </div>
+          </div>
+          <p class="ob__cart"><strong>Need a shopping-cart connection?</strong> Pick it in the brand intake and tell us what you need. We confirm the platform and scope with you. Sending the form doesn't install a cart or change your website.</p>
+          <button type="button" class="btn btn--ghost" data-ob-go="1">Edit brand details</button>
+        </div>
+
+        <div class="ob__panel" id="obp-3" role="tabpanel" aria-labelledby="obt-3" hidden>
+          <h3>Your link. Your code. Your credit.</h3>
+          <p class="ob__lead">Share this link on your website and socials. Every visit that comes through it carries your referral code, so the order is credited to you.</p>
+          <div class="ob__empty" data-ob-empty><p>Your partner link appears here after you send your brand details.</p><button type="button" class="btn btn--sm btn--ghost" data-ob-go="1">Start brand intake</button></div>
+          <div data-ob-filled hidden>
+            <div class="copyrow copyrow--big"><code class="mono" data-ob-link></code><button type="button" class="btn btn--ink" data-copy="link">Copy link</button></div>
+            <dl class="ob__facts">
+              <div><dt>Referral code</dt><dd class="mono" id="obCode"></dd></div>
+              <div><dt>Brand</dt><dd id="obBrandOut"></dd></div>
+              <div><dt>Connection</dt><dd id="obConnOut"></dd></div>
+              <div><dt>Click tracking</dt><dd>Turns on once your partner manager confirms your setup.</dd></div>
+            </dl>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -925,10 +1053,9 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
       <div class="section__head rv"><h2>Questions partners ask first.</h2></div>
       <div class="faq rv">
         <details><summary>Is there a cost to apply?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><p>No. Applying is free. Pricing depends on your program and volume, and your partner manager walks you through it on the call.</p></details>
-        <details><summary>Are there minimum orders?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><p>It depends on the program. White-label brands, clinic supply, and telehealth programs each work differently. We'll give you the exact numbers for your setup on the call.</p></details>
+        <details><summary>Are there minimum orders?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><p>It depends on the program. White-label brands, clinic supply, and dropship programs each work differently. We'll give you the exact numbers for your setup on the call.</p></details>
         <details><summary>How does onboarding work?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><p>After you apply, a partner manager calls you to understand your business. If it's a fit, you get access to our private partner portal with the catalog, pricing, and onboarding steps, and we set up your program from there.</p></details>
-        <details><summary>What's the difference between RUO products and the clinical programs?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><p>RUO (research use only) products are sold for laboratory research and are not for human consumption. Telehealth and regenerative medicine are separate clinical programs delivered by licensed providers. They are run, sold, and labeled separately.</p></details>
-        <details><summary>Do I need a medical license?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Not for an RUO brand or the affiliate program. Clinical programs have requirements that depend on your state and your role. We'll tell you what applies before you commit to anything.</p></details>
+        <details><summary>Do I need a medical license?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Not for an RUO brand, wholesale supply, or the affiliate program. If anything in your setup needs a license, we'll tell you before you commit to anything.</p></details>
         <details><summary>Will my customers see the Peplogix name?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><p>White-label means your brand goes on the product and the packaging. Your partner manager will confirm exactly how labeling and shipping work for your program.</p></details>
       </div>
     </div>
@@ -942,9 +1069,7 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
       <a class="logo" href="#top"><img src="assets/peplogix-logo-white.png" alt="Peplogix" width="122" height="32"></a>
       <nav aria-label="Footer">
         <ul>
-          <li><a href="#partners">Who we work with</a></li>
           <li><a href="#your-brand">Your own brand</a></li>
-          <li><a href="#telehealth">Telehealth</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
         <ul>
@@ -958,7 +1083,6 @@ select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w
     </div>
     <div class="foot__legal">
       <p><strong>Research use only.</strong> All RUO products sold by Peplogix and its white-label partners are intended solely for laboratory research. They are not for human or veterinary use, are not drugs, food, supplements, or cosmetics, and have not been evaluated by the FDA. They are not intended to diagnose, treat, cure, or prevent any disease.</p>
-      <p><strong>Clinical programs.</strong> Telehealth and regenerative medicine services are provided by independent, licensed healthcare providers. Availability, eligibility, and program details vary by state. Nothing on this page is medical advice.</p>
       <p>&copy; <span id="yr">2026</span> Peplogix Partners. All rights reserved.</p>
     </div>
   </div>
@@ -991,6 +1115,10 @@ const CONFIG = {
   // Every application is emailed here (FormSubmit.co). The first submission sends an
   // "Activate Form" email to this address; click it once and all later applications arrive.
   leadEmail: "wnagi@peplogix.com",
+  // Brand intake submissions (partner onboarding) go here. Empty uses leadEmail.
+  intakeEmail: "",
+  // Partner links point here with ?ref=CODE added.
+  partnerLinkBase: "https://peplogix.github.io/",
   bookingUrl: "",                         // e.g. Calendly or Salesforce Scheduler link. Empty hides the button.
   responseTime: "",                       // e.g. "within 1 business day". Empty uses neutral wording.
   landingVariant: "b2b-funnel-v1",
@@ -1001,22 +1129,22 @@ const CONFIG = {
 };
 
 const SEGMENTS = [
-  { key:"clinic", label:"Clinics", title:"Add programs and supply without adding overhead.",
-    body:"Run white-label telehealth and regenerative medicine programs under your clinic's name, in 48 states, and source supply through one partner.",
-    points:["White-label telehealth your patients book with you","Regenerative medicine programs in 48 states","Wholesale supply for your clinic","One partner manager for everything"],
-    interests:["telehealth","regen","supply"] },
-  { key:"physician", label:"Physicians", title:"Your name on a telehealth practice, without building one.",
-    body:"Offer telehealth and regenerative medicine under your own brand. We provide the platform and operations so you can focus on patients.",
-    points:["Branded telehealth offering","Regenerative medicine programs in 48 states","No platform to build or maintain","Requirements reviewed for your state and role"],
-    interests:["telehealth","regen"] },
+  { key:"clinic", label:"Clinics", title:"Supply and your own brand, without adding overhead.",
+    body:"Source research supply through one partner, and put your clinic's name on the products you carry.",
+    points:["Wholesale supply for your clinic","Your clinic's brand on the label and packaging","Fulfillment handled for you","One partner manager for everything"],
+    interests:["supply","ruo-box"] },
+  { key:"physician", label:"Physicians", title:"Your own product line, without building one.",
+    body:"Carry products under your own brand. We handle sourcing, labeling, storage, and shipping so you can focus on your practice.",
+    points:["Your name on the label and packaging","Wholesale supply","No warehouse or shipping to manage","Requirements reviewed for your state and role"],
+    interests:["supply","ruo-box"] },
   { key:"medspa", label:"Med spas", title:"New programs for your menu, under your brand.",
-    body:"Extend what you offer with white-label telehealth and regenerative medicine programs, plus supply for your locations.",
+    body:"Extend what you offer with white-label products under your brand, plus supply for your locations.",
     points:["Branded programs for your clients","Works across multiple locations","Wholesale supply","Onboarding handled by a partner manager"],
-    interests:["telehealth","regen","supply"] },
+    interests:["ruo-box","supply"] },
   { key:"practice", label:"Medical practices", title:"One partner for programs, supply, and fulfillment.",
-    body:"Multi-provider practices use Peplogix to add branded telehealth and regenerative medicine programs and simplify supply.",
-    points:["Programs available in 48 states","White-label under your practice name","Wholesale supply and fulfillment","A single point of contact"],
-    interests:["telehealth","regen","supply"] },
+    body:"Multi-provider practices use Peplogix to add white-label products under the practice name and simplify supply.",
+    points:["White-label under your practice name","Wholesale supply and fulfillment","Storefront and dropship available","A single point of contact"],
+    interests:["ruo-box","supply"] },
   { key:"ruo", label:"RUO buyers & resellers", title:"Wholesale research supply, shipped under your label.",
     body:"Buy wholesale for research resale, or have us warehouse and dropship for you so you never touch a box.",
     points:["Wholesale research peptides","White-label labeling and packaging","3PL warehousing","Dropship straight to your customers"],
@@ -1033,15 +1161,11 @@ const SEGMENTS = [
 const TYPE_OPTIONS = [...SEGMENTS.map(({key,label})=>({key,label})), {key:"other",label:"Other"}];
 const INTERESTS = [
   {key:"ruo-box", label:"RUO business in a box"},
-  {key:"telehealth", label:"White-label telehealth"},
-  {key:"regen", label:"Regenerative medicine"},
   {key:"storefront", label:"Storefront build"},
   {key:"supply", label:"Wholesale / clinic supply"},
   {key:"affiliate", label:"Affiliate program"}
 ];
 const STATES = ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"];
-// Tile-grid map: [abbr, row, col]
-const TILES = [["AK",0,0],["ME",0,11],["VT",1,10],["NH",1,11],["WA",2,1],["ID",2,2],["MT",2,3],["ND",2,4],["MN",2,5],["IL",2,6],["WI",2,7],["MI",2,8],["NY",2,9],["RI",2,10],["MA",2,11],["OR",3,1],["NV",3,2],["WY",3,3],["SD",3,4],["IA",3,5],["IN",3,6],["OH",3,7],["PA",3,8],["NJ",3,9],["CT",3,10],["CA",4,1],["UT",4,2],["CO",4,3],["NE",4,4],["MO",4,5],["KY",4,6],["WV",4,7],["VA",4,8],["MD",4,9],["DE",4,10],["AZ",5,2],["NM",5,3],["KS",5,4],["AR",5,5],["TN",5,6],["NC",5,7],["SC",5,8],["OK",6,4],["LA",6,5],["MS",6,6],["AL",6,7],["GA",6,8],["HI",7,0],["TX",7,4],["FL",7,9]];
 
 const $ = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => [...r.querySelectorAll(s)];
@@ -1112,35 +1236,6 @@ $$(".seg2 button").forEach(b => b.addEventListener("click", () => {
   $("#previewSvg").toggleAttribute("data-off", b.dataset.view !== "pack");
 }));
 
-/* Segments: tabs with roving focus */
-const tabs = $("#segTabs"), panel = $("#segPanel");
-tabs.innerHTML = SEGMENTS.map((s,i) =>
-  `<button class="seg__tab" role="tab" id="tab-${s.key}" aria-controls="segPanel" aria-selected="${i===0}" tabindex="${i===0?0:-1}" data-key="${s.key}">${s.label}${icon("i-arrow")}</button>`).join("");
-const showSeg = (key, focus) => {
-  const s = SEGMENTS.find(x => x.key === key);
-  $$(".seg__tab", tabs).forEach(t => { const on = t.dataset.key === key; t.setAttribute("aria-selected", on); t.tabIndex = on ? 0 : -1; if (on && focus) t.focus(); });
-  panel.setAttribute("aria-labelledby", `tab-${key}`);
-  panel.innerHTML = `<h3>${s.title}</h3><p>${s.body}</p><ul class="seg__list">${s.points.map(p=>`<li>${icon("i-check-circle")}<span>${p}</span></li>`).join("")}</ul>
-    <a class="btn" href="#apply" data-preselect-type="${s.key}" data-preselect-interest="${s.interests.join(",")}" data-cta="segment-${s.key}">Apply as ${s.label.toLowerCase().replace(/s$/,"").replace("rUO","RUO")} ${icon("i-arrow")}</a>`;
-  if (s.key === "ruo") $(".btn", panel).firstChild.textContent = "Apply as an RUO buyer ";
-  if (s.key === "founder") $(".btn", panel).firstChild.textContent = "Start my brand ";
-  if (s.key === "practice") $(".btn", panel).firstChild.textContent = "Apply as a practice ";
-  if (s.key === "clinic") $(".btn", panel).firstChild.textContent = "Apply as a clinic ";
-  if (s.key === "physician") $(".btn", panel).firstChild.textContent = "Apply as a physician ";
-  if (s.key === "medspa") $(".btn", panel).firstChild.textContent = "Apply as a med spa ";
-  if (s.key === "affiliate") $(".btn", panel).firstChild.textContent = "Become an affiliate ";
-  if (!reduced) { panel.removeAttribute("data-anim"); void panel.offsetWidth; panel.setAttribute("data-anim",""); }
-};
-tabs.addEventListener("click", e => { const t = e.target.closest(".seg__tab"); if (t) showSeg(t.dataset.key); });
-tabs.addEventListener("keydown", e => {
-  const list = $$(".seg__tab", tabs), i = list.indexOf(document.activeElement);
-  if (i < 0) return;
-  const step = {ArrowDown:1,ArrowRight:1,ArrowUp:-1,ArrowLeft:-1}[e.key];
-  if (step) { e.preventDefault(); showSeg(list[(i + step + list.length) % list.length].dataset.key, true); }
-  if (e.key === "Home") { e.preventDefault(); showSeg(list[0].dataset.key, true); }
-  if (e.key === "End") { e.preventDefault(); showSeg(list.at(-1).dataset.key, true); }
-});
-showSeg(SEGMENTS[0].key);
 
 /* Build your program */
 const SERVICES = [
@@ -1149,18 +1244,14 @@ const SERVICES = [
   {key:"ship", icon:"i-truck", label:"Dropship fulfillment", desc:"We pack and ship each order", interest:"ruo-box"},
   {key:"shop", icon:"i-store", label:"Storefront build", desc:"We build your online store", interest:"storefront"},
   {key:"supply", icon:"i-check-circle", label:"Wholesale supply", desc:"Product for your clinic or resale", interest:"supply"},
-  {key:"tele", icon:"i-steth", label:"White-label telehealth", desc:"A branded telehealth offering, 48 states", interest:"telehealth"},
-  {key:"regen", icon:"i-cells", label:"Regenerative medicine", desc:"Programs for your practice, 48 states", interest:"regen"},
-  {key:"aff", icon:"i-arrow", label:"Affiliate sales", desc:"Our affiliates promote and sell your brand", interest:"affiliate"}
+  {key:"aff", icon:"i-arrow", label:"Affiliate sales", desc:"We integrate affiliate sales into your brand", interest:"affiliate"}
 ];
 const TASKS = [
   {label:"Sourcing product", by:["brand","supply"]},
   {label:"Labels and packaging with your brand", by:["brand"]},
   {label:"Storing inventory", by:["store"]},
   {label:"Packing and shipping orders", by:["ship"]},
-  {label:"Telehealth platform and provider network", by:["tele"], optional:true},
-  {label:"Regenerative program setup", by:["regen"], optional:true},
-  {label:"Affiliates selling your brand", by:["aff"], optional:true},
+  {label:"Affiliate sales built into your brand", by:["aff"], optional:true},
   {label:"Building your online storefront", by:["shop"]},
   {label:"Marketing and selling", by:[]},
   {label:"Your customer relationships", by:[]}
@@ -1192,51 +1283,15 @@ $("#svcList").addEventListener("click", e => {
 });
 $("#planCta").addEventListener("click", () => {
   $$("input[name=interests]").forEach(c => c.checked = false);
-  preselect(on.has("brand") && !on.has("supply") && !on.has("tele") && !on.has("regen") ? "founder" : null,
+  preselect(on.has("brand") && !on.has("supply") ? "founder" : null,
     [...new Set(SERVICES.filter(s => on.has(s.key)).map(s => s.interest))].join(","));
 });
 renderPlan();
 
-/* State coverage map */
-const NOT_COVERED = new Set(["KY","CT"]);
-const ABBR = {AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"California",CO:"Colorado",CT:"Connecticut",DE:"Delaware",FL:"Florida",GA:"Georgia",HI:"Hawaii",ID:"Idaho",IL:"Illinois",IN:"Indiana",IA:"Iowa",KS:"Kansas",KY:"Kentucky",LA:"Louisiana",ME:"Maine",MD:"Maryland",MA:"Massachusetts",MI:"Michigan",MN:"Minnesota",MS:"Mississippi",MO:"Missouri",MT:"Montana",NE:"Nebraska",NV:"Nevada",NH:"New Hampshire",NJ:"New Jersey",NM:"New Mexico",NY:"New York",NC:"North Carolina",ND:"North Dakota",OH:"Ohio",OK:"Oklahoma",OR:"Oregon",PA:"Pennsylvania",RI:"Rhode Island",SC:"South Carolina",SD:"South Dakota",TN:"Tennessee",TX:"Texas",UT:"Utah",VT:"Vermont",VA:"Virginia",WA:"Washington",WV:"West Virginia",WI:"Wisconsin",WY:"Wyoming"};
-$("#mapGrid").innerHTML = TILES.map(([a,r,c]) => `<button type="button" class="st" style="grid-row:${r+1};grid-column:${c+1}" data-st="${a}" aria-label="${ABBR[a]}${NOT_COVERED.has(a) ? " (not available)" : ""}" aria-pressed="false">${a}</button>`).join("");
-const mapStatus = $("#mapStatus");
-const showState = a => {
-  const name = ABBR[a];
-  $$(".st").forEach(t => t.setAttribute("aria-pressed", t.dataset.st === a));
-  if (NOT_COVERED.has(a)) {
-    mapStatus.innerHTML = `<strong>${name}</strong><span class="map__no">Not available</span><br>Telehealth and regenerative medicine programs aren't currently offered in ${name}. Wholesale and white-label services may still be available. <a href="#apply">Ask us about ${name} →</a>`;
-    if (!reduced) { mapStatus.classList.remove("flash"); void mapStatus.offsetWidth; mapStatus.classList.add("flash"); }
-    return;
-  }
-  mapStatus.innerHTML = `<strong>${name}</strong><span class="map__ok">${icon("i-check")}Covered</span><br>White-label telehealth and regenerative medicine programs are available in ${name}. <a href="#apply" data-apply-state="${name}">Apply from ${name} →</a>`;
-  if (!reduced) { mapStatus.classList.remove("flash"); void mapStatus.offsetWidth; mapStatus.classList.add("flash"); }
-};
-$("#mapGrid").addEventListener("click", e => { const t = e.target.closest(".st"); if (t) showState(t.dataset.st); });
-mapStatus.addEventListener("click", e => {
-  const a = e.target.closest("[data-apply-state]"); if (!a) return;
-  $("#state").value = a.dataset.applyState; clearErr("state");
-  preselect(null, "telehealth,regen");
-});
-const map = $("#usMap");
-const lightMap = () => {
-  if (reduced) { map.classList.add("is-lit"); return; }
-  const tiles = $$(".st", map).filter(t => !NOT_COVERED.has(t.dataset.st)), count = $("#mapCount");
-  [...tiles].sort((a,b) => (parseInt(a.style.gridColumn) - parseInt(b.style.gridColumn)) || (parseInt(a.style.gridRow) - parseInt(b.style.gridRow)))
-    .forEach((t,i) => setTimeout(() => {
-      t.classList.add("on");
-      count.textContent = i + 1;
-    }, 120 + i * 22));
-};
-$("#mapGrid").querySelectorAll(".st").forEach(t => NOT_COVERED.has(t.dataset.st) && t.classList.add("off"));
-$("#mapCount").textContent = reduced ? "48" : "0";
-
-/* Reveal + map trigger */
+/* Reveal */
 const io = new IntersectionObserver(entries => entries.forEach(en => {
   if (!en.isIntersecting) return;
   en.target.classList.add("in");
-  if (en.target === map) lightMap();
   io.unobserve(en.target);
 }), {threshold:.18, rootMargin:"0px 0px -40px 0px"});
 $$(".rv").forEach(el => io.observe(el));
@@ -1247,7 +1302,7 @@ $("#typeChips").innerHTML = TYPE_OPTIONS.map(o =>
   `<label class="chip"><input type="radio" name="business_type" value="${o.key}" aria-describedby="err-type"><span>${icon("i-check")}${o.label}</span></label>`).join("");
 $("#interestChips").innerHTML = INTERESTS.map(o =>
   `<label class="chip"><input type="checkbox" name="interests" value="${o.key}" aria-describedby="err-interest"><span>${icon("i-check")}${o.label}</span></label>`).join("");
-["#state","#d2c_state"].forEach(sel => $(sel).insertAdjacentHTML("beforeend", STATES.map(s => `<option>${s}</option>`).join("")));
+["#state","#d2c_state"].forEach(sel => $(sel)?.insertAdjacentHTML("beforeend", STATES.map(s => `<option>${s}</option>`).join("")));
 
 const labelOf = (list, key) => list.find(o => o.key === key)?.label ?? key;
 const preselect = (type, interests) => {
@@ -1371,6 +1426,7 @@ const sendEmail = async (data, extra = {}) => {
     "Email": data.email, "Phone": data.phone, "State": data.state, "Business type": data.businessType,
     "Interests": data.interests.replaceAll(";", ", "), "Stage": data.stage, ...extra,
     "Campaign": [utm.utm_source, utm.utm_medium, utm.utm_campaign, utm.utm_content].filter(Boolean).join(" / "),
+    "Referred by": (() => { try { return localStorage.getItem("pl_ref") || ""; } catch { return ""; } })(),
     "Page": location.href.split("#")[0]
   };
   Object.keys(body).forEach(k => body[k] === "" && delete body[k]);
@@ -1428,6 +1484,7 @@ $("#b2bForm").addEventListener("submit", async e => {
 
 /* D2C: switchable between a Salesforce capture and an external link */
 const d2cBtn = $("#d2cBtn"), d2cForm = $("#d2cForm");
+if (d2cBtn && d2cForm) {
 if (CONFIG.d2c.mode === "link" && CONFIG.d2c.url) { d2cBtn.href = CONFIG.d2c.url; d2cBtn.removeAttribute("aria-expanded"); d2cBtn.removeAttribute("aria-controls"); }
 d2cBtn.addEventListener("click", e => {
   if (CONFIG.d2c.mode === "link" && CONFIG.d2c.url) return;
@@ -1452,6 +1509,166 @@ d2cForm.addEventListener("submit", async e => {
   await Promise.all([sendEmail(d2cData, {"Action needed": "Email this person the D2C site link"}), sendToSalesforce(d2cData)]);
   $$(".field, #d2cSubmit", d2cForm).forEach(el => el.hidden = true); $("#d2cDone").hidden = false;
 });
+}
+
+/* Partner onboarding: brand intake -> website setup -> partner link */
+(() => {
+  const OB_KEY = "pl_onboard";
+  const store = { get(){ try { return JSON.parse(localStorage.getItem(OB_KEY) || "null"); } catch { return null; } },
+                  set(v){ try { localStorage.setItem(OB_KEY, JSON.stringify(v)); } catch {} } };
+  const tabs = $$("#onboard [role=tab]");
+  const show = (n, focus) => {
+    tabs.forEach(t => { const on = t.dataset.ob === String(n); t.setAttribute("aria-selected", on); t.tabIndex = on ? 0 : -1; $("#" + t.getAttribute("aria-controls")).hidden = !on; });
+    if (focus) tabs[n - 1].focus();
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener("click", () => show(i + 1));
+    t.addEventListener("keydown", e => {
+      const d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+      if (d) { e.preventDefault(); show((i + d + tabs.length) % tabs.length + 1, true); }
+    });
+  });
+  $$("[data-ob-go]").forEach(b => b.addEventListener("click", () => { show(+b.dataset.obGo); $("#onboard").scrollIntoView({behavior: reduced ? "auto" : "smooth"}); }));
+
+  /* Colors */
+  [1,2,3].forEach(i => $("#ob_c" + i).addEventListener("input", e => $("#ob_c" + i + "v").textContent = e.target.value.toUpperCase()));
+  $("#ob_sitecolors").addEventListener("change", e => $("#obSwatches").classList.toggle("is-off", e.target.checked));
+
+  /* Logo: same checks as the preview above; an image logo also updates the storefront preview */
+  let logo = null, extras = [];
+  const MB = 1024 * 1024;
+  const obReset = msg => {
+    $("#obDropIc").innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4M7.5 8.5 12 4l4.5 4.5M5 15v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></svg>`;
+    $("#obDropT").innerHTML = "<strong>Drop your logo here</strong> or <u>browse</u>";
+    $("#obDropD").innerHTML = msg ? `<span class="drop__err">${msg}</span>` : "SVG, PNG, JPG, WebP or PDF, up to 5 MB.";
+    $("#obDropX").hidden = true;
+  };
+  const obRead = file => {
+    if (!file) return;
+    if (!/^(image\/(png|jpeg|svg\+xml|webp)|application\/pdf)$/.test(file.type)) return obReset("That file type won't work. Use SVG, PNG, JPG, WebP or PDF.");
+    if (file.size > 5 * MB) return obReset("That file is over 5 MB. Try a smaller version.");
+    logo = file;
+    $("#obDropT").textContent = file.name;
+    $("#obDropD").textContent = "Drop another file to replace it.";
+    $("#obDropX").hidden = false;
+    if (file.type === "application/pdf") { $("#obDropIc").innerHTML = `<svg aria-hidden="true"><use href="#i-check"/></svg>`; return; }
+    const r = new FileReader();
+    r.onload = () => { $("#obDropIc").innerHTML = `<img src="${r.result}" alt="">`; if (!hasLogo) setLogo(r.result); };
+    r.readAsDataURL(file);
+  };
+  const obDrop = $("#obDrop");
+  $("#ob_logo").addEventListener("change", e => obRead(e.target.files[0]));
+  ["dragenter","dragover"].forEach(ev => obDrop.addEventListener(ev, e => { e.preventDefault(); obDrop.classList.add("is-over"); }));
+  ["dragleave","drop"].forEach(ev => obDrop.addEventListener(ev, e => { e.preventDefault(); obDrop.classList.remove("is-over"); }));
+  obDrop.addEventListener("drop", e => obRead(e.dataTransfer.files[0]));
+  $("#obDropX").addEventListener("click", e => { e.preventDefault(); e.stopPropagation(); logo = null; $("#ob_logo").value = ""; obReset(); });
+  obReset();
+
+  /* Extra brand files: up to 3, 5 MB each, 12 MB together with the logo */
+  const fmt = b => b >= MB ? (b / MB).toFixed(1) + " MB" : Math.max(1, Math.round(b / 1024)) + " KB";
+  const filesErr = msg => { $("#obFilesMsg").textContent = msg || ""; $("#err-ob_files").classList.toggle("is-on", !!msg); };
+  $("#ob_files").addEventListener("change", e => {
+    const picked = [...e.target.files];
+    filesErr("");
+    if (picked.length > 3) filesErr("Pick up to 3 files. We kept the first 3.");
+    extras = picked.slice(0, 3).filter(f => f.size <= 5 * MB);
+    if (extras.length < Math.min(picked.length, 3)) filesErr("Files over 5 MB were left out.");
+    const total = extras.reduce((a, f) => a + f.size, logo ? logo.size : 0);
+    if (total > 12 * MB) { extras = []; filesErr("These files add up to more than 12 MB with your logo. Try smaller versions."); }
+    $("#obFileList").innerHTML = extras.map(f => `<li><span>${f.name.replace(/[<>&]/g, "")}</span><span>${fmt(f.size)}</span></li>`).join("");
+  });
+
+  /* Referral code and partner link */
+  const slug = v => v.toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 24);
+  const suffix = () => Math.random().toString(36).slice(2, 6);
+  const CONN = { site: "Branded site, linked from yours", cart: "Shopping-cart connection", link: "Partner link only" };
+  const HOW = {
+    WordPress: "On WordPress, add it under Appearance → Menus as a Custom Link, or in the Site Editor as a Navigation link. A Button block works too.",
+    Shopify: "On Shopify, go to Online Store → Navigation, open your main menu and add a menu item with this link.",
+    Wix: "On Wix, open the editor, add a Button or a menu item, and set its link to this web address.",
+    Squarespace: "On Squarespace, go to Pages, click + in your navigation and add a Link with this address.",
+    Webflow: "On Webflow, add a Link Block or Button to your navbar and paste this URL as the link.",
+  };
+  const render = st => {
+    const has = !!st;
+    $$("#onboard [data-ob-empty]").forEach(el => el.hidden = has);
+    $$("#onboard [data-ob-filled]").forEach(el => el.hidden = !has);
+    tabs.forEach(t => t.toggleAttribute("data-done", has && t.dataset.ob === "1"));
+    if (!has) return;
+    $$("#onboard [data-ob-link]").forEach(el => el.textContent = st.link);
+    $("#obHtml").textContent = `<a href="${st.link}" target="_blank" rel="noopener">${st.menu}</a>`;
+    $("#obHow").textContent = HOW[st.platform] || "Add it to your site's main menu or as a button. Your partner manager can walk you through it on your platform.";
+    $("#obCode").textContent = st.code;
+    $("#obBrandOut").textContent = st.brand;
+    $("#obConnOut").textContent = CONN[st.conn];
+    const isCart = st.conn === "cart", isLink = st.conn === "link";
+    $("#obSetupTitle").textContent = isCart ? "A shopping-cart connection, scoped with you." : isLink ? "One link, ready to share." : "A branded site, linked from yours.";
+    $("#obSetupLead").textContent = isCart ? "Your partner manager confirms the platform and what the cart needs to do before anything is built. Your website stays as it is until you approve the plan."
+      : isLink ? "No new site needed. Add your partner link to your menu, a button or your socials, and every visit carries your referral code."
+      : "We plan a separate store in your brand. Your current website stays exactly where it is, on any platform, and links to it.";
+  };
+  $$("#onboard [data-copy]").forEach(b => b.addEventListener("click", async () => {
+    const st = store.get(); if (!st) return;
+    const text = b.dataset.copy === "html" ? $("#obHtml").textContent : st.link;
+    try { await navigator.clipboard.writeText(text); } catch { const r = document.createRange(); r.selectNodeContents(b.previousElementSibling); const s = getSelection(); s.removeAllRanges(); s.addRange(r); return; }
+    const was = b.textContent; b.textContent = "Copied"; b.setAttribute("data-copied", "");
+    setTimeout(() => { b.textContent = was; b.removeAttribute("data-copied"); }, 1600);
+  }));
+
+  /* Validation */
+  const siteOk = v => /^(https?:\/\/)?([a-z0-9-]+\.)+[a-z]{2,}(\/\S*)?$/i.test(v.trim());
+  const checks = [["#ob_brand", v => v.trim()], ["#ob_name", v => v.trim()], ["#ob_email", emailOk], ["#ob_site", siteOk], ["#ob_platform", v => v]];
+  const validate = () => {
+    let ok = true;
+    checks.forEach(([sel, test]) => { const el = $(sel), good = !!test(el.value); el.setAttribute("aria-invalid", !good); $("#err-" + sel.slice(1)).classList.toggle("is-on", !good); ok = ok && good; });
+    const c = $("#ob_consent").checked; $("#ob_consent").setAttribute("aria-invalid", !c); $("#err-ob_consent").classList.toggle("is-on", !c);
+    return ok && c;
+  };
+  checks.forEach(([sel, test]) => $(sel).addEventListener("input", e => { if (e.target.getAttribute("aria-invalid") === "true" && test(e.target.value)) { e.target.setAttribute("aria-invalid", "false"); $("#err-" + sel.slice(1)).classList.remove("is-on"); } }));
+
+  /* Submit: email the intake (with files) through the same FormSubmit inbox as applications */
+  $("#obForm").addEventListener("submit", async e => {
+    e.preventDefault();
+    const alert = $("#obAlert"); alert.style.display = "none";
+    if ($("#ob_honey").value) return;
+    if (!validate()) { const bad = $('#obForm [aria-invalid="true"]'); bad && bad.focus(); return; }
+    const brand = $("#ob_brand").value.trim(), conn = $('#obForm input[name="ob_conn"]:checked').value;
+    const prev = store.get();
+    const base = slug($("#ob_ref").value) || slug(brand) || "partner";
+    const code = prev && prev.base === base ? prev.code : `${base}-${suffix()}`;
+    const st = { brand, base, code, conn, platform: $("#ob_platform").value, menu: $("#ob_menu").value.trim() || "Shop " + brand,
+                 link: `${CONFIG.partnerLinkBase}?ref=${encodeURIComponent(code)}` };
+    const colors = $("#ob_sitecolors").checked ? "Use the colors already on their website" : [1,2,3].map(i => $("#ob_c" + i).value.toUpperCase()).join(" / ") + " (primary / secondary / accent)";
+    const fd = new FormData();
+    Object.entries({
+      _subject: `Brand intake: ${brand} (${$("#ob_name").value.trim()})`, _template: "table", _replyto: $("#ob_email").value.trim(), _captcha: "false",
+      "Form": "Partner onboarding: brand intake", "Brand": brand, "Name": $("#ob_name").value.trim(), "Email": $("#ob_email").value.trim(),
+      "Website": $("#ob_site").value.trim(), "Platform": st.platform, "Brand colors": colors,
+      "Logo": logo ? `${logo.name} (attached)` : "None yet", "Extra files": extras.map(f => f.name).join(", ") || "None",
+      "Connection": CONN[conn], "Menu / button name": st.menu, "Referral code": code, "Partner link": st.link,
+      "Notes": $("#ob_notes").value.trim(), "Selected services": [...on].map(k => (SERVICES.find(s => s.key === k) || {}).label).filter(Boolean).join(", "),
+      "Page": location.href.split("#")[0]
+    }).forEach(([k, v]) => v && fd.append(k, v));
+    [logo, ...extras].filter(Boolean).forEach(f => fd.append("attachment", f, f.name));
+    const btn = $("#obSubmit"), label = btn.innerHTML;
+    btn.setAttribute("aria-busy", "true"); btn.disabled = true; btn.innerHTML = `<span class="spin" aria-hidden="true"></span>Sending`;
+    let ok = false;
+    try {
+      const r = await fetch(`https://formsubmit.co/ajax/${CONFIG.intakeEmail || CONFIG.leadEmail}`, { method: "POST", headers: { Accept: "application/json" }, body: fd });
+      const j = await r.json().catch(() => ({}));
+      ok = String(j.success) === "true" || /activat/i.test(j.message || "");
+    } catch {}
+    btn.removeAttribute("aria-busy"); btn.disabled = false; btn.innerHTML = label;
+    if (!ok) { alert.textContent = "We couldn't send your brand details. Check your connection and try again, or email us and we'll set it up with you."; alert.style.display = "block"; alert.scrollIntoView({block: "center"}); return; }
+    store.set(st); render(st); show(2);
+    $("#onboard").scrollIntoView({behavior: reduced ? "auto" : "smooth"});
+  });
+
+  render(store.get());
+})();
+
+/* Remember a partner's referral code when a visitor arrives through their link */
+(() => { const r = params.get("ref"); if (r) { try { localStorage.setItem("pl_ref", r.slice(0, 64)); } catch {} } })();
 </script>
 </body>
 </html>
