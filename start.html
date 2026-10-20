@@ -262,6 +262,14 @@ p{margin:0;text-wrap:pretty}
 .logoslot{position:absolute;display:grid;place-items:center;background:#fff;border-radius:2px}
 .logoslot[hidden]{display:none}
 .logoslot img{max-width:94%;max-height:90%;width:auto;height:auto;object-fit:contain}
+.lineup{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:0}
+@media (max-width:520px){.lineup{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.lineup figure{position:relative;margin:0;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 0 0 1px var(--line),0 10px 24px -16px rgba(30,33,42,.35)}
+.lineup figure>img{display:block;width:100%;height:auto;aspect-ratio:1}
+.lineup figcaption{grid-column:1/-1;font-size:14px;color:var(--muted);margin-top:4px}
+.lineup figcaption b{font-weight:600;color:var(--ink-2);letter-spacing:.02em}
+.ob__preview{margin-top:16px;animation:panelIn .4s var(--ease-out)}
+.ob__preview[hidden]{display:none}
 
 .shop__info{display:flex;flex-direction:column;justify-content:center;min-width:0}
 .shop__crumb{margin:0;font-size:1.7cqi;color:#858C98;letter-spacing:.02em}
@@ -579,14 +587,9 @@ textarea.input.ob__notes{height:auto;min-height:96px;padding:12px 14px;resize:ve
 .combo .plan li{font-size:13.5px;padding:7px 10px}
 .combo .plan__cta{margin-top:18px;min-height:44px}
 .combo .plan__note{margin-top:10px;font-size:12.5px}
-.starthead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(20px,4vw,48px);align-items:center;margin-bottom:24px}
-@media (max-width:900px){.starthead{grid-template-columns:minmax(0,1fr)}}
+.starthead{display:grid;gap:20px;margin-bottom:24px}
 .page-start .starthead .section__head{margin-bottom:0}
-.lineup{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:0}
-.lineup figure{position:relative;margin:0;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 0 0 1px var(--line),0 10px 24px -16px rgba(30,33,42,.35)}
-.lineup figure>img{display:block;width:100%;height:auto;aspect-ratio:1}
-.lineup figcaption{grid-column:1/-1;font-size:13.5px;color:var(--muted);margin-top:4px}
-.lineup figcaption b{font-weight:600;color:var(--ink-2);letter-spacing:.02em}
+.starthead .lineup{gap:14px}
 </style>
 </head>
 <body class="page-start">
@@ -666,7 +669,7 @@ textarea.input.ob__notes{height:auto;min-height:96px;padding:12px 14px;resize:ve
       <div class="starthead rv"><div class="section__head">
         <h2>Choose what we run for you.</h2>
         <p>Switch services on and off to see who handles what. Then send your brand details below and we'll price your setup on the call.</p>
-      </div><div class="lineup"><figure><img src="assets/prod-caps.webp" alt="BPC-157 capsules with a your-logo-here label" width="640" height="640"><span class="logoslot" style="left:29.8%;top:37.6%;width:34.8%;height:8.8%" hidden><img alt=""></span></figure><figure><img src="assets/prod-spray.webp" alt="Cartalax Pro oral spray with a your-logo-here label" width="640" height="640"><span class="logoslot" style="left:34.6%;top:57.1%;width:19.4%;height:6.9%" hidden><img alt=""></span></figure><figure><img src="assets/prod-serum.webp" alt="4-in-1 serum with a your-logo-here label" width="640" height="640"><span class="logoslot" style="left:38.0%;top:48.0%;width:24.8%;height:7.4%" hidden><img alt=""></span></figure><figure><img src="assets/prod-nasal.webp" alt="ARA-290 nasal spray with a your-logo-here label" width="640" height="640"><span class="logoslot" style="left:40.9%;top:54.6%;width:18.6%;height:7.2%" hidden><img alt=""></span></figure><figcaption>Your logo goes where it says <b>YOUR LOGO HERE</b>. Add it in the brand details below to see it on your line.</figcaption></div></div>
+      </div><div class="lineup"><figure><img src="assets/prod-caps.webp" alt="BPC-157 capsules with a your-logo-here label" width="640" height="640"><span class="logoslot" style="left:29.8%;top:37.6%;width:34.8%;height:8.8%" hidden><img alt=""></span></figure><figure><img src="assets/prod-spray.webp" alt="Cartalax Pro oral spray with a your-logo-here label" width="640" height="640"><span class="logoslot" style="left:34.6%;top:57.1%;width:19.4%;height:6.9%" hidden><img alt=""></span></figure><figure><img src="assets/prod-serum.webp" alt="4-in-1 serum with a your-logo-here label" width="640" height="640"><span class="logoslot" style="left:38.0%;top:48.0%;width:24.8%;height:7.4%" hidden><img alt=""></span></figure><figure><img src="assets/prod-nasal.webp" alt="ARA-290 nasal spray with a your-logo-here label" width="640" height="640"><span class="logoslot" style="left:40.9%;top:54.6%;width:18.6%;height:7.2%" hidden><img alt=""></span></figure><figcaption>Your logo goes where it says <b>YOUR LOGO HERE</b>. Upload it in the brand details below and it shows up on these right away.</figcaption></div></div>
       <div class="build combo rv">
         <div class="svcs" id="svcList" role="group" aria-label="Services"></div>
         <aside class="plan" aria-live="polite" aria-labelledby="planCount">
@@ -736,6 +739,7 @@ textarea.input.ob__notes{height:auto;min-height:96px;padding:12px 14px;resize:ve
                   <input type="file" id="ob_logo" class="sr-only" accept="image/png,image/jpeg,image/svg+xml,image/webp,application/pdf">
                 </label>
                 <p class="ob__fine">No logo yet? Say so in the notes and we'll work from your brand name.</p>
+                <div class="ob__preview" id="obPreview" hidden><span class="label">Your logo on your line</span><div class="lineup"><figure><img src="assets/prod-caps.webp" alt="BPC-157 capsules with your logo" width="640" height="640" loading="lazy"><span class="logoslot" style="left:29.8%;top:37.6%;width:34.8%;height:8.8%" hidden><img alt=""></span></figure><figure><img src="assets/prod-spray.webp" alt="Cartalax Pro oral spray with your logo" width="640" height="640" loading="lazy"><span class="logoslot" style="left:34.6%;top:57.1%;width:19.4%;height:6.9%" hidden><img alt=""></span></figure><figure><img src="assets/prod-serum.webp" alt="4-in-1 serum with your logo" width="640" height="640" loading="lazy"><span class="logoslot" style="left:38.0%;top:48.0%;width:24.8%;height:7.4%" hidden><img alt=""></span></figure><figure><img src="assets/prod-nasal.webp" alt="ARA-290 nasal spray with your logo" width="640" height="640" loading="lazy"><span class="logoslot" style="left:40.9%;top:54.6%;width:18.6%;height:7.2%" hidden><img alt=""></span></figure></div></div>
               </div>
               <div class="field">
                 <span class="label">Extra brand files <span class="hint">Optional</span></span>
@@ -882,7 +886,7 @@ const icon = id => `<svg aria-hidden="true"><use href="#${id}"/></svg>`;
 const emailOk = v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
 // the intake's logo upload previews on the product lineup at the top
 let hasLogo = false;
-const setLogo = url => { hasLogo = !!url; $$(".logoslot").forEach(sl => { sl.hidden = !url; const im = sl.querySelector("img"); if (url) im.src = url; else im.removeAttribute("src"); }); };
+const setLogo = url => { hasLogo = !!url; const pv = $("#obPreview"); if (pv) pv.hidden = !url; $$(".logoslot").forEach(sl => { sl.hidden = !url; const im = sl.querySelector("img"); if (url) im.src = url; else im.removeAttribute("src"); }); };
 document.documentElement.classList.add("js");
 $("#yr").textContent = new Date().getFullYear();
 const nav = $("#nav");
@@ -984,7 +988,7 @@ $$(".rv").forEach(el => io.observe(el));
     $("#obDropX").hidden = false;
     if (file.type === "application/pdf") { $("#obDropIc").innerHTML = `<svg aria-hidden="true"><use href="#i-check"/></svg>`; return; }
     const r = new FileReader();
-    r.onload = () => { $("#obDropIc").innerHTML = `<img src="${r.result}" alt="">`; if (!hasLogo) setLogo(r.result); };
+    r.onload = () => { $("#obDropIc").innerHTML = `<img src="${r.result}" alt="">`; setLogo(r.result); };
     r.readAsDataURL(file);
   };
   const obDrop = $("#obDrop");
@@ -992,7 +996,7 @@ $$(".rv").forEach(el => io.observe(el));
   ["dragenter","dragover"].forEach(ev => obDrop.addEventListener(ev, e => { e.preventDefault(); obDrop.classList.add("is-over"); }));
   ["dragleave","drop"].forEach(ev => obDrop.addEventListener(ev, e => { e.preventDefault(); obDrop.classList.remove("is-over"); }));
   obDrop.addEventListener("drop", e => obRead(e.dataTransfer.files[0]));
-  $("#obDropX").addEventListener("click", e => { e.preventDefault(); e.stopPropagation(); logo = null; $("#ob_logo").value = ""; obReset(); });
+  $("#obDropX").addEventListener("click", e => { e.preventDefault(); e.stopPropagation(); logo = null; $("#ob_logo").value = ""; obReset(); setLogo(null); });
   obReset();
 
   /* Extra brand files: up to 3, 5 MB each, 12 MB together with the logo */
