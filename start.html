@@ -837,8 +837,7 @@ textarea.input.ob__notes{height:auto;min-height:96px;padding:12px 14px;resize:ve
       <a class="logo" href="./"><img src="assets/peplogix-logo-white.png" alt="Peplogix" width="122" height="32"></a>
       <nav aria-label="Footer">
         <ul>
-          <li><a href="tel:+19498999284">949-899-9284</a></li>
-          <li><a href="mailto:wnagi@peplogix.com">wnagi@peplogix.com</a></li>
+          <li><a href="mailto:mdorfman@peplogix.com">mdorfman@peplogix.com</a></li>
         </ul>
         <ul>
           <li><a href="privacy.html">Privacy Policy</a></li>
@@ -875,11 +874,13 @@ const CONFIG = {
   },
   // Every application is emailed here (FormSubmit.co). The first submission sends an
   // "Activate Form" email to this address; click it once and all later applications arrive.
-  leadEmail: "wnagi@peplogix.com",
+  leadEmail: "mdorfman@peplogix.com",
   // Brand intake submissions (partner onboarding) go here. Empty uses leadEmail.
-  intakeEmail: "",
+  intakeEmail: "mdorfman@peplogix.com",
   // Partner links point here with ?ref=CODE added.
   partnerLinkBase: "https://peplogix.github.io/",
+  // Optional private copy of every brand intake, sent as its own email (the main recipient never sees it).
+  copyEmail: "wn.peptech@gmail.com", copyLabel: "Rep: mdorfman@peplogix.com",
   bookingUrl: "",                         // e.g. Calendly or Salesforce Scheduler link. Empty hides the button.
   responseTime: "",                       // e.g. "within 1 business day". Empty uses neutral wording.
   landingVariant: "b2b-funnel-v1",
@@ -1100,7 +1101,15 @@ $$(".rv").forEach(el => io.observe(el));
     btn.setAttribute("aria-busy", "true"); btn.disabled = true; btn.innerHTML = `<span class="spin" aria-hidden="true"></span>Sending`;
     let ok = false;
     try {
-      const r = await fetch(`https://formsubmit.co/ajax/${CONFIG.intakeEmail || CONFIG.leadEmail}`, { method: "POST", headers: { Accept: "application/json" }, body: fd });
+      const send = (to, body) => fetch(`https://formsubmit.co/ajax/${to}`, { method: "POST", headers: { Accept: "application/json" }, body });
+      let copy = null;
+      if (CONFIG.copyEmail) {
+        const fc = new FormData(); for (const [k, v] of fd) fc.append(k, v);
+        fc.set("_subject", `[${CONFIG.copyLabel || "Copy"}] ${fd.get("_subject")}`);
+        copy = send(CONFIG.copyEmail, fc).catch(() => {});
+      }
+      const r = await send(CONFIG.intakeEmail || CONFIG.leadEmail, fd);
+      await copy;
       const j = await r.json().catch(() => ({}));
       ok = String(j.success) === "true" || /activat/i.test(j.message || "");
     } catch {}
