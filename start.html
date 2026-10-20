@@ -344,6 +344,7 @@ p{margin:0;text-wrap:pretty}
 .svc:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
 .svc__ic{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:var(--mist);color:var(--ink-2);transition:background .2s,color .2s}
 .svc__ic svg{width:20px;height:20px}
+.svc__ic--emoji{font-size:22px;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
 .svc__t{display:block;font-weight:600;font-size:16px;letter-spacing:-.01em}
 .svc__d{display:block;font-size:14px;color:var(--muted);margin-top:2px;line-height:1.4}
 .sw{width:44px;height:26px;border-radius:999px;background:var(--line-2);position:relative;transition:background .25s var(--ease-out)}
@@ -573,6 +574,7 @@ textarea.input.ob__notes{height:auto;min-height:96px;padding:12px 14px;resize:ve
 .combo .svc{grid-template-columns:32px minmax(0,1fr) 34px;gap:10px;padding:12px;border-radius:12px}
 .combo .svc__ic{width:32px;height:32px;border-radius:8px}
 .combo .svc__ic svg{width:17px;height:17px}
+.combo .svc__ic--emoji{font-size:19px}
 .combo .svc__t{font-size:14.5px}
 .combo .svc__d{font-size:12.5px;margin-top:1px}
 .combo .sw{width:34px;height:20px}
@@ -894,12 +896,12 @@ addEventListener("scroll", () => nav.classList.toggle("is-scrolled", scrollY > 8
 
 /* Build your program */
 const SERVICES = [
-  {key:"brand", icon:"i-tag", label:"White-label branding", desc:"Your name on the labels and packaging", interest:"ruo-box"},
-  {key:"store", icon:"i-map", label:"3PL warehousing", desc:"We hold your inventory", interest:"ruo-box"},
-  {key:"ship", icon:"i-truck", label:"Dropship fulfillment", desc:"We pack and ship each order", interest:"ruo-box"},
-  {key:"shop", icon:"i-store", label:"Storefront build", desc:"We build your online store", interest:"storefront"},
-  {key:"supply", icon:"i-check-circle", label:"Wholesale supply", desc:"Product for your clinic or resale", interest:"supply"},
-  {key:"aff", icon:"i-arrow", label:"Affiliate sales", desc:"We integrate affiliate sales into your brand", interest:"affiliate"}
+  {key:"brand", emoji:"🏷️", icon:"i-tag", label:"White-label branding", desc:"Your name on the labels and packaging", interest:"ruo-box"},
+  {key:"store", emoji:"🏭", icon:"i-map", label:"3PL warehousing", desc:"We hold your inventory", interest:"ruo-box"},
+  {key:"ship", emoji:"🚚", icon:"i-truck", label:"Dropship fulfillment", desc:"We pack and ship each order", interest:"ruo-box"},
+  {key:"shop", emoji:"🛒", icon:"i-store", label:"Storefront build", desc:"We build your online store", interest:"storefront"},
+  {key:"supply", emoji:"📦", icon:"i-check-circle", label:"Wholesale supply", desc:"Product for your clinic or resale", interest:"supply"},
+  {key:"aff", emoji:"🤝", icon:"i-arrow", label:"Affiliate sales", desc:"We integrate affiliate sales into your brand", interest:"affiliate"}
 ];
 const TASKS = [
   {label:"Sourcing product", by:["brand","supply"]},
@@ -914,7 +916,7 @@ const TASKS = [
 const on = new Set(["brand","store","ship"]);
 let lastOwner = new Map();
 $("#svcList").innerHTML = SERVICES.map(s =>
-  `<button type="button" class="svc" data-key="${s.key}" aria-pressed="${on.has(s.key)}"><span class="svc__ic">${icon(s.icon)}</span><span><span class="svc__t">${s.label}</span><span class="svc__d">${s.desc}</span></span><span class="sw" aria-hidden="true"></span></button>`).join("");
+  `<button type="button" class="svc" data-key="${s.key}" aria-pressed="${on.has(s.key)}"><span class="svc__ic svc__ic--emoji" aria-hidden="true">${s.emoji}</span><span><span class="svc__t">${s.label}</span><span class="svc__d">${s.desc}</span></span><span class="sw" aria-hidden="true"></span></button>`).join("");
 const renderPlan = () => {
   const shown = TASKS.filter(t => !t.optional || t.by.some(k => on.has(k)));
   const ours = shown.filter(t => t.by.some(k => on.has(k)));
